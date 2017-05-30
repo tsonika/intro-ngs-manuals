@@ -1,8 +1,7 @@
 # BPA Workshops
 
-Workshops run by BPA.
-
-## To see information on the initial Mkdocs setup see: https://bpa-csiro-workshops.github.io/btp-module-template-md/modules/setup_editing/mkdocs_setup/
+Workshops run by BPA.  
+To see information on the initial Mkdocs setup see: https://bpa-csiro-workshops.github.io/btp-module-template-md/modules/setup_editing/mkdocs_setup/
 
 ## Deployment
 
