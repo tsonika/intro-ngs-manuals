@@ -22,6 +22,10 @@ extra:
 
   site_favicon: 'media/logos/bpalogo.png'
 
+#  social:
+#    - type: github
+#      link: https://bpa-csiro-workshops.github.io/btp-manuals-md
+
 markdown_extensions:
     - admonition
     - smarty
