@@ -1,5 +1,4 @@
-Key Learning Outcomes
----------------------
+## Key Learning Outcomes
 
 After completing this practical the trainee should be able to:
 
@@ -13,8 +12,8 @@ After completing this practical the trainee should be able to:
 
 -   Visualize CNV events by manual inspection
 
-Resources You’ll be Using
--------------------------
+***
+## Resources You’ll be Using
 
 ### Tools Used
 
@@ -26,12 +25,14 @@ http://www.broadinstitute.org/igv/
 
 ### Sources of Data
 
+Raw data download:  
 http://sra.dnanexus.com/studies/ERP001071
 
+Data publication:  
 http://www.ncbi.nlm.nih.gov/pubmed/22194472
 
-Introduction
-------------
+***
+## Introduction
 
 The goal of this hands-on session is to perform a copy number variation
 analysis (CNV) on a normal/tumour pair of alignment files (BAMs)
@@ -54,8 +55,8 @@ discussion on the importance of good quality data by highlighting the
 inadequacies of the workshop dataset and the implications this has on
 analysis results.
 
-Prepare the Environment
------------------------
+***
+## Prepare the Environment
 
 We will use a dataset derived from whole genome sequencing of a
 33-yr-old lung adenocarcinoma patient, who is a never-smoker and has no
@@ -64,12 +65,11 @@ familial cancer history.
 The data files are contained in the subdirectory called `data` and are
 the following:
 
-`normal.chr5.60Mb.bam` and `normal.chr5.60Mb.bam.bai`
-:   \
+>  `normal.chr5.60Mb.bam` and `normal.chr5.60Mb.bam.bai`
 
-`tumour.chr5.60Mb.bam` and `tumour.chr5.60Mb.bam`
-:   \
+>  `tumour.chr5.60Mb.bam` and `tumour.chr5.60Mb.bam.bai`
 
+<br>
 These files are based on subsetting the whole genomes derived from blood
 and liver metastases to the first 60Mb of chromosome 5. This will allow
 our analyses to run in a sufficient time during the workshop, but it’s
@@ -81,8 +81,11 @@ Open the Terminal and go to the `CNV` working directory:
 
     cd cnv/
 
-All commands entered into the terminal for this tutorial should be from
-within the **`cnv`** directory.
+
+!!! failure ""
+    All commands entered into the terminal for this tutorial should be from
+    within the **`cnv`** directory.
+
 
 Check that the `data` directory contains the above-mentioned files by
 typing:
@@ -92,8 +95,8 @@ typing:
 All commands used in this tutorial can be copy/pasted from the
 commands.sh file in the `cnv` directory.
 
-Sequenza CNV Analysis
----------------------
+***
+## Sequenza CNV Analysis
 
 Sequenza is run in three steps. The first pre-processing step is run on
 the final normal and tumour mapped data (BAM files) in order to walk the
@@ -106,53 +109,54 @@ the third step. Finally, the third step is run in R normalise the depth
 ratio between the normal/tumour genomes, infer cellularity and ploidy
 and graphically output results for interpretation.
 
+
 ### Step 1: Pre-Processing – Walking the Genome
 
-    pypy software/sequenza/sequenza-utils.py bam2seqz -n data/normal.chr5.60Mb.bam -t data/tumour.chr5.60Mb.bam --fasta assets/human\_g1k\_v37.fasta -gc assets/human\_g1k\_v37.gc50Base.txt.gz -C 5:1-60000000 | gzip > stage1.seqz.gz
+  ```
+  pypy software/sequenza/sequenza-utils.py bam2seqz -n data/normal.chr5.60Mb.bam -t data/tumour.chr5.60Mb.bam --fasta assets/human_g1k_v37.fasta -gc assets/human_g1k_v37.gc50Base.txt.gz -C 5:1-60000000 | gzip > stage1.seqz.gz
+  ```
 
-Hint: press tab after typing a few characters of a directory of filename
-to auto-complete the rest. This makes entering long file names very
-quick.
+!!! hint "Hint"
+    Press tab after typing a few characters of a directory of filename to
+    auto-complete the rest. This makes entering long file names very quick.
 
-Explanation of parameters
 
--n
-:   the normal BAM
+Explanation of parameters:
 
--t
-:   the tumour BAM
+  >  **-n**: the normal BAM  
+  >  **-t**: the tumour BAM  
+  >  **-\-fasta**: the reference genome used for mapping (b37 here)  
+  >  **-gc**: GC content as windows through the genome (pre-generated and downloadable from the Sequenza website)  
+  >  **-C**: specifies the genomic location to process  
 
-–fasta
-:   the reference genome used for mapping (b37 here)
+<br>
+!!! failure ""
+    There will not be any indication that it is running once you launch the
+    command, to make sure it is running open a new Terminal tab with
+    `Shift + Control + T` (or from the menu with File then Open Tab) and type
+    the command `top`. You should see the top line being the command ’pypy’ with
+    a % CPU usage of 98/99%. Press `q` to quit out of this process view and go
+    back to the tab running Sequenza. If everything is running correctly, it
+    will take approximately 40 minutes to run. Go have a coffee!
 
--gc
-:   GC content as windows through the genome (pre-generated and
-    downloadable from the Sequenza website)
-
--C
-:   specifies the genomic location to process
-
-There will not be any indication that it is running once you launch the
-command, to make sure it is running open a new Terminal tab with Shift +
-Control + T (or from the menu with File then Open Tab) and type the
-command ’top’. You should see the top line being the command ’pypy’ with
-a % CPU usage of 98/99%. Press q to quit out of this process view and go
-back to the tab running Sequenza. If everything is running correctly, it
-will take approximately 40 minutes to run. Go have a coffee!
-
+<br>
 Once the command is done you will be returned to the terminal prompt.
-Make sure the output file is the correct size by typing ’ll -h’ from the
+Make sure the output file is the correct size by typing `ll -h` from the
 Terminal window that you ran Sequenza from, there should be a file
 called `stage1.seqz.gz` of the size 326M.
+
 
 You can look at the first few lines of the output in the file
 `stage1.seqz.gz` with:
 
-    zcat stage1.seqz.gz | head -n 20
+  ```bash
+  zcat stage1.seqz.gz | head -n 20
+  ```
 
 This output has one line for each position in the BAMs and includes
 information on the position, depths, allele frequencies, zygosity, GC in
 the location.
+
 
 ### Step 2: Perform Binning
 
@@ -160,48 +164,55 @@ The binning step takes the rows of genomic positions and compresses them
 down to 1 row for every 200 rows previously. This massively reduces the
 file size and processing time in the third step.
 
-    pypy software/sequenza/sequenza-utils.py seqz-binning -w 200 -s stage1.seqz.gz | gzip > stage2.seqz.gz
+  ```
+  pypy software/sequenza/sequenza-utils.py seqz-binning -w 200 -s stage1.seqz.gz | gzip > stage2.seqz.gz
+  ```
 
-Explanation of parameters
+Explanation of parameters:
 
--w
-:   the window size (typically 50 for exomes, 200 for genomes)
-
--s
-:   the large seqz file generated in the first step
+> **-w**: the window size (typically 50 for exomes, 200 for genomes)  
+> **-s**: the large seqz file generated in the first step
 
 This step should take approximately 4 minutes to complete.
+
 
 ### Step 3: Running Sequenza Algorithms and Plotting Results
 
 We will now perform the CNV analysis and output the results using the R
 part of Sequenza.
 
-Open the R terminal
+Open the R terminal:
 
-    R
+  ```R
+  R
+  ```
 
-You should now see the R prompt identified with "\>".
+You should now see the R prompt identified with ">".
 
-Run the Sequenza R commands
+Run the Sequenza R commands:
 
-    library("sequenza")
-    setwd("/home/trainee/cnv")
-    data.file <- "stage2.seqz.gz"
-    seqzdata <- sequenza.extract(data.file)
-    CP.example <- sequenza.fit(seqzdata)
-    sequenza.results(sequenza.extract = seqzdata, cp.table = CP.example, sample.id = "CanGenWorkshop", out.dir="sequenza_results")
+  ```R
+  library("sequenza")
+  setwd("/home/trainee/cnv")
+  data.file <- "stage2.seqz.gz"
+  seqzdata <- sequenza.extract(data.file)
+  CP.example <- sequenza.fit(seqzdata)
+  sequenza.results(sequenza.extract = seqzdata, cp.table = CP.example, sample.id = "CanGenWorkshop", out.dir="sequenza_results")
+  ```
 
-If every command ran successfully, you will now have a
-"sequenza\_results" folder containing 13 files.
+If every command ran successfully, you will now have a `sequenza_results`
+folder containing 13 files.
 
-Quit R
+Quit R:  
 
-    q()
-    Then n at the "Save workspace image" prompt
+  ```R
+  q()
+  ```  
 
-Sequenza Analysis Results and Visualisation
--------------------------------------------
+Then enter `n` at the "Save workspace image" prompt.
+
+***
+## Sequenza Analysis Results and Visualisation
 
 One of the first and most important estimates that Sequenza provides is
 the tumour cellularity (the estimated percentage of tumour cells in the
@@ -209,10 +220,13 @@ tumour genome). This estimate is based on the B allele frequency and
 depth ratio through the genome and is an important metric to know for
 interpretation of Sequenza results and for other analyses. Lets look at
 the cellularity estimate for our analysis by opening
-CanGenWorkshop\_model\_fit.pdf with the command:
+`CanGenWorkshop_model_fit.pdf` with the command:
 
-    evince sequenza_results/CanGenWorkshop_model_fit.pdf
+  ```
+  evince sequenza_results/CanGenWorkshop_model_fit.pdf
+  ```
 
+<br>
 The cellularity estimate is at the top along with the average ploidy
 estimate and the standard deviation of the B allele frequency. We can
 see that the cellularity has been estimated at 24% which is fairly low
@@ -226,13 +240,20 @@ Close the PDF window to resume the Terminal prompt.
 Let’s now look at the CNV inferences through our genomic block. Open the
 genome copy number visualisation file with:
 
-    evince sequenza_results/CanGenWorkshop_genome_view.pdf
+  ```
+  evince sequenza_results/CanGenWorkshop_genome_view.pdf
+  ```
 
+<br>
 This file contains three "pages" of copy number events through the
-entire genomic block. The first page shows copy numbers of the A (red)
-and B (blue) alleles, the second page shows overall copy number changes
-and the third page shows the B allele frequency and depth ratio through
-genomic block. Looking at the overall copy number changes, we see that
+entire genomic block.
+
+1. The first page shows copy numbers of the A (red) and B (blue) alleles,
+2. The second page shows overall copy number changes, and
+3. The third page shows the B allele frequency and depth ratio through
+genomic block.  
+
+Looking at the overall copy number changes, we see that
 our block is at a copy number of 2 with a small duplication to copy
 number 4 about 1/3 of the way through the block and another just after
 halfway through the block. There is also a reduction in copy number to 1
@@ -245,18 +266,24 @@ You can see how this is a very easy to read output and lets you
 immediately see the frequency and severity of copy number events through
 your genome. Let’s compare the small genomic block we ran with the same
 output from the entire genome which has been pre-computed for you. This
-is located in the "pre\_generated/results\_whole\_genome" folder and
+is located in the `pre_generated/results_whole_genome` folder and
 contains the same 13 output files as for the small genomic block. As
 before, let’s look at the cellularity estimate with:
 
-    evince pre_generated/results_whole_genome/CanGenWorkshop_model_fit.pdf
+  ```
+  evince pre_generated/results_whole_genome/CanGenWorkshop_model_fit.pdf
+  ```
 
+<br>
 It now looks like it’s even worse at just 16%! A change is to be
 expected as we were only analysing 1.9% of the genome. Let’s now look at
 the whole genome copy number profile with:
 
-    evince pre_generated/results_whole_genome/CanGenWorkshop_genome_view.pdf
+  ```
+  evince pre_generated/results_whole_genome/CanGenWorkshop_genome_view.pdf
+  ```
 
+<br>
 You can see that there are a number of copy number events across the
 genome and our genomic block (the first 60Mb of chromosome 5) is
 inferred as mostly copy number 4 followed by a reduction to copy number
@@ -267,38 +294,43 @@ mostly at copy number 4 with a small reduction to copy number 2, the
 most likely scenario in lieu of more data is that this is a copy number
 2 block with a reduction to 1. It’s important to carefully examine the
 cellularity, ploidy and BAF estimates of your sample along with the
-plots of model fit (CanGenWorkshop\_model\_fit.pdf) and
-cellularity/ploidy contours (CanGenWorkshop\_CP\_contours.pdf) in order
+plots of model fit (`CanGenWorkshop_model_fit.pdf`) and
+cellularity/ploidy contours (`CanGenWorkshop_CP_contours.pdf`) in order
 to decide if you believe Sequenza’s inference of the copy numbers. Have
 a look at these for yourself if you want to get a better idea of how
 Sequenza makes its inferences and conclusions.
 
-CNV Visualisation/Confirmation in IGV
--------------------------------------
+***
+## CNV Visualisation/Confirmation in IGV
 
 Let’s see if we can visualise one of the CNV events where copy number
 increased significantly. We’ll focus on the copy number 4 event seen at
-about 1/3 of the way through the CanGenWorkshop\_genome\_view.pdf output
+about 1/3 of the way through the `CanGenWorkshop_genome_view.pdf` output
 we generated. First, we need to find the coordinates that have been
-predicted for this event. Have a look at the
-CanGenWorkshop\_segments.txt file in the results folder to view all
-predicted CNV events with:
+predicted for this event. Have a look at the `CanGenWorkshop_segments.txt`
+file in the results folder to view all predicted CNV events with:
 
-    less sequenza_results/CanGenWorkshop_segments.txt
+  ```
+  less sequenza_results/CanGenWorkshop_segments.txt
+  ```
 
+<br>
 There is only one at a copy number of 4 (CNt column) and it starts at
-21051700 to 21522065 which is 470kb and corresponds to the small block
+21,051,700 to 21,522,065 which is 470kb and corresponds to the small block
 we see in the genome view PDF.
 
-Quit out of viewing the segments file by pressing q.
+Quit out of viewing the segments file by pressing `q`.
 
 We will now open IGV and see if we can observe the predicted increase in
 copy number within these genomic coordinates.
 
-    /home/trainee/snv/Applications/igv/igv.sh
+  ```
+  /home/trainee/snv/Applications/igv/igv.sh
+  ```
 
 IGV will take 30 seconds or so to open so just be patient.
 
+<br>
 For a duplication of this size, we will not be able to easily observe it
 just by looking at the raw read alignments. In order to see it we will
 generate two tiled data files (TDFs) within IGV which contain the
@@ -307,19 +339,19 @@ means that we can aggregate the average read depth over relatively large
 chunks of the genome and compare these values between the normal and
 tumour genomes.
 
-To begin, we will go to "Tools" then "Run igvtools..." in the IGV
+To begin, we will go to `Tools` then `Run igvtools...` in the IGV
 menubar. Specify the normal bam file (under `cnv` then `data`) as the
-input file and change the window size to 100000 (one hundred thousand).
-Then press the "Run" button and IGV will make the TDF file. This takes
-about 5 minutes. Repeat this for the tumour genome.
+input file and change the window size to 100,000 (one hundred thousand).
+Then press the `Run` button and IGV will make the TDF file. This takes
+about 5 minutes. **Repeat this for the tumour genome.**
 
-After you have both TDF files, go to "File" and "Load from file..." in
+After you have both TDF files, go to `File` and `Load from file...` in
 the menubar and select the BAM and TDF files to open. Once you have
 opened them, they will appear as tracks along with the BAM tracks we
 loaded initially. Navigate to the genomic coordinates of our event
 (5:21,051,700-21,522,065) by typing it in the coordinate box at the top.
 Mouse over the two blue tracks to get the average depth values for the
-100,000bp windows. What you should see is that the liverMets sample has
+100,000 bp windows. What you should see is that the liverMets sample has
 3-6X more coverage than the Blood sample for the four windows that cover
 this region.
 
@@ -337,8 +369,8 @@ contains 50% normal cells and 50% tumour cells). Now, half of the
 duplicated "tumour genome" segment will be at a copy number of 2 and
 half will be at 4. What does this mean when we sequence them as a
 mixture? The resulting average copy number of the block will be
-$(0.5*2)+(0.5*4) = 3$. Now what if we only have 16% tumour cells in our
-"tumour genome"? This will be $(0.84*2)+(0.16*4) = 2.32$. You can see
+\((0.5*2)+(0.5*4) = 3\). Now what if we only have 16% tumour cells in our
+"tumour genome"? This will be \((0.84*2)+(0.16*4) = 2.32\). You can see
 how sequencing a low cellularity tumour at a low depth makes it much
 harder to infer copy number variations!
 
@@ -362,8 +394,8 @@ variants and in aggregate these will still retain power to infer these
 events when using tools that look at the whole genome like Sequenza
 does.
 
-References
-----------
+***
+## References
 
 1.  F. Favero, T. Joshi, A. M. Marquard, N. J. Birkbak, M. Krzystanek,
     Q. Li, Z. Szallasi, and A. C. Eklund. "Sequenza: allele-specific
