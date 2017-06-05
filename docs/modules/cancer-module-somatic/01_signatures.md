@@ -246,13 +246,14 @@ combinations. We can calculate this by listing out the six possible
 types of single nucleotide mutations:
 
   <pre>
-  -   A/C   the reverse compliment (T/G) is also in this group
-  -   A/G   includes (T/C)
-  -   A/T   includes (T/A)
-  -   C/A   includes (G/T)
+  -   C/A   the reverse compliment (G/T) is also in this group
   -   C/G   includes (G/C)
   -   C/T   includes (G/C)
+  -   T/A   includes (A/T)
+  -   T/C   includes (A/G)
+  -   T/G   includes (A/C)
   </pre>
+
 
 The neighbouring bases, on either side of a mutation, are referred to as
 the mutation context. There are 16 possible combinations of mutation
@@ -272,13 +273,13 @@ contexts (6 x 16).
 Start by substituting [.] for the A/C mutation type
 
   <pre>
-  -   A[A/C]A
-  -   A[A/C]C
-  -   A[A/C]G
-  -   A[A/C]T
-  -   C[A/C]A
-  -   C[A/C]C
-  -   C[A/C]G
+  -   A[C/A]A
+  -   A[C/A]C
+  -   A[C/A]G
+  -   A[C/A]T
+  -   C[C/A]A
+  -   C[C/A]C
+  -   C[C/A]G
   </pre>
 
 and so on...
@@ -287,7 +288,7 @@ We assign all the somatic mutations identified in a single tumour to one
 of these categories and total up the number in each.
 
 !!! note "Question"
-    What about a mutation that looks like G[T/G]A, where should this go?
+    What about a mutation that looks like G[A/C]A, where should this go?
 
     !!! hint ""
         ??? "**Hint**"
