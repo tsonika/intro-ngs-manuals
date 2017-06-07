@@ -112,8 +112,9 @@ Open the Terminal and go to the `rnaseq` working directory:
 
     cd /home/trainee/rnaseq/
 
-All commands entered into the terminal for this tutorial should be from
-within the **`/home/trainee/rnaseq`** directory.
+!!! failure "STOP"
+    All commands entered into the terminal for this tutorial should be from
+    within the **`/home/trainee/rnaseq`** directory.
 
 Check that the `data` directory contains the above-mentioned files by
 typing:
@@ -133,10 +134,10 @@ the alignment to speed up the alignment and keep its memory footprint
 small. The the index for the `Danio rerio` genome has been created for
 you.
 
-The command to create an index is as follows. You DO NOT need to run
-this command yourself - we have done this for you.
+!!! failure "STOP"
+    The command to create an index is as follows. You DO NOT need to run this command yourself - we have done this for you.
 
-    bowtie2-build genome/Danio_rerio.Zv9.66.dna.fa genome/ZV9
+    **`bowtie2-build genome/Danio_rerio.Zv9.66.dna.fa genome/ZV9`**
 
 Tophat2 has a number of parameters in order to perform the alignment. To
 view them all type:
