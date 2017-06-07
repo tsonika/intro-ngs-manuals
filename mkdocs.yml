@@ -31,7 +31,7 @@ markdown_extensions:
     - smarty
     - tables
     - markdown_include.include
-    - codehilite(linenums=true)
+    - codehilite(linenums=True)
 #    - codehilite
     - toc(permalink=true)
     - mdx_math
@@ -45,15 +45,15 @@ markdown_extensions:
     - pymdownx.superfences
     - pymdownx.tasklist(custom_checkbox=true)
     - pymdownx.tilde
-    - pymdownx.spoilers
+    - pymdownx.details
 
 extra_css:
     #- css/extra.css
-    - css/spoilers.css
+    - css/details.css
 
 extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML
-    - js/spoilers.js
+    - js/details.js
 
 pages:
 - Home: index.md

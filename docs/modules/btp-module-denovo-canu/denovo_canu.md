@@ -146,7 +146,12 @@ canu -p prefix -d outdir corMhapSensitivity=high corMinCoverage=0 genomeSize=2.8
 
 ### Questions
 
-Q: How do long- and short-read assembly methods differ? A: short reads: De Bruijn graphs; long reads: a move back towards simpler overlap-layout-consensus methods.
+!!! note "Question"
+    How do long- and short-read assembly methods differ?
+    
+    !!! success ""
+        ??? "**Answer**"
+            short reads: De Bruijn graphs; long reads: a move back towards simpler overlap-layout-consensus methods.
 
 Q: Where can we find out the what the approximate genome size should be for the species being assembled? A: NCBI Genomes - enter species name - click on Genome Assembly and Annotation report - sort table by clicking on the column header Size (Mb) - look at range of sizes in this column.
 
