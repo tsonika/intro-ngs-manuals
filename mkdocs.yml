@@ -57,7 +57,10 @@ extra_javascript:
 
 pages:
 - Home: index.md
-- Timetable: timetables/timetable_cancer.md
+- Timetable:
+  - Intro to NGS: timetables/timetable_introNGS.md
+  - Cancer Genomics: timetables/timetable_cancer.md
+  - Long Read: timetables/timetable_longRead.md
 - Workshop Information: preamble.md
 
 # - All Modules:
