@@ -30,8 +30,11 @@ http://www.ensembl.org
 Trawler:  
 https://trawler.erc.monash.edu.au/index.html
 
-MEME:  
-http://meme.ebi.edu.au/meme/cgi-bin/meme.cgi
+RSAT peak-motifs
+http://floresta.eead.csic.es/rsat/peak-motifs~f~orm.cgi
+
+MEME-ChIP:  
+http://meme-suite.org/tools/meme-chip
 
 TOMTOM:  
 http://meme.ebi.edu/meme/cgi-bin/tomtom.cgi
