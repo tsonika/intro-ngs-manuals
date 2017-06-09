@@ -64,7 +64,7 @@ pages:
 - Workshop Information: preamble.md
 
 # - All Modules:
-#     - ChIP-seq: modules/btp-module-chip-seq/chip-seq-draft-SL_ST.md
+#     - ChIP-seq: modules/btp-module-chip-seq/chip-seq.md
 #     - DeNovo Canu: modules/btp-module-denovo-canu/denovo_canu.md
 #     - NGS Biological Insight: modules/btp-module-ngs-bio/biol.md
 #     - NGS Introduction to Command Line: modules/btp-module-ngs-cli/commandline.md
@@ -91,7 +91,7 @@ pages:
 #     - Metagenomics WGA: modules/metagenomics-module-wga/wga.md
 
 - BTP Modules:
-    - ChIP-seq: modules/btp-module-chip-seq/chip-seq-draft-SL_ST.md
+    - ChIP-seq: modules/btp-module-chip-seq/chip-seq.md
     - DeNovo Canu: modules/btp-module-denovo-canu/denovo_canu.md
     - Introduction to Command Line: modules/btp-module-ngs-cli/commandline.md
     - Data Quality: modules/btp-module-ngs-qc/ngs-qc.md

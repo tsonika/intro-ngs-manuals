@@ -122,14 +122,15 @@ bowtie are:
 :   Input qualities are Phred+64 (same as `–solexa1.3-quals`).
 
 –solexa-quals
-:   Input qualities are from GA Pipeline ver. $<$ 1.3.
+:   Input qualities are from GA Pipeline ver. < 1.3.
 
 –solexa1.3-quals
-:   Input qualities are from GA Pipeline ver. $\geq$ 1.3.
+:   Input qualities are from GA Pipeline ver. >= 1.3.
 
 –integer-quals
 :   Qualities are given as space-separated integers (not ASCII).
 
+    
 The FASTQ files we are working with are Sanger encoded (Phred+33), which
 is the default for Bowtie2.
 
@@ -144,16 +145,18 @@ exit type ’q’.
     head  Oct4.sam
     less -S Oct4.sam
 
-Can you distinguish between the header of the SAM format and the actual
-alignments?
+!!! note "Question"
+    Can you distinguish between the header of the SAM format and the actual alignments?
 
-The header line starts with the letter ‘@’, i.e.:
+??? "**Answer**"
+    !!! success "Answer"
+        The header line starts with the letter ‘@’, i.e.:
 
-  ----- ------------ -------------- ---------- ----------------------------------------------------------------------------------------------------------
-  @HD   VN:1.0       SO:unsorted               
-  @SQ   SN:chr1      LN:195471971              
-  @PG   ID:Bowtie2   PN:bowtie2     VN:2.2.4   CL:“/tools/bowtie2/bowtie2-default/bowtie2-align-s –wrapper basic-0 -x bowtie\_index/mm10 -q Oct4.fastq”
-  ----- ------------ -------------- ---------- ----------------------------------------------------------------------------------------------------------
+        ----- ------------ -------------- ---------- ----------------------------------------------------------------------------------------------------------
+        @HD   VN:1.0       SO:unsorted               
+        @SQ   SN:chr1      LN:195471971              
+        @PG   ID:Bowtie2   PN:bowtie2     VN:2.2.4   CL:“/tools/bowtie2/bowtie2-default/bowtie2-align-s –wrapper basic-0 -x bowtie\_index/mm10 -q Oct4.fastq”
+        ----- ------------ -------------- ---------- ----------------------------------------------------------------------------------------------------------
 
 While, the actual alignments start with read id, i.e.:
 
@@ -162,20 +165,24 @@ While, the actual alignments start with read id, i.e.:
   SRR002012.48   16   chr1   etc
   -------------- ---- ------ -----
 
-What kind of information does the header provide?
+!!! note "Question"
+    What kind of information does the header provide?
 
--   @HD: Header line; VN: Format version; SO: the sort order of
-    alignments.
+??? "**Answer**"
+    !!! success "Answer"
+    
+    -   @HD: Header line; VN: Format version; SO: the sort order of alignments.
 
--   @SQ: Reference sequence information; SN: reference sequence name;
-    LN: reference sequence length.
+    -   @SQ: Reference sequence information; SN: reference sequence name; LN: reference sequence length.
 
--   @PG: Read group information; ID: Read group identifier; VN: Program
-    version; CL: the command line that produces the alignment.
+     -   @PG: Read group information; ID: Read group identifier; VN: Program version; CL: the command line that produces the alignment.
 
-To which chromosome are the reads mapped?
+!!! note "Question"
+    To which chromosome are the reads mapped?
 
-Chromosome 1.
+??? "**Answer**"
+    !!! success "Answer"
+        Chromosome 1.
 
 Manipulate SAM output
 ---------------------
@@ -215,7 +222,7 @@ that the file is sorted according to chromosomal coordinates.
 Sort alignments according to chromosomal position and store the result
 in the file with the prefix `Oct4.sorted`:
 
-    samtools sort Oct4.bam Oct4.sorted
+    samtools sort Oct4.bam -o Oct4.sorted.bam
 
 Index the sorted file.
 
@@ -264,7 +271,7 @@ in order to load the desire files go to:
 
     File > Load from File
 
-On the pop up window navigate to Desktop $>$ chipseq folder and select
+On the pop up window navigate to Desktop -> chipseq folder and select
 the file `Oct4.sorted.bam`.
 
 Repeat these steps in order to load `Oct4.bw` as well.
@@ -277,21 +284,22 @@ In order to see the aligned reads of the BAM file, you need to zoom in
 to a specific region. For example, look for gene `Lemd1` in the search
 box.
 
-What is the main difference between the visualization of BAM and bigWig
-files?
+!!! note "Question"
+    What is the main difference between the visualization of BAM and bigWig files?
 
-The actual alignment of reads that stack to a particular region can be
-displayed using the information stored in a BAM format. The bigWig
-format is for display of dense, continuous data that will be displayed
-in the Genome Browser as a graph.
+??? "**Answer**"
+    !!! success "Answer"
+        The actual alignment of reads that stack to a particular region can be displayed using the information stored in a BAM format. The bigWig format is for display of dense, continuous data that will be displayed in the Genome Browser as a graph.
 
 Using the `+` button on the top right, zoom in to see more of the
 details of the alignments.
 
-What do you think the different colors mean?
+!!! note "Question"
+    What do you think the different colors mean?
 
-The different color represents four nucleotides, e.g. blue is Cytidine
-(C), red is Thymidine (T).
+??? "**Answer**"
+    !!! success "Answer"
+        The different color represents four nucleotides, e.g. blue is Cytidine (C), red is Thymidine (T).
 
 Practice Makes Perfect!
 -----------------------
