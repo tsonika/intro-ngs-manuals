@@ -30,7 +30,7 @@ http://www.ensembl.org
 Trawler:  
 https://trawler.erc.monash.edu.au/index.html
 
-RSAT peak-motifs
+RSAT peak-motifs:    
 http://floresta.eead.csic.es/rsat/peak-motifs~f~orm.cgi
 
 MEME-ChIP:  
@@ -77,9 +77,9 @@ the genome. When using Bowtie, this can be done using the `-m 1` option,
 which tells it to report only unique matches (See `bowtie –help` for
 more details).
 
-Open the Terminal and go to the `ChIP-seq` directory:
+Open the Terminal and go to the `chipseq` directory:
 
-    cd /home/trainee/ChIP-seq
+    cd /home/trainee/chipseq
     ls
     R
 
@@ -117,7 +117,7 @@ your working directory correctly:
 
     library(spp);
     library(biomaRt);
-    setwd('/home/trainee/ChIP-seq');
+    setwd('/home/trainee/chipseq');
 
 **1. Loading tag data, selecting choosing alignment quality, removing
 anomalies**\
