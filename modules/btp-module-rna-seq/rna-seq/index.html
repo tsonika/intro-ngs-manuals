@@ -15,7 +15,7 @@
       
         <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       
-      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.6.3">
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.7.3">
     
     
       
@@ -23,12 +23,12 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr-56ade86843.js"></script>
+      <script src="../../../assets/javascripts/modernizr-1df76c4e58.js"></script>
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application-e2807e330f.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application-acc56dad49.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-f78e5cb881.palette.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-8817cfa535.palette.css">
       
     
     
@@ -42,7 +42,7 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     
-      <link rel="stylesheet" href="../../../css/spoilers.css">
+      <link rel="stylesheet" href="../../../css/details.css">
     
     
   </head>
@@ -103,7 +103,7 @@
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
+        <div class="md-search-result" data-md-component="result" data-md-lang-search="">
           <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
             Type to start searching
           </div>
@@ -115,11 +115,7 @@
 </div>
         
       </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <div class="md-header-nav__source">
-          
-        </div>
-      </div>
+      
     </div>
   </nav>
 </header>
@@ -146,6 +142,17 @@
 
       
         
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../timetables/timetable_introNGS/" title="Timetable" class="md-tabs__link">
+          Timetable
+        </a>
+      
+    </li>
+  
+
       
         
       
@@ -154,7 +161,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../btp-module-chip-seq/chip-seq-draft-SL_ST/" title="BTP Modules" class="md-tabs__link md-tabs__link--active">
+        <a href="../../btp-module-chip-seq/chip-seq/" title="BTP Modules" class="md-tabs__link md-tabs__link--active">
           BTP Modules
         </a>
       
@@ -241,10 +248,58 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="../../../timetables/timetable_cancer/" title="Timetable" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
       Timetable
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Timetable
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../timetables/timetable_introNGS/" title="Intro to NGS" class="md-nav__link">
+      Intro to NGS
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../timetables/timetable_cancer/" title="Cancer Genomics" class="md-nav__link">
+      Cancer Genomics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../timetables/timetable_longRead/" title="Long Read" class="md-nav__link">
+      Long Read
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -287,7 +342,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../btp-module-chip-seq/chip-seq-draft-SL_ST/" title="ChIP-seq" class="md-nav__link">
+    <a href="../../btp-module-chip-seq/chip-seq/" title="ChIP-seq" class="md-nav__link">
       ChIP-seq
     </a>
   </li>
@@ -1171,8 +1226,11 @@ the following:</p>
 </pre></div>
 </td></tr></table>
 
+<div class="admonition failure">
+<p class="admonition-title">STOP</p>
 <p>All commands entered into the terminal for this tutorial should be from
 within the <strong><code class="codehilite">/home/trainee/rnaseq</code></strong> directory.</p>
+</div>
 <p>Check that the <code class="codehilite">data</code> directory contains the above-mentioned files by
 typing:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ls data
@@ -1188,12 +1246,11 @@ aligner that performs spliced alignments.</p>
 the alignment to speed up the alignment and keep its memory footprint
 small. The the index for the <code class="codehilite">Danio rerio</code> genome has been created for
 you.</p>
-<p>The command to create an index is as follows. You DO NOT need to run
-this command yourself - we have done this for you.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>bowtie2-build genome/Danio_rerio.Zv9.66.dna.fa genome/ZV9
-</pre></div>
-</td></tr></table>
-
+<div class="admonition failure">
+<p class="admonition-title">STOP</p>
+<p>The command to create an index is as follows. You DO NOT need to run this command yourself - we have done this for you.</p>
+<p><strong><code class="codehilite">bowtie2-build genome/Danio_rerio.Zv9.66.dna.fa genome/ZV9</code></strong></p>
+</div>
 <p>Tophat2 has a number of parameters in order to perform the alignment. To
 view them all type:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>tophat2 --help
@@ -2127,12 +2184,14 @@ brep<span class="o">&lt;-</span>csBoxplot<span class="p">(</span>genes<span clas
       
     </div>
     
-      <script src="../../../assets/javascripts/application-6b4ff16fa7.js"></script>
+      <script src="../../../assets/javascripts/application-b30566c560.js"></script>
+      
+      
       <script>app.initialize({url:{base:"../../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
-        <script src="../../../js/spoilers.js"></script>
+        <script src="../../../js/details.js"></script>
       
     
     

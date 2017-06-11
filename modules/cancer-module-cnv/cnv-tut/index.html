@@ -15,7 +15,7 @@
       
         <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       
-      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.6.3">
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.7.3">
     
     
       
@@ -23,12 +23,12 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr-56ade86843.js"></script>
+      <script src="../../../assets/javascripts/modernizr-1df76c4e58.js"></script>
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application-e2807e330f.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application-acc56dad49.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-f78e5cb881.palette.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-8817cfa535.palette.css">
       
     
     
@@ -42,7 +42,7 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     
-      <link rel="stylesheet" href="../../../css/spoilers.css">
+      <link rel="stylesheet" href="../../../css/details.css">
     
     
   </head>
@@ -103,7 +103,7 @@
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
+        <div class="md-search-result" data-md-component="result" data-md-lang-search="">
           <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
             Type to start searching
           </div>
@@ -115,11 +115,7 @@
 </div>
         
       </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <div class="md-header-nav__source">
-          
-        </div>
-      </div>
+      
     </div>
   </nav>
 </header>
@@ -146,6 +142,17 @@
 
       
         
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../timetables/timetable_introNGS/" title="Timetable" class="md-tabs__link">
+          Timetable
+        </a>
+      
+    </li>
+  
+
       
         
       
@@ -154,7 +161,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../btp-module-chip-seq/chip-seq-draft-SL_ST/" title="BTP Modules" class="md-tabs__link">
+        <a href="../../btp-module-chip-seq/chip-seq/" title="BTP Modules" class="md-tabs__link">
           BTP Modules
         </a>
       
@@ -241,10 +248,58 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="../../../timetables/timetable_cancer/" title="Timetable" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
       Timetable
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Timetable
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../timetables/timetable_introNGS/" title="Intro to NGS" class="md-nav__link">
+      Intro to NGS
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../timetables/timetable_cancer/" title="Cancer Genomics" class="md-nav__link">
+      Cancer Genomics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../timetables/timetable_longRead/" title="Long Read" class="md-nav__link">
+      Long Read
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -285,7 +340,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../btp-module-chip-seq/chip-seq-draft-SL_ST/" title="ChIP-seq" class="md-nav__link">
+    <a href="../../btp-module-chip-seq/chip-seq/" title="ChIP-seq" class="md-nav__link">
       ChIP-seq
     </a>
   </li>
@@ -954,6 +1009,7 @@
 <p>Visualize CNV events by manual inspection</p>
 </li>
 </ul>
+<hr />
 <h2 id="resources-youll-be-using">Resources You’ll be Using<a class="headerlink" href="#resources-youll-be-using" title="Permanent link">&para;</a></h2>
 <h3 id="tools-used">Tools Used<a class="headerlink" href="#tools-used" title="Permanent link">&para;</a></h3>
 <p>Sequenza:<br />
@@ -961,8 +1017,11 @@
 <p>IGV:<br />
 <a href="http://www.broadinstitute.org/igv/">http://www.broadinstitute.org/igv/</a></p>
 <h3 id="sources-of-data">Sources of Data<a class="headerlink" href="#sources-of-data" title="Permanent link">&para;</a></h3>
-<p><a href="http://sra.dnanexus.com/studies/ERP001071">http://sra.dnanexus.com/studies/ERP001071</a></p>
-<p><a href="http://www.ncbi.nlm.nih.gov/pubmed/22194472">http://www.ncbi.nlm.nih.gov/pubmed/22194472</a></p>
+<p>Raw data download:<br />
+<a href="http://sra.dnanexus.com/studies/ERP001071">http://sra.dnanexus.com/studies/ERP001071</a></p>
+<p>Data publication:<br />
+<a href="http://www.ncbi.nlm.nih.gov/pubmed/22194472">http://www.ncbi.nlm.nih.gov/pubmed/22194472</a></p>
+<hr />
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>The goal of this hands-on session is to perform a copy number variation
 analysis (CNV) on a normal/tumour pair of alignment files (BAMs)
@@ -982,17 +1041,19 @@ the first part for validation purposes. This section will also include a
 discussion on the importance of good quality data by highlighting the
 inadequacies of the workshop dataset and the implications this has on
 analysis results.</p>
+<hr />
 <h2 id="prepare-the-environment">Prepare the Environment<a class="headerlink" href="#prepare-the-environment" title="Permanent link">&para;</a></h2>
 <p>We will use a dataset derived from whole genome sequencing of a
 33-yr-old lung adenocarcinoma patient, who is a never-smoker and has no
 familial cancer history.</p>
 <p>The data files are contained in the subdirectory called <code class="codehilite">data</code> and are
 the following:</p>
-<p><code class="codehilite">normal.chr5.60Mb.bam</code> and <code class="codehilite">normal.chr5.60Mb.bam.bai</code>
-:   \</p>
-<p><code class="codehilite">tumour.chr5.60Mb.bam</code> and <code class="codehilite">tumour.chr5.60Mb.bam</code>
-:   \</p>
-<p>These files are based on subsetting the whole genomes derived from blood
+<blockquote>
+<p><code class="codehilite">normal.chr5.60Mb.bam</code> and <code class="codehilite">normal.chr5.60Mb.bam.bai</code></p>
+<p><code class="codehilite">tumour.chr5.60Mb.bam</code> and <code class="codehilite">tumour.chr5.60Mb.bam.bai</code></p>
+</blockquote>
+<p><br>
+These files are based on subsetting the whole genomes derived from blood
 and liver metastases to the first 60Mb of chromosome 5. This will allow
 our analyses to run in a sufficient time during the workshop, but it’s
 worth being aware that we are analysing just 1.9% of the genome which
@@ -1003,8 +1064,10 @@ cancer genomics on full genomes!</p>
 </pre></div>
 </td></tr></table>
 
+<div class="admonition failure">
 <p>All commands entered into the terminal for this tutorial should be from
 within the <strong><code class="codehilite">cnv</code></strong> directory.</p>
+</div>
 <p>Check that the <code class="codehilite">data</code> directory contains the above-mentioned files by
 typing:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ll data
@@ -1013,6 +1076,7 @@ typing:</p>
 
 <p>All commands used in this tutorial can be copy/pasted from the
 commands.sh file in the <code class="codehilite">cnv</code> directory.</p>
+<hr />
 <h2 id="sequenza-cnv-analysis">Sequenza CNV Analysis<a class="headerlink" href="#sequenza-cnv-analysis" title="Permanent link">&para;</a></h2>
 <p>Sequenza is run in three steps. The first pre-processing step is run on
 the final normal and tumour mapped data (BAM files) in order to walk the
@@ -1025,39 +1089,40 @@ the third step. Finally, the third step is run in R normalise the depth
 ratio between the normal/tumour genomes, infer cellularity and ploidy
 and graphically output results for interpretation.</p>
 <h3 id="step-1-pre-processing-walking-the-genome">Step 1: Pre-Processing – Walking the Genome<a class="headerlink" href="#step-1-pre-processing-walking-the-genome" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pypy software/sequenza/sequenza-utils.py bam2seqz -n data/normal.chr5.60Mb.bam -t data/tumour.chr5.60Mb.bam --fasta assets/human\_g1k\_v37.fasta -gc assets/human\_g1k\_v37.gc50Base.txt.gz -C 5:1-60000000 | gzip &gt; stage1.seqz.gz
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pypy software/sequenza/sequenza-utils.py bam2seqz -n data/normal.chr5.60Mb.bam -t data/tumour.chr5.60Mb.bam --fasta assets/human_g1k_v37.fasta -gc assets/human_g1k_v37.gc50Base.txt.gz -C 5:1-60000000 | gzip &gt; stage1.seqz.gz
 </pre></div>
 </td></tr></table>
 
-<p>Hint: press tab after typing a few characters of a directory of filename
-to auto-complete the rest. This makes entering long file names very
-quick.</p>
-<p>Explanation of parameters</p>
-<p>-n
-:   the normal BAM</p>
-<p>-t
-:   the tumour BAM</p>
-<p>–fasta
-:   the reference genome used for mapping (b37 here)</p>
-<p>-gc
-:   GC content as windows through the genome (pre-generated and
-    downloadable from the Sequenza website)</p>
-<p>-C
-:   specifies the genomic location to process</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Press tab after typing a few characters of a directory of filename to
+auto-complete the rest. This makes entering long file names very quick.</p>
+</div>
+<p>Explanation of parameters:</p>
+<blockquote>
+<p><strong>-n</strong>: the normal BAM<br />
+<strong>-t</strong>: the tumour BAM<br />
+<strong>--fasta</strong>: the reference genome used for mapping (b37 here)<br />
+<strong>-gc</strong>: GC content as windows through the genome (pre-generated and downloadable from the Sequenza website)<br />
+<strong>-C</strong>: specifies the genomic location to process  </p>
+</blockquote>
+<div class="admonition failure">
 <p>There will not be any indication that it is running once you launch the
-command, to make sure it is running open a new Terminal tab with Shift +
-Control + T (or from the menu with File then Open Tab) and type the
-command ’top’. You should see the top line being the command ’pypy’ with
-a % CPU usage of 98/99%. Press q to quit out of this process view and go
+command, to make sure it is running open a new Terminal tab with
+<code class="codehilite">Shift + Control + T</code> (or from the menu with File then Open Tab) and type
+the command <code class="codehilite">top</code>. You should see the top line being the command ’pypy’ with
+a % CPU usage of 98/99%. Press <code class="codehilite">q</code> to quit out of this process view and go
 back to the tab running Sequenza. If everything is running correctly, it
 will take approximately 40 minutes to run. Go have a coffee!</p>
-<p>Once the command is done you will be returned to the terminal prompt.
-Make sure the output file is the correct size by typing ’ll -h’ from the
+</div>
+<p><br>
+Once the command is done you will be returned to the terminal prompt.
+Make sure the output file is the correct size by typing <code class="codehilite">ll -h</code> from the
 Terminal window that you ran Sequenza from, there should be a file
 called <code class="codehilite">stage1.seqz.gz</code> of the size 326M.</p>
 <p>You can look at the first few lines of the output in the file
 <code class="codehilite">stage1.seqz.gz</code> with:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>zcat stage1.seqz.gz | head -n 20
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>zcat stage1.seqz.gz <span class="p">|</span> head -n <span class="m">20</span>
 </pre></div>
 </td></tr></table>
 
@@ -1072,22 +1137,22 @@ file size and processing time in the third step.</p>
 </pre></div>
 </td></tr></table>
 
-<p>Explanation of parameters</p>
-<p>-w
-:   the window size (typically 50 for exomes, 200 for genomes)</p>
-<p>-s
-:   the large seqz file generated in the first step</p>
+<p>Explanation of parameters:</p>
+<blockquote>
+<p><strong>-w</strong>: the window size (typically 50 for exomes, 200 for genomes)<br />
+<strong>-s</strong>: the large seqz file generated in the first step</p>
+</blockquote>
 <p>This step should take approximately 4 minutes to complete.</p>
 <h3 id="step-3-running-sequenza-algorithms-and-plotting-results">Step 3: Running Sequenza Algorithms and Plotting Results<a class="headerlink" href="#step-3-running-sequenza-algorithms-and-plotting-results" title="Permanent link">&para;</a></h3>
 <p>We will now perform the CNV analysis and output the results using the R
 part of Sequenza.</p>
-<p>Open the R terminal</p>
+<p>Open the R terminal:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>R
 </pre></div>
 </td></tr></table>
 
-<p>You should now see the R prompt identified with &ldquo;>&ldquo;.</p>
-<p>Run the Sequenza R commands</p>
+<p>You should now see the R prompt identified with &ldquo;&gt;&rdquo;.</p>
+<p>Run the Sequenza R commands:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -1102,15 +1167,15 @@ sequenza.results<span class="p">(</span>sequenza.extract <span class="o">=</span
 </pre></div>
 </td></tr></table>
 
-<p>If every command ran successfully, you will now have a
-&ldquo;sequenza_results&rdquo; folder containing 13 files.</p>
-<p>Quit R</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>q()
-Then n at the &quot;Save workspace image&quot; prompt
+<p>If every command ran successfully, you will now have a <code class="codehilite">sequenza_results</code>
+folder containing 13 files.</p>
+<p>Quit R:  </p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">q</span><span class="p">()</span>
 </pre></div>
 </td></tr></table>
 
+<p>Then enter <code class="codehilite">n</code> at the &ldquo;Save workspace image&rdquo; prompt.</p>
+<hr />
 <h2 id="sequenza-analysis-results-and-visualisation">Sequenza Analysis Results and Visualisation<a class="headerlink" href="#sequenza-analysis-results-and-visualisation" title="Permanent link">&para;</a></h2>
 <p>One of the first and most important estimates that Sequenza provides is
 the tumour cellularity (the estimated percentage of tumour cells in the
@@ -1118,12 +1183,13 @@ tumour genome). This estimate is based on the B allele frequency and
 depth ratio through the genome and is an important metric to know for
 interpretation of Sequenza results and for other analyses. Lets look at
 the cellularity estimate for our analysis by opening
-CanGenWorkshop_model_fit.pdf with the command:</p>
+<code class="codehilite">CanGenWorkshop_model_fit.pdf</code> with the command:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>evince sequenza_results/CanGenWorkshop_model_fit.pdf
 </pre></div>
 </td></tr></table>
 
-<p>The cellularity estimate is at the top along with the average ploidy
+<p><br>
+The cellularity estimate is at the top along with the average ploidy
 estimate and the standard deviation of the B allele frequency. We can
 see that the cellularity has been estimated at 24% which is fairly low
 and we will see why this is bad in the next section on CNV
@@ -1137,11 +1203,16 @@ genome copy number visualisation file with:</p>
 </pre></div>
 </td></tr></table>
 
-<p>This file contains three &ldquo;pages&rdquo; of copy number events through the
-entire genomic block. The first page shows copy numbers of the A (red)
-and B (blue) alleles, the second page shows overall copy number changes
-and the third page shows the B allele frequency and depth ratio through
-genomic block. Looking at the overall copy number changes, we see that
+<p><br>
+This file contains three &ldquo;pages&rdquo; of copy number events through the
+entire genomic block.</p>
+<ol>
+<li>The first page shows copy numbers of the A (red) and B (blue) alleles,</li>
+<li>The second page shows overall copy number changes, and</li>
+<li>The third page shows the B allele frequency and depth ratio through
+genomic block.  </li>
+</ol>
+<p>Looking at the overall copy number changes, we see that
 our block is at a copy number of 2 with a small duplication to copy
 number 4 about &#8531; of the way through the block and another just after
 halfway through the block. There is also a reduction in copy number to 1
@@ -1153,21 +1224,23 @@ gap with short read data.</p>
 immediately see the frequency and severity of copy number events through
 your genome. Let’s compare the small genomic block we ran with the same
 output from the entire genome which has been pre-computed for you. This
-is located in the &ldquo;pre_generated/results_whole_genome&rdquo; folder and
+is located in the <code class="codehilite">pre_generated/results_whole_genome</code> folder and
 contains the same 13 output files as for the small genomic block. As
 before, let’s look at the cellularity estimate with:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>evince pre_generated/results_whole_genome/CanGenWorkshop_model_fit.pdf
 </pre></div>
 </td></tr></table>
 
-<p>It now looks like it’s even worse at just 16%! A change is to be
+<p><br>
+It now looks like it’s even worse at just 16%! A change is to be
 expected as we were only analysing 1.9% of the genome. Let’s now look at
 the whole genome copy number profile with:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>evince pre_generated/results_whole_genome/CanGenWorkshop_genome_view.pdf
 </pre></div>
 </td></tr></table>
 
-<p>You can see that there are a number of copy number events across the
+<p><br>
+You can see that there are a number of copy number events across the
 genome and our genomic block (the first 60Mb of chromosome 5) is
 inferred as mostly copy number 4 followed by a reduction to copy number
 2, rather than 2 to 1 as we saw in the output we generated. The reason
@@ -1177,27 +1250,28 @@ mostly at copy number 4 with a small reduction to copy number 2, the
 most likely scenario in lieu of more data is that this is a copy number
 2 block with a reduction to 1. It’s important to carefully examine the
 cellularity, ploidy and BAF estimates of your sample along with the
-plots of model fit (CanGenWorkshop_model_fit.pdf) and
-cellularity/ploidy contours (CanGenWorkshop_CP_contours.pdf) in order
+plots of model fit (<code class="codehilite">CanGenWorkshop_model_fit.pdf</code>) and
+cellularity/ploidy contours (<code class="codehilite">CanGenWorkshop_CP_contours.pdf</code>) in order
 to decide if you believe Sequenza’s inference of the copy numbers. Have
 a look at these for yourself if you want to get a better idea of how
 Sequenza makes its inferences and conclusions.</p>
+<hr />
 <h2 id="cnv-visualisationconfirmation-in-igv">CNV Visualisation/Confirmation in IGV<a class="headerlink" href="#cnv-visualisationconfirmation-in-igv" title="Permanent link">&para;</a></h2>
 <p>Let’s see if we can visualise one of the CNV events where copy number
 increased significantly. We’ll focus on the copy number 4 event seen at
-about &#8531; of the way through the CanGenWorkshop_genome_view.pdf output
+about &#8531; of the way through the <code class="codehilite">CanGenWorkshop_genome_view.pdf</code> output
 we generated. First, we need to find the coordinates that have been
-predicted for this event. Have a look at the
-CanGenWorkshop_segments.txt file in the results folder to view all
-predicted CNV events with:</p>
+predicted for this event. Have a look at the <code class="codehilite">CanGenWorkshop_segments.txt</code>
+file in the results folder to view all predicted CNV events with:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>less sequenza_results/CanGenWorkshop_segments.txt
 </pre></div>
 </td></tr></table>
 
-<p>There is only one at a copy number of 4 (CNt column) and it starts at
-21051700 to 21522065 which is 470kb and corresponds to the small block
+<p><br>
+There is only one at a copy number of 4 (CNt column) and it starts at
+21,051,700 to 21,522,065 which is 470kb and corresponds to the small block
 we see in the genome view PDF.</p>
-<p>Quit out of viewing the segments file by pressing q.</p>
+<p>Quit out of viewing the segments file by pressing <code class="codehilite">q</code>.</p>
 <p>We will now open IGV and see if we can observe the predicted increase in
 copy number within these genomic coordinates.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>/home/trainee/snv/Applications/igv/igv.sh
@@ -1205,25 +1279,26 @@ copy number within these genomic coordinates.</p>
 </td></tr></table>
 
 <p>IGV will take 30 seconds or so to open so just be patient.</p>
-<p>For a duplication of this size, we will not be able to easily observe it
+<p><br>
+For a duplication of this size, we will not be able to easily observe it
 just by looking at the raw read alignments. In order to see it we will
 generate two tiled data files (TDFs) within IGV which contain the
 average read depth for a given window size through the genome. This
 means that we can aggregate the average read depth over relatively large
 chunks of the genome and compare these values between the normal and
 tumour genomes.</p>
-<p>To begin, we will go to &ldquo;Tools&rdquo; then &ldquo;Run igvtools&hellip;&rdquo; in the IGV
+<p>To begin, we will go to <code class="codehilite">Tools</code> then <code class="codehilite">Run igvtools...</code> in the IGV
 menubar. Specify the normal bam file (under <code class="codehilite">cnv</code> then <code class="codehilite">data</code>) as the
-input file and change the window size to 100000 (one hundred thousand).
-Then press the &ldquo;Run&rdquo; button and IGV will make the TDF file. This takes
-about 5 minutes. Repeat this for the tumour genome.</p>
-<p>After you have both TDF files, go to &ldquo;File&rdquo; and &ldquo;Load from file&hellip;&rdquo; in
+input file and change the window size to 100,000 (one hundred thousand).
+Then press the <code class="codehilite">Run</code> button and IGV will make the TDF file. This takes
+about 5 minutes. <strong>Repeat this for the tumour genome.</strong></p>
+<p>After you have both TDF files, go to <code class="codehilite">File</code> and <code class="codehilite">Load from file...</code> in
 the menubar and select the BAM and TDF files to open. Once you have
 opened them, they will appear as tracks along with the BAM tracks we
 loaded initially. Navigate to the genomic coordinates of our event
 (5:21,051,700-21,522,065) by typing it in the coordinate box at the top.
 Mouse over the two blue tracks to get the average depth values for the
-100,000bp windows. What you should see is that the liverMets sample has
+100,000 bp windows. What you should see is that the liverMets sample has
 3-6X more coverage than the Blood sample for the four windows that cover
 this region.</p>
 <p>This may seem a bit underwhelming, after all, wasn’t the increase of the
@@ -1239,8 +1314,8 @@ contains 50% normal cells and 50% tumour cells). Now, half of the
 duplicated &ldquo;tumour genome&rdquo; segment will be at a copy number of 2 and
 half will be at 4. What does this mean when we sequence them as a
 mixture? The resulting average copy number of the block will be
-$(0.5*2)+(0.5*4) = 3$. Now what if we only have 16% tumour cells in our
-&ldquo;tumour genome&rdquo;? This will be $(0.84*2)+(0.16*4) = 2.32$. You can see
+<script type="math/tex">(0.5*2)+(0.5*4) = 3</script>. Now what if we only have 16% tumour cells in our
+&ldquo;tumour genome&rdquo;? This will be <script type="math/tex">(0.84*2)+(0.16*4) = 2.32</script>. You can see
 how sequencing a low cellularity tumour at a low depth makes it much
 harder to infer copy number variations!</p>
 <p>Returning to our genomes at hand, when we previously looked at the
@@ -1261,6 +1336,7 @@ a net increase in reads supplying evidence for copy number events and
 variants and in aggregate these will still retain power to infer these
 events when using tools that look at the whole genome like Sequenza
 does.</p>
+<hr />
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ol>
 <li>F. Favero, T. Joshi, A. M. Marquard, N. J. Birkbak, M. Krzystanek,
@@ -1341,12 +1417,14 @@ does.</p>
       
     </div>
     
-      <script src="../../../assets/javascripts/application-6b4ff16fa7.js"></script>
+      <script src="../../../assets/javascripts/application-b30566c560.js"></script>
+      
+      
       <script>app.initialize({url:{base:"../../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
-        <script src="../../../js/spoilers.js"></script>
+        <script src="../../../js/details.js"></script>
       
     
     

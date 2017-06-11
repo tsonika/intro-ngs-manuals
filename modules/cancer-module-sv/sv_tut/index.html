@@ -15,7 +15,7 @@
       
         <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       
-      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.6.3">
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.7.3">
     
     
       
@@ -23,12 +23,12 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr-56ade86843.js"></script>
+      <script src="../../../assets/javascripts/modernizr-1df76c4e58.js"></script>
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application-e2807e330f.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application-acc56dad49.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-f78e5cb881.palette.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-8817cfa535.palette.css">
       
     
     
@@ -42,7 +42,7 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     
-      <link rel="stylesheet" href="../../../css/spoilers.css">
+      <link rel="stylesheet" href="../../../css/details.css">
     
     
   </head>
@@ -103,7 +103,7 @@
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
+        <div class="md-search-result" data-md-component="result" data-md-lang-search="">
           <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
             Type to start searching
           </div>
@@ -115,11 +115,7 @@
 </div>
         
       </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <div class="md-header-nav__source">
-          
-        </div>
-      </div>
+      
     </div>
   </nav>
 </header>
@@ -146,6 +142,17 @@
 
       
         
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../timetables/timetable_introNGS/" title="Timetable" class="md-tabs__link">
+          Timetable
+        </a>
+      
+    </li>
+  
+
       
         
       
@@ -154,7 +161,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../btp-module-chip-seq/chip-seq-draft-SL_ST/" title="BTP Modules" class="md-tabs__link">
+        <a href="../../btp-module-chip-seq/chip-seq/" title="BTP Modules" class="md-tabs__link">
           BTP Modules
         </a>
       
@@ -241,10 +248,58 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="../../../timetables/timetable_cancer/" title="Timetable" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
       Timetable
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Timetable
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../timetables/timetable_introNGS/" title="Intro to NGS" class="md-nav__link">
+      Intro to NGS
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../timetables/timetable_cancer/" title="Cancer Genomics" class="md-nav__link">
+      Cancer Genomics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../timetables/timetable_longRead/" title="Long Read" class="md-nav__link">
+      Long Read
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -285,7 +340,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../btp-module-chip-seq/chip-seq-draft-SL_ST/" title="ChIP-seq" class="md-nav__link">
+    <a href="../../btp-module-chip-seq/chip-seq/" title="ChIP-seq" class="md-nav__link">
       ChIP-seq
     </a>
   </li>
@@ -487,15 +542,15 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#useful-links" title="Useful Links" class="md-nav__link">
     Useful Links
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -852,15 +907,15 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#useful-links" title="Useful Links" class="md-nav__link">
     Useful Links
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -978,7 +1033,7 @@ participants will:</p>
     prior to structural variant calling.</p>
 </li>
 <li>
-<p>Have run DELLY on a subset of whole genome next generation
+<p>Have run <code class="codehilite">DELLY</code> on a subset of whole genome next generation
     sequencing data pertaining to a single human tumour with a matched
     normal control.</p>
 </li>
@@ -991,10 +1046,11 @@ participants will:</p>
 </li>
 <li>
 <p>Have used their understanding of distinct SV paired-end mapping and
-    soft-clipped read patterns to visually verify DELLY predicted SVs
-    using IGV.</p>
+    soft-clipped read patterns to visually verify <code class="codehilite">DELLY</code> predicted SVs
+    using <code class="codehilite">IGV</code>.</p>
 </li>
 </ul>
+<hr />
 <h2 id="resources-youll-be-using">Resources You’ll be Using<a class="headerlink" href="#resources-youll-be-using" title="Permanent link">&para;</a></h2>
 <h3 id="tools-used">Tools Used<a class="headerlink" href="#tools-used" title="Permanent link">&para;</a></h3>
 <p>DELLY:<br />
@@ -1011,16 +1067,17 @@ participants will:</p>
 <a href="https://www.python.org/downloads/release/python-2710/">https://www.python.org/downloads/release/python-2710/</a></p>
 <p>PyVCF Banyan numpy:<br />
 <a href="https://pypi.python.org/pypi">https://pypi.python.org/pypi</a></p>
-<h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permanent link">&para;</a></h2>
+<h3 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permanent link">&para;</a></h3>
 <p>SAM Specification:<br />
 <a href="http://samtools.sourceforge.net/SAM1.pdf">http://samtools.sourceforge.net/SAM1.pdf</a></p>
 <p>Explain SAM Flags:<br />
 <a href="http://picard.sourceforge.net/explain-flags.html">http://picard.sourceforge.net/explain-flags.html</a></p>
+<hr />
 <h2 id="alignment-quality-control">Alignment Quality Control<a class="headerlink" href="#alignment-quality-control" title="Permanent link">&para;</a></h2>
 <p>For structural variant calling several alignment quality control metrics
 should be evaluated. All paired-end mapping methods heavily rely on the
 insert size distribution. GC-content biases are important as it can
-impact read-depths. DELLY generates read-depth ratios between tumour and
+impact read-depths. <code class="codehilite">DELLY</code> generates read-depth ratios between tumour and
 control samples. The percentage of mapped reads, singletons, duplicates
 and properly paired reads are additional metrics you should evaluate
 prior to any structural variant calling. These statistics vary largely
@@ -1028,10 +1085,11 @@ by protocol and hence, it is usually best to compare multiple different
 sequencing runs using the same against each other to highlight outliers.</p>
 <p>It is recommended that Picard module commands <code class="codehilite">CollectInsertSizeMetrics</code>
 and <code class="codehilite">CollectGcBiasMetrics</code>, and <code class="codehilite">samtools flagstat</code> command be used.</p>
+<hr />
 <h2 id="prepare-the-environment">Prepare the Environment<a class="headerlink" href="#prepare-the-environment" title="Permanent link">&para;</a></h2>
 <p>As a quick introduction we will do a structural variant analysis using a
 single immortal cancer cell line and its control genome (mortal parental
-cells). Total execution time to run the DELLY structural discovery
+cells). Total execution time to run the <code class="codehilite">DELLY</code> structural discovery
 calling program for a matched normal tumour pair will vary depending on
 the read coverage and the size of the genome. As a guide, it can take
 approximately 10 to 50 hours (translocation predictions taking the
@@ -1055,19 +1113,20 @@ programs or output.</p>
  7
  8
  9
-10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cd /home/trainee/sv
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">cd</span> /home/trainee/sv
 ls
 mkdir &lt;YourFirstName&gt;
-cd &lt;YourFirstName&gt;
+<span class="nb">cd</span> &lt;YourFirstName&gt;
 
-export DS=/home/trainee/sv/data
-export RF=/home/trainee/sv/reference_data
-export SF=/home/trainee/sv/variantFiltering/somaticVariants
-export BR=/home/trainee/snv/Applications/igv
-export CZ=/home/trainee/sv/converter
+<span class="nb">export</span> <span class="nv">DS</span><span class="o">=</span>/home/trainee/sv/data
+<span class="nb">export</span> <span class="nv">RF</span><span class="o">=</span>/home/trainee/sv/reference_data
+<span class="nb">export</span> <span class="nv">SF</span><span class="o">=</span>/home/trainee/sv/variantFiltering/somaticVariants
+<span class="nb">export</span> <span class="nv">BR</span><span class="o">=</span>/home/trainee/snv/Applications/igv
+<span class="nb">export</span> <span class="nv">CZ</span><span class="o">=</span>/home/trainee/sv/converter
 </pre></div>
 </td></tr></table>
 
+<hr />
 <h2 id="somatic-structural-variant-discovery-using-delly">Somatic Structural Variant Discovery using DELLY<a class="headerlink" href="#somatic-structural-variant-discovery-using-delly" title="Permanent link">&para;</a></h2>
 <p>In order to generate <em>putative</em> somatic SVs it is crucial to account for
 germline SVs. To facilitate, DELLY requires the joint input of a match
@@ -1083,72 +1142,113 @@ delly -t TRA -x $RF/hg19.excl -o tra.vcf -g $RF/hg19.fa $DS/cancer_cell_line.bam
 </td></tr></table>
 
 <p>Description of the arguments used in the command:</p>
-<p>DEL
-:   = conduct deletion discovery</p>
-<p>DUP
-:   = conduct tandem duplication discovery</p>
-<p>INV
-:   = conduct inversion discovery</p>
-<p>TRA
-:   = conduct translocation discovery</p>
-<p>-o
-:   = vcf output</p>
-<p>-g
-:   = reference genome in FASTA format</p>
-<p>-x
-:   = genomic regions to exclude (e.g. centro- and telomeric regions)</p>
+<blockquote>
+<p><strong>DEL</strong>: conduct deletion discovery<br />
+<strong>DUP</strong>: conduct tandem duplication discovery<br />
+<strong>INV</strong>: conduct inversion discovery<br />
+<strong>TRA</strong>: conduct translocation discovery<br />
+<strong>-o</strong>: vcf output<br />
+<strong>-g</strong>: reference genome in FASTA format<br />
+<strong>-x</strong>: genomic regions to exclude (e.g. centro- and telomeric regions)  </p>
+</blockquote>
+<hr />
 <h2 id="delly-vcf-output">DELLY VCF output<a class="headerlink" href="#delly-vcf-output" title="Permanent link">&para;</a></h2>
-<p>A VCF file has multiple header lines starting with the hash # sign.
+<p>A VCF file has multiple header lines starting with the hash <code class="codehilite">#</code> sign.
 Below the header lines is one record for each structural variant. The
-record format is described in the below table:</p>
-<p>[H]</p>
-<p>lll</p>
-<p>Column &amp; Field &amp; Description\
-1 &amp; CHROM &amp; Chromosome name\
-2 &amp; POS &amp; 1-based position. For an indel, this is the position preceding
-the indel\
-3 &amp; ID &amp; Variant identifier\
-4 &amp; REF &amp; Reference sequence at POS involved in the variant\
-5 &amp; ALT &amp; Comma delimited list of alternative sequence(s)\
-6 &amp; QUAL &amp; Phred-scaled probability of all samples being homozygous
-reference\
-7 &amp; FILTER &amp; Semicolon delimited list of filters that the variant fails
-to pass\
-8 &amp; INFO &amp; Semicolon delimited list of variant information\
-9 &amp; FORMAT &amp; Colon delimited list of the format of sample genotypes in
-subsequent fields\
-10+ &amp; &amp; Individual genotype information defined by FORMAT\</p>
-<p>[tab:vcfoutput]</p>
-<p>You can look at the header of the vcf file using grep, <code class="codehilite">-A 1</code> includes
+record format is described in the table below:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Column</th>
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">CHROM</td>
+<td align="left">Chromosome name</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">POS</td>
+<td align="left">1-based position. For an indel, this is the position preceding the indel</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">ID</td>
+<td align="left">Variant identifier</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">REF</td>
+<td align="left">Reference sequence at POS involved in the variant</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">ALT</td>
+<td align="left">Comma delimited list of alternative sequence(s)</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">QUAL</td>
+<td align="left">Phred-scaled probability of all samples being homozygous reference</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left">FILTER</td>
+<td align="left">Semicolon delimited list of filters that the variant fails to pass</td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left">INFO</td>
+<td align="left">Semicolon delimited list of variant information</td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left">FORMAT</td>
+<td align="left">Colon delimited list of the format of sample genotypes in subsequent fields</td>
+</tr>
+<tr>
+<td align="left">10+</td>
+<td align="left"></td>
+<td align="left">Individual genotype information defined by FORMAT</td>
+</tr>
+</tbody>
+</table>
+<p>You can look at the header of the vcf file using <code class="codehilite">grep -A 1</code> includes
 the first structural variant record in the file:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>grep &quot;^#&quot; -A 1 del.vcf
 </pre></div>
 </td></tr></table>
 
-<p>The INFO field holds structural variant site information whereas all
+<p><br>
+The INFO field holds structural variant site information whereas all
 genotype information (annotated as per the FORMAT fields) is provided in
 the sample column. Reference supporting reads are compared to
 alternative supporting reads and mapping qualities are used to compute
 genotype likelihoods (GL) for homozygous reference (0/0), heterozygous
 reference (0/1) and homozygous alternate (1/1) (GT). The final genotype
 (GT) is simply derived from the best GL and GQ is a phred-scaled
-genotype quality reflecting the confidence in this genotype. If GQ\&lt;15
+genotype quality reflecting the confidence in this genotype. If GQ&lt;15
 the genotype is flagged as LowQual. The genotyping takes into account
 all paired-ends with a mapping quality greater than 20 by default.</p>
 <p>The INFO field provides information on the quality of the SV prediction
 and breakpoints. If you browse through the vcf file you will notice that
 a subset of the DELLY structural variant predictions have been refined
 using split-reads. These precise variants are flagged in the vcf info
-field with the tag <em>PRECISE</em>. To count the number of precise and
-imprecise variants you can simply use grep.</p>
+field with the tag <code class="codehilite">PRECISE</code>. To count the number of precise and
+imprecise variants you can simply use <code class="codehilite">grep</code>.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>grep -c -w &quot;PRECISE&quot; *.vcf
-grep -c -w &quot;IMPRECISE&quot; *.vcf
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>grep -c -w <span class="s2">&quot;PRECISE&quot;</span> *.vcf
+grep -c -w <span class="s2">&quot;IMPRECISE&quot;</span> *.vcf
 </pre></div>
 </td></tr></table>
 
-<p>DELLY clusters abnormal paired-ends and every single cluster gives rise
-to an IMPRECISE SV call. For every IMPRECISE SV call an attempt is made
+<p><br>
+DELLY clusters abnormal paired-ends and every single cluster gives rise
+to an <code class="codehilite">IMPRECISE</code> SV call. For every <code class="codehilite">IMPRECISE</code> SV call an attempt is made
 to identify supporting split-reads/soft-clipped reads DELLY then
 computes a consensus sequence (INFO:CONSENSUS) out of all split-read
 candidates and then aligns this consensus sequence to the reference
@@ -1162,11 +1262,12 @@ tail-to-tail inversions, and so on. The consensus alignment quality
 (SRQ) is a score between 0 and 1, where 1 indicates 100% identity to the
 reference. Nearby SNPs, InDels and micro-insertions at the breakpoint
 can lower this score but only for mis-assemblies it should be very poor.
-DELLY currently drops consensus alignments with a score\&lt;0.8 and then
-falls back to an IMPRECISE prediction.</p>
-<p>SVs are flagged as FILTER:LowQual if PE\&lt;3 OR MAPQ\&lt;20 (for
-translocations: PE\&lt;5 OR MAPQ\&lt;20), otherwise, the SV results in a
-FILTER:PASS. PRECISE variants will have split-read support (SR>0).</p>
+DELLY currently drops consensus alignments with a score &lt;0.8 and then
+falls back to an <code class="codehilite">IMPRECISE</code> prediction.</p>
+<p>SVs are flagged as FILTER:LowQual if PE &lt;3 OR MAPQ &lt;20 (for
+translocations: PE &lt;5 OR MAPQ &lt;20), otherwise, the SV results in a
+FILTER:PASS. <code class="codehilite">PRECISE</code> variants will have split-read support (SR &gt;0).</p>
+<hr />
 <h2 id="somatic-structural-variant-filtering">Somatic Structural Variant Filtering<a class="headerlink" href="#somatic-structural-variant-filtering" title="Permanent link">&para;</a></h2>
 <p>Please note that this vcf file contains germline and somatic structural
 variants but also false positives caused by repeat induced mis-mappings
@@ -1175,34 +1276,37 @@ structural variant site information and the cancer and normal genotype
 information to filter a set of confident somatic structural variants.
 DELLY ships with a somatic filtering python script. For a set of
 confident somatic calls one could exclude all structural variants
-\&lt;400bp, require a minimum variant allele frequency of 10%, no support
+&lt;400bp, require a minimum variant allele frequency of 10%, no support
 in the matched normal and an overall confident structural variant site
 prediction with the VCF filter field being equal to PASS.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>python $SF/somaticFilter.py -t DEL  -T cancer_cell_line -N control -v del.vcf -o del.filt.vcf -a 0.1 -m 400 -f
-python $SF/somaticFilter.py -t DUP -T cancer_cell_line -N control -v dup.vcf -o dup.filt.vcf -a 0.1 -m 400 -f
-python $SF/somaticFilter.py -t INV  -T cancer_cell_line -N control -v inv.vcf -o inv.filt.vcf -a 0.1 -m 400 -f
-python $SF/somaticFilter.py -t TRA -T cancer_cell_line -N control -v tra.vcf -o tra.filt.vcf -a 0.1 -m 400 -f
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">python</span> <span class="err">$</span><span class="n">SF</span><span class="o">/</span><span class="n">somaticFilter</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">t</span> <span class="n">DEL</span>  <span class="o">-</span><span class="n">T</span> <span class="n">cancer_cell_line</span> <span class="o">-</span><span class="n">N</span> <span class="n">control</span> <span class="o">-</span><span class="n">v</span> <span class="k">del</span><span class="o">.</span><span class="n">vcf</span> <span class="o">-</span><span class="n">o</span> <span class="k">del</span><span class="o">.</span><span class="n">filt</span><span class="o">.</span><span class="n">vcf</span> <span class="o">-</span><span class="n">a</span> <span class="mf">0.1</span> <span class="o">-</span><span class="n">m</span> <span class="mi">400</span> <span class="o">-</span><span class="n">f</span>
+<span class="n">python</span> <span class="err">$</span><span class="n">SF</span><span class="o">/</span><span class="n">somaticFilter</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">t</span> <span class="n">DUP</span> <span class="o">-</span><span class="n">T</span> <span class="n">cancer_cell_line</span> <span class="o">-</span><span class="n">N</span> <span class="n">control</span> <span class="o">-</span><span class="n">v</span> <span class="n">dup</span><span class="o">.</span><span class="n">vcf</span> <span class="o">-</span><span class="n">o</span> <span class="n">dup</span><span class="o">.</span><span class="n">filt</span><span class="o">.</span><span class="n">vcf</span> <span class="o">-</span><span class="n">a</span> <span class="mf">0.1</span> <span class="o">-</span><span class="n">m</span> <span class="mi">400</span> <span class="o">-</span><span class="n">f</span>
+<span class="n">python</span> <span class="err">$</span><span class="n">SF</span><span class="o">/</span><span class="n">somaticFilter</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">t</span> <span class="n">INV</span>  <span class="o">-</span><span class="n">T</span> <span class="n">cancer_cell_line</span> <span class="o">-</span><span class="n">N</span> <span class="n">control</span> <span class="o">-</span><span class="n">v</span> <span class="n">inv</span><span class="o">.</span><span class="n">vcf</span> <span class="o">-</span><span class="n">o</span> <span class="n">inv</span><span class="o">.</span><span class="n">filt</span><span class="o">.</span><span class="n">vcf</span> <span class="o">-</span><span class="n">a</span> <span class="mf">0.1</span> <span class="o">-</span><span class="n">m</span> <span class="mi">400</span> <span class="o">-</span><span class="n">f</span>
+<span class="n">python</span> <span class="err">$</span><span class="n">SF</span><span class="o">/</span><span class="n">somaticFilter</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">t</span> <span class="n">TRA</span> <span class="o">-</span><span class="n">T</span> <span class="n">cancer_cell_line</span> <span class="o">-</span><span class="n">N</span> <span class="n">control</span> <span class="o">-</span><span class="n">v</span> <span class="n">tra</span><span class="o">.</span><span class="n">vcf</span> <span class="o">-</span><span class="n">o</span> <span class="n">tra</span><span class="o">.</span><span class="n">filt</span><span class="o">.</span><span class="n">vcf</span> <span class="o">-</span><span class="n">a</span> <span class="mf">0.1</span> <span class="o">-</span><span class="n">m</span> <span class="mi">400</span> <span class="o">-</span><span class="n">f</span>
 </pre></div>
 </td></tr></table>
 
-<p>Using VCFtools we can merge all somatic structural variants together in
+<p><br>
+Using <code class="codehilite">VCFtools</code> we can merge all somatic structural variants together in
 a single vcf file.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>vcf-concat del.filt.vcf dup.filt.vcf inv.filt.vcf tra.filt.vcf | vcf-sort &gt; somatic.sv.vcf
 </pre></div>
 </td></tr></table>
 
-<p>For large VCF files you should also zip and index them using bgzip and
-tabix. Please run the below commands to meet the requirements for
-visualising somatic structural variants using IGV.</p>
+<p><br>
+For large VCF files you should also zip and index them using <code class="codehilite">bgzip</code> and
+<code class="codehilite">tabix</code>. Please run the below commands to meet the requirements for
+visualising somatic structural variants using <code class="codehilite">IGV</code>.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>bgzip somatic.sv.vcf
 tabix somatic.sv.vcf.gz
 </pre></div>
 </td></tr></table>
 
+<hr />
 <h2 id="visualisation-of-somatic-structural-variants">Visualisation of Somatic Structural Variants<a class="headerlink" href="#visualisation-of-somatic-structural-variants" title="Permanent link">&para;</a></h2>
 <p>The final step will be to browse some of these somatic structural
 variants in IGV and to visually verify the reliability of the calls. VCF
@@ -1217,122 +1321,202 @@ head somatic.sv.bed
 </pre></div>
 </td></tr></table>
 
-<p>Load the IGV browser</p>
+<p><br>
+Load the IGV browser</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$BR/igv.sh
 </pre></div>
 </td></tr></table>
 
-<p>Once IGV has started use <em>File</em> and <em>Load from File</em> to load the
-cancer_cell_line.bam. To dedicate more of the screen to read pile ups,
+<p><br>
+Once IGV has started use <code class="codehilite">File</code> and <code class="codehilite">Load from File</code> to load the
+<code class="codehilite">cancer_cell_line.bam</code>. To dedicate more of the screen to read pile ups,
 right click on the left hand box that contains the
-<em>cancer_cell_line.bam Junctions</em> then select <em>Remove Track</em>. Go to
-<em>View</em> menu and select <em>Preferences</em>, then click on the Alignments tab
-and in the <em>Visibility range threshold (kb)</em> text box, enter 600. This
+<code class="codehilite">cancer_cell_line.bam Junctions</code> then select <code class="codehilite">Remove Track</code>. Go to
+<code class="codehilite">View</code> menu and select <code class="codehilite">Preferences</code>, then click on the Alignments tab
+and in the <code class="codehilite">Visibility range threshold (kb)</code> text box, enter 600. This
 will allow you to increase your visibility of pile ups as you zoom out.
-Now look for check box for <em>Filter secondary alignments</em> click on to
+Now look for check box for <code class="codehilite">Filter secondary alignments</code> click on to
 ensure we do not see secondary alignments (alternate mapped position of
-a read) . Also ensure that <em>Show soft-clipped bases</em> has been checked
-then click <em>OK</em>.</p>
-<p>Then import <code class="codehilite">somatic.sv.bed</code> from your working directory using <em>Regions</em>
-and <em>Import Regions</em>.</p>
+a read). Also ensure that <code class="codehilite">Show soft-clipped bases</code> has been checked
+then click <code class="codehilite">OK</code>.</p>
+<p>Then import <code class="codehilite">somatic.sv.bed</code> from your working directory using <code class="codehilite">Regions</code>
+and <code class="codehilite">Import Regions</code>.</p>
 <h3 id="verify-deletion">Verify Deletion<a class="headerlink" href="#verify-deletion" title="Permanent link">&para;</a></h3>
+<div class="admonition attention">
+<p><em>This is an advanced section.</em>  </p>
+</div>
 <p>The somatic structural variants can then be browsed easily using the
-<em>Region Navigator</em>. Select the deletion (chrX:76853017-77014863) from
-the <em>Region Navigator</em> and click <em>View</em>. This will centre the IGV
+<code class="codehilite">Region Navigator</code>. Select the deletion (chrX:76853017-77014863) from
+the <code class="codehilite">Region Navigator</code> and click <code class="codehilite">View</code>. This will centre the IGV
 alignment view on the selected structural variant. Close the regions of
 interest pop up window. The red bar below the ruler marks the region of
 the deletion.</p>
-<p>It’s usually best to zoom out once by clicking on the ’-’ sign in the
+<p>It’s usually best to zoom out once by clicking on the <code class="codehilite">-</code> sign in the
 toolbar at the top, to give a wide view of the supporting abnormal
 paired-end read mappings.</p>
 <p>To highlight the abnormal paired-ends right click on the main track
-display panel and select <em>Color alignments by</em> and then switch to
-<em>insert size and pair orientation</em>.</p>
+display panel and select <code class="codehilite">Color alignments by</code> and then switch to
+<code class="codehilite">insert size and pair orientation</code>.</p>
 <p>Read pairs that have a larger than expected insert size will be
-highlighted in red. Click <em>View as pairs</em>. Right click and <em>Sort
-alignments by</em> then select <em>start location</em>.</p>
+highlighted in red. Click <code class="codehilite">View as pairs</code>. Right click and <code class="codehilite">Sortalignments by</code> then select <code class="codehilite">start location</code>.</p>
+<p><br></p>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
 <p>How many abnormal <em>paired-end read pairs</em> (red coloured F/R oriented
 read pairs) can you see that spans the deletion region? Does this number
 coincide with the INFO:PE?</p>
-<p>19, YES</p>
+<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>19, YES</p></details></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
 <p>Zoom into left breakpoint and tally the number of soft-clipped reads at
 both junctions. How many abnormal split-reads (soft-clipped reads) did
 you observe? Clue INFO:SR.</p>
-<p>11</p>
-<p>Go to the RefSeq genes track at the bottom of IGV and right click to
-<em>Expanded</em>. Is the predicted deletion likely to have a deleterious
+<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>11</p></details></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
+<p>Go to the RefSeq genes track at the bottom of <code class="codehilite">IGV</code> and right click to
+<code class="codehilite">Expanded</code>. Is the predicted deletion likely to have a deleterious
 impact on a gene? If so, what gene and exons are deleted?</p>
-<p>ATRX, exons 2 to 25.</p>
+<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>ATRX, exons 2 to 25.</p></details></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
 <p>Does this region appear to be completely removed from this cancer
 genome? How can you tell?</p>
-<p>Yes, there is no read coverage within this deletion region relative to
-the control genome.</p>
+<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>Yes, there is no read coverage within this deletion region relative to
+the control genome.</p></details></div>
+</div>
 <h3 id="verify-translocation">Verify translocation<a class="headerlink" href="#verify-translocation" title="Permanent link">&para;</a></h3>
-<p>Select the duplication (chrX:45649874-45689322) from the <em>Region
-Navigator</em>.</p>
-<p>Highlight the abnormal paired-ends by clicking and selecting <em>Color
-alignments by</em> and then switch to <em>insert size and pair orientation</em>.
-Also, invoke <em>Sort alignments by</em> then select <em>start location</em>.</p>
+<div class="admonition attention">
+<p><em>This is an advanced section.</em></p>
+</div>
+<ul>
+<li>
+<p>Select the duplication (chrX:45649874-45689322) from the <code class="codehilite">Region Navigator</code>.</p>
+</li>
+<li>
+<p>Highlight the abnormal paired-ends by clicking and selecting <code class="codehilite">Color alignments by</code>
+and then switch to <code class="codehilite">insert size and pair orientation</code>.
+Also, invoke <code class="codehilite">Sort alignments by</code> then select <code class="codehilite">start location</code>.</p>
+</li>
+<li>
 <p>Zoom out until you can see all the purple reads at the junction.</p>
+</li>
+</ul>
+<p><br></p>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
 <p>What is the direction of the purple cluster of reads (indicates that
 mate reads are mapped to Chr15)? Is it pointing to the tail or head of
 Chr18?</p>
-<p>Forward, towards the tail, or 3’ (+ive)</p>
-<p>Right click on to one of the purple coloured reads and select <em>View mate
-region in split-screen</em>. This will split the screen and display Chr15 on
-the left and place a red highlighted outline on both reads, to indicate
-the pairs. Right click and <em>Sort alignments by</em> then select <em>start
-location</em>. What is the direction of the yellow cluster of reads
-(indicates that mate reads are mapped to Chr18)? Is it pointing to the
-tail or head of Chr15? If you wish to zoom in or out, first click inside
-of the chromosome ideogram panel, then ctrl- to zoom out and shift+ to
-zoom in.</p>
-<p>? Reverse, towards the head, or 5’ (+ive)</p>
+<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>Forward, towards the tail, or 3’ (+ive)</p></details></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
+<p>Right click on to one of the purple coloured reads and select <code class="codehilite">View mate region in split-screen</code>.
+This will split the screen and display Chr15 on the left and place a red
+highlighted outline on both reads, to indicate the pairs. Right click and
+<code class="codehilite">Sort alignments by</code> then select <code class="codehilite">start location</code>.</p>
+<p>What is the direction of the yellow cluster of reads (indicates that mate
+reads are mapped to Chr18)? Is it pointing to the tail or head of Chr15?
+If you wish to zoom in or out, first click inside of the chromosome ideogram
+panel, then ctrl- to zoom out and shift+ to zoom in.</p>
+<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>Reverse, towards the head, or 5’ (+ive)</p></details></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
 <p>How is the Chr15 and Chr18 fused (which one of the four translocation
-connection types)? If you are uncertain then run a BLAT search using the
-INFO:CONSENSUS sequence (gedit somatic.sv.vcf).
-<a href="https://genome.ucsc.edu/cgi-bin/hgBlat?command=start">https://genome.ucsc.edu/cgi-bin/hgBlat?command=start</a></p>
-<p>RF, head to tail, or 5 to 3. Therefore, Chr18 left side is fused to
-Chr15 right side.</p>
+connection types)? If you are uncertain then run a BLAT (<a href="https://genome.ucsc.edu/cgi-bin/hgBlat?command=start">https://genome.ucsc.edu/cgi-bin/hgBlat?command=start</a>)
+search using the INFO:CONSENSUS sequence (gedit <code class="codehilite">somatic.sv.vcf</code>).</p>
+<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>RF, head to tail, or 5 to 3. Therefore, Chr18 left side is fused to
+Chr15 right side.</p></details></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
 <p>Did DELLY predict a reciprocal translocation? How can you tell?</p>
-<p>No, as we would expect to observe a Chr18 right side fused to Chr15 left
-side, near the same breakpoints.</p>
+<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>No, as we would expect to observe a Chr18 right side fused to Chr15 left
+side, near the same breakpoints.</p></details></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
 <p>What gene structures is this translocation predicted to impact?</p>
-<p>PARD6G on Chr15 and ADAMTSL3 on Chr18.</p>
+<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>PARD6G on Chr15 and ADAMTSL3 on Chr18.</p></details></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
 <p>What is one possible reason why there is no observable read coverage
 after Chr18 breakpoint?</p>
-<p>Chromosome loss.</p>
+<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>Chromosome loss.</p></details></div>
+</div>
 <h3 id="verify-tandem-duplication">Verify tandem duplication<a class="headerlink" href="#verify-tandem-duplication" title="Permanent link">&para;</a></h3>
-<p>Select the tandem duplication (chrX:45649874-45689322) from the <em>Region
-Navigator</em>.</p>
-<p>Highlight the abnormal paired-ends by clicking and selecting <em>Color
-alignments by</em> and then switch to <em>insert size and pair orientation</em>.
-Also, invoke <em>Sort alignments by</em> then select <em>start location</em>.</p>
+<div class="admonition attention">
+<p><em>This is an advanced section.</em></p>
+</div>
+<ul>
+<li>
+<p>Select the tandem duplication (chrX:45649874-45689322) from the <code class="codehilite">RegionNavigator</code>.</p>
+</li>
+<li>
+<p>Highlight the abnormal paired-ends by clicking and selecting <code class="codehilite">Color alignments by</code>
+and then switch to <code class="codehilite">insert size and pair orientation</code>.
+Also, invoke <code class="codehilite">Sort alignments by</code> then select <code class="codehilite">start location</code>.</p>
+</li>
+<li>
 <p>Zoom out until you can see all the red paired-end reads spanning the two
 junctions. After that zoom in on the cluster of abnormal reads on the
 left junction and then right junction.</p>
+</li>
+</ul>
+<p><br></p>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
 <p>Which is the order and orientation of these paired-end reads (FR, RF, FF
 or RR)?</p>
-<p>RF</p>
+<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>RF</p></details></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
 <p>What is the estimated read-depth ratio of the cancer_cell_line versus
 normal control (INFO:RDRATIO) over the duplicate region?</p>
-<p>3.3 ( 3 x increased read depth)</p>
+<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>3.3 ( 3 x increased read depth)</p></details></div>
+</div>
 <h3 id="verify-inversion">Verify Inversion<a class="headerlink" href="#verify-inversion" title="Permanent link">&para;</a></h3>
+<div class="admonition attention">
+<p><em>This is an advanced section.</em></p>
+</div>
+<ul>
+<li>
 <p>Type into the search box near at tool bar, Chr20:54834492</p>
-<p>Right click on main display and select <em>Group alignments by</em> then switch
-on <em>paired-orientation</em>. Also, right click and <em>Sort alignments by</em> then
-select <em>start location</em>.</p>
+</li>
+<li>
+<p>Right click on main display and select <code class="codehilite">Group alignments by</code> then switch
+on <code class="codehilite">paired-orientation</code>. Also, right click and <code class="codehilite">Sort alignments by</code> then
+select <code class="codehilite">start location</code>.</p>
+</li>
+<li>
 <p>Zoom out until you can see all the red coloured cluster of reads near
 the breakpoint.</p>
-<p>Right click on to one of the red coloured reads and select <em>View mate
-region in split-screen</em>. This will split the screen and display the read
-mate on the right side. This will take you to the mate-reads near the
-second breakpoint.</p>
-<p>Which direction are the paired-end reads spanning (left or right
-spanning)?</p>
-<p>Right</p>
+</li>
+<li>
+<p>Right click on to one of the red coloured reads and select <code class="codehilite">View mate region in split-screen</code>.
+This will split the screen and display the read mate on the right side.
+This will take you to the mate-reads near the second breakpoint.</p>
+</li>
+</ul>
+<p><br></p>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
+<p>Which direction are the paired-end reads spanning (left or right spanning)?</p>
+<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>Right</p></details></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
 <p>What is the estimated size of the inverted interval?</p>
-<p>55,408,660 – 54,834,492 = 574,168 bp</p>
+<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>55,408,660 – 54,834,492 = 574,168 bp</p></details></div>
+</div>
+<hr />
 <h2 id="acknowledgements">Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permanent link">&para;</a></h2>
 <p>We would like to thank and acknowledge Tobias Rausch (EMBL Heidelberg)
 for his help and for allowing us to borrow and adapt his replies to
@@ -1410,12 +1594,14 @@ questions and original course material.</p>
       
     </div>
     
-      <script src="../../../assets/javascripts/application-6b4ff16fa7.js"></script>
+      <script src="../../../assets/javascripts/application-b30566c560.js"></script>
+      
+      
       <script>app.initialize({url:{base:"../../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
-        <script src="../../../js/spoilers.js"></script>
+        <script src="../../../js/details.js"></script>
       
     
     

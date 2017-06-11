@@ -15,7 +15,7 @@
       
         <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       
-      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.6.3">
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.7.3">
     
     
       
@@ -23,12 +23,12 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr-56ade86843.js"></script>
+      <script src="../../../assets/javascripts/modernizr-1df76c4e58.js"></script>
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application-e2807e330f.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application-acc56dad49.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-f78e5cb881.palette.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-8817cfa535.palette.css">
       
     
     
@@ -42,7 +42,7 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     
-      <link rel="stylesheet" href="../../../css/spoilers.css">
+      <link rel="stylesheet" href="../../../css/details.css">
     
     
   </head>
@@ -107,7 +107,7 @@
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
+        <div class="md-search-result" data-md-component="result" data-md-lang-search="">
           <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
             Type to start searching
           </div>
@@ -119,11 +119,7 @@
 </div>
         
       </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <div class="md-header-nav__source">
-          
-        </div>
-      </div>
+      
     </div>
   </nav>
 </header>
@@ -150,6 +146,17 @@
 
       
         
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../timetables/timetable_introNGS/" title="Timetable" class="md-tabs__link">
+          Timetable
+        </a>
+      
+    </li>
+  
+
       
         
       
@@ -158,7 +165,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../btp-module-chip-seq/chip-seq-draft-SL_ST/" title="BTP Modules" class="md-tabs__link">
+        <a href="../../btp-module-chip-seq/chip-seq/" title="BTP Modules" class="md-tabs__link">
           BTP Modules
         </a>
       
@@ -245,10 +252,58 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="../../../timetables/timetable_cancer/" title="Timetable" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
       Timetable
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Timetable
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../timetables/timetable_introNGS/" title="Intro to NGS" class="md-nav__link">
+      Intro to NGS
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../timetables/timetable_cancer/" title="Cancer Genomics" class="md-nav__link">
+      Cancer Genomics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../timetables/timetable_longRead/" title="Long Read" class="md-nav__link">
+      Long Read
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -289,7 +344,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../btp-module-chip-seq/chip-seq-draft-SL_ST/" title="ChIP-seq" class="md-nav__link">
+    <a href="../../btp-module-chip-seq/chip-seq/" title="ChIP-seq" class="md-nav__link">
       ChIP-seq
     </a>
   </li>
@@ -921,7 +976,7 @@
 <ul>
 <li>
 <p>Visualise mutational signatures present in a cohort using somatic
-    single nucleotide mutation data in Variant Call Format (vcf) files.</p>
+    single nucleotide mutation data in Variant Call Format (VCF) files.</p>
 </li>
 <li>
 <p>Compare analysis output with published results to identify common
@@ -932,6 +987,7 @@
     with cohort cancer analysis.</p>
 </li>
 </ul>
+<hr />
 <h2 id="resources-youll-be-using">Resources You’ll be Using<a class="headerlink" href="#resources-youll-be-using" title="Permanent link">&para;</a></h2>
 <h3 id="tools-used">Tools Used<a class="headerlink" href="#tools-used" title="Permanent link">&para;</a></h3>
 <p>R-3.2.2 statistical environment:<br />
@@ -954,6 +1010,7 @@
 <h3 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permanent link">&para;</a></h3>
 <p>Variant Call Format (VCF) specification: <br />
 <a href="http://samtools.github.io/hts-specs/VCFv4.2.pdf">http://samtools.github.io/hts-specs/VCFv4.2.pdf</a></p>
+<hr />
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>The most common genetic model for cancer development is the accumulation
 of DNA mutations over time, eventually leading to the disruption or
@@ -964,8 +1021,7 @@ normal aging processes and through exposure to carcinogens.</p>
 mutations identified in tumour cells (somatic SNVs) and group them
 together by the type of the mutation and also what the neighbouring
 bases are. This is commonly referred to as somatic mutational
-signatures.</p>
-<p>Common mutational processes that are regularly identified in cancer
+signatures. Common mutational processes that are regularly identified in cancer
 sequencing are:</p>
 <ul>
 <li>
@@ -994,7 +1050,8 @@ sequencing are:</p>
     C/T mutations too.</p>
 </li>
 </ul>
-<p>In cohort cancer analysis it is common to try to generate subtypes to
+<p><br>
+In cohort cancer analysis it is common to try to generate subtypes to
 group your data based on a particular molecular phenotype. A reason for
 doing may include finding sets of patients that have a similar form of
 the disease and therefore all might benefit from a particular treatment.
@@ -1004,10 +1061,11 @@ on the pattern of exposures or processes that have contributed to their
 genome changes. The patients don’t have to have the same type of cancer
 so pan-cancer studies are using this analysis to find similarities
 across cancer types.</p>
+<hr />
 <h2 id="preparing-the-r-environment">Preparing the R environment<a class="headerlink" href="#preparing-the-r-environment" title="Permanent link">&para;</a></h2>
-<p>The mathematical framework developed by Alexandrov et al was implemented
-in MATLAB. We are going to use a version implemented in R by Gehring et
-al, called <code class="codehilite">SomaticSignatures package</code>, that is very quick and flexible
+<p>The mathematical framework developed by Alexandrov <em>et al.</em> was implemented
+in MATLAB. We are going to use a version implemented in R by Gehring <em>et
+al.</em> called <code class="codehilite">SomaticSignatures package</code>, that is very quick and flexible
 but currently only accepts point mutations not insertions or deletions
 (indels). In tests on our data we have found that the Somatic Signatures
 package in R returns very similar results to the full implementation of
@@ -1016,13 +1074,13 @@ Alexandrov’s framework.</p>
 <code class="codehilite">somatic/somatic_signatures</code>:</p>
 <p>Open the Terminal and go to the <code class="codehilite">somatic_signatures</code> working directory:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cd ~/somatic/somatic_signatures
-pwd
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">cd</span> ~/somatic/somatic_signatures
+<span class="nb">pwd</span>
 </pre></div>
 </td></tr></table>
 
 <p>In this folder you should find 12 files that end with the extension
-.vcf. Use the list command to make sure you can see them.</p>
+<code class="codehilite"><span class="na">.vcf</span></code>. Use the list command to make sure you can see them.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ls
 </pre></div>
 </td></tr></table>
@@ -1042,18 +1100,19 @@ commands.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>library(SomaticSignatures)
-library(BSgenome.Hsapiens.UCSC.hg19)
-library(ggplot2)
-library(Cairo)
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">library</span><span class="p">(</span>SomaticSignatures<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>BSgenome.Hsapiens.UCSC.hg19<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>Cairo<span class="p">)</span>
 </pre></div>
 </td></tr></table>
 
 <p>Set the directory where any output files will be generated</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>setwd(&quot;~/somatic/somatic_signatures&quot;)
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">setwd</span><span class="p">(</span><span class="s">&quot;~/somatic/somatic_signatures&quot;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
 
+<hr />
 <h2 id="loading-and-preparing-the-snv-mutation-data">Loading and preparing the SNV mutation data<a class="headerlink" href="#loading-and-preparing-the-snv-mutation-data" title="Permanent link">&para;</a></h2>
 <p>The mutations used in this analysis need to be high quality somatic
 mutations</p>
@@ -1070,7 +1129,7 @@ mutations</p>
     high quality mutation calls.</p>
 </li>
 </ul>
-<p>Read in the mutations from the 12 vcf files</p>
+<p>Read in the mutations from the 12 VCF files</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>files <span class="o">&lt;-</span> <span class="kp">list.files</span><span class="p">(</span><span class="s">&quot;~/somatic/somatic_signatures&quot;</span><span class="p">,</span> pattern<span class="o">=</span><span class="s">&quot;vcf$&quot;</span><span class="p">,</span> full.names<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
@@ -1082,14 +1141,14 @@ mutations</p>
 
 <p>You should see a list of 12 sample files.</p>
 <p>Next read in all the genomic positions of variants in the VCF files
-using the vranges class.</p>
+using the <code class="codehilite">vranges</code> class.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>vranges <span class="o">&lt;-</span> <span class="kp">lapply</span><span class="p">(</span>files<span class="p">,</span> <span class="kr">function</span><span class="p">(</span>v<span class="p">)</span> readVcfAsVRanges<span class="p">(</span>v<span class="p">,</span><span class="s">&quot;hg19&quot;</span><span class="p">))</span>
 </pre></div>
 </td></tr></table>
 
 <p>Join all the lists of variant positions into one big data set so that it
 can be processed together and look at what is contained in the
-concatenated vranges data</p>
+concatenated <code class="codehilite">vranges</code> data</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>vranges.cat <span class="o">&lt;-</span> <span class="kp">do.call</span><span class="p">(</span><span class="kt">c</span><span class="p">,</span>vranges<span class="p">)</span>
 vranges.cat
@@ -1102,7 +1161,7 @@ mutation base changes along with what sample they were seen in.</p>
 <p>Note there are a lot of NA values in this data set because we have left
 out non-essential information in order to cut down on the processing
 time.</p>
-<p>Next we need to ensure all the positions in the vranges object have been
+<p>Next we need to ensure all the positions in the <code class="codehilite">vranges</code> object have been
 recorded in UCSC notation form so that they will match up with the
 reference we are using.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>vranges.cat <span class="o">&lt;-</span> ucsc<span class="p">(</span>vranges.cat<span class="p">)</span>
@@ -1112,7 +1171,7 @@ reference we are using.</p>
 <p>It is always important to select the correct reference for your data.</p>
 <p>We can print out how many mutations we have read in for each of the
 cancer samples we are using by using the command.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>print(table(sampleNames(vranges.cat)))
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">print</span><span class="p">(</span><span class="kp">table</span><span class="p">(</span>sampleNames<span class="p">(</span>vranges.cat<span class="p">)))</span>
 </pre></div>
 </td></tr></table>
 
@@ -1124,106 +1183,59 @@ bases on either side of the mutation i.e. the mutation context.</p>
 </pre></div>
 </td></tr></table>
 
-<p>We can inspect what information we had added to the vranges.cat object
-by typing ’mc’ on the command line. Notice that the mutation and its
+<p>We can inspect what information we had added to the <code class="codehilite">vranges.cat</code> object
+by typing <code class="codehilite">mc</code> on the command line. Notice that the mutation and its
 context have been added to the last two columns.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>mc
 </pre></div>
 </td></tr></table>
 
+<hr />
 <h2 id="snv-mutation-context">SNV mutation context<a class="headerlink" href="#snv-mutation-context" title="Permanent link">&para;</a></h2>
 <p>There are a total of 96 possible single base mutations and context
 combinations. We can calculate this by listing out the six possible
 types of single nucleotide mutations:</p>
-<ul>
-<li>
-<p>A/C</p>
-<p>the reverse compliment (T/G) is also in this group</p>
-</li>
-<li>
-<p>A/G</p>
-<p>includes (T/C)</p>
-</li>
-<li>
-<p>A/T</p>
-<p>includes (T/A)</p>
-</li>
-<li>
-<p>C/A</p>
-<p>includes (G/T)</p>
-</li>
-<li>
-<p>C/G</p>
-<p>includes (G/C)</p>
-</li>
-<li>
-<p>C/T</p>
-<p>includes (G/C)</p>
-</li>
-</ul>
+<p><pre>
+  -   C/A   the reverse compliment (G/T) is also in this group
+  -   C/G   includes (G/C)
+  -   C/T   includes (G/C)
+  -   T/A   includes (A/T)
+  -   T/C   includes (A/G)
+  -   T/G   includes (A/C)
+  </pre></p>
 <p>The neighbouring bases, on either side of a mutation, are referred to as
 the mutation context. There are 16 possible combinations of mutation
 contexts. Here [.] stands for one of the mutations listed above.</p>
-<ul>
-<li>
-<p>A[.]A</p>
-<p>A[.]C</p>
-<p>A[.]G</p>
-<p>A[.]T</p>
-</li>
-<li>
-<p>C[.]A</p>
-<p>C[.]C</p>
-<p>C[.]G</p>
-<p>C[.]T</p>
-</li>
-<li>
-<p>G[.]A</p>
-<p>G[.]C</p>
-<p>G[.]G</p>
-<p>G[.]T</p>
-</li>
-<li>
-<p>T[.]A</p>
-<p>T[.]C</p>
-<p>T[.]G</p>
-<p>T[.]T</p>
-</li>
-</ul>
+<p><pre>
+  -   A[.]A   A[.]C   A[.]G   A[.]T
+  -   C[.]A   C[.]C   C[.]G   C[.]T
+  -   G[.]A   G[.]C   G[.]G   G[.]T
+  -   T[.]A   T[.]C   T[.]G   T[.]T
+  </pre></p>
 <p>Now if we substitute the [.]’s with each of the 6 different mutations
 you will find there are 96 possible types of combined mutations and
 contexts (6 x 16).</p>
 <p>Start by substituting [.] for the A/C mutation type</p>
-<ul>
-<li>
-<p>A[A/C]A</p>
-</li>
-<li>
-<p>A[A/C]C</p>
-</li>
-<li>
-<p>A[A/C]G</p>
-</li>
-<li>
-<p>A[A/C]T</p>
-</li>
-<li>
-<p>C[A/C]A</p>
-</li>
-<li>
-<p>C[A/C]C</p>
-</li>
-<li>
-<p>C[A/C]G</p>
-</li>
-</ul>
+<p><pre>
+  -   A[C/A]A
+  -   A[C/A]C
+  -   A[C/A]G
+  -   A[C/A]T
+  -   C[C/A]A
+  -   C[C/A]C
+  -   C[C/A]G
+  </pre></p>
 <p>and so on&hellip;</p>
 <p>We assign all the somatic mutations identified in a single tumour to one
 of these categories and total up the number in each.</p>
-<p>What about a mutation that looks like G[T/G]A, where should this go?
-Hint remember to reverse compliment all the nucleotides.</p>
-<p>In the T[A/C]C context count.</p>
-<p>Now we have all the information that is needed for each sample we can
+<div class="admonition note">
+<p class="admonition-title">Question</p>
+<p>What about a mutation that looks like G[A/C]A, where should this go?</p>
+<div class="admonition hint"><details><summary><strong>Hint</strong></summary><p>Remember to reverse compliment all the nucleotides.</p></details></div>
+<div class="admonition success"><details><summary><strong>Answer</strong></summary><p>In the T[A/C]C context count.</p></details></div>
+</div>
+<p><br>
+Now we have all the information that is needed for each sample we can
 make a matrix that contains counts of mutations in each of the 96
 possible combinations of mutations and contexts counting up the totals
 separately for each sample</p>
@@ -1235,6 +1247,7 @@ separately for each sample</p>
 
 <p>The output of the <code class="codehilite">dim(mm)</code> command show us that there are 96 rows
 (these are the context values) and 12 columns which are the 12 samples.</p>
+<hr />
 <h2 id="running-the-nmf-analysis">Running the NMF analysis<a class="headerlink" href="#running-the-nmf-analysis" title="Permanent link">&para;</a></h2>
 <p>Using the matrix we have made we can now run the non-negative matrix
 factorisation (NMF) process that attempts to find the most stable,
@@ -1247,7 +1260,7 @@ the data by 3 groups, and then 4 and so on.</p>
 this practical. If you have more samples from potentially diverse
 sources you may need to run with a larger range of signatures and with
 more replicates.</p>
-<p>to find out how many signatures we have in the data run the command.</p>
+<p>To find out how many signatures we have in the data run the command.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>gof_nmf <span class="o">&lt;-</span> assessNumberSignatures<span class="p">(</span>mm<span class="p">,</span> <span class="m">2</span><span class="o">:</span><span class="m">10</span><span class="p">,</span> nReplicates <span class="o">=</span> <span class="m">5</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
@@ -1256,18 +1269,21 @@ more replicates.</p>
 plot</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Cairo(file=&quot;plotNumberOfSignatures.pdf&quot;, type=&quot;pdf&quot;, units=&quot;in&quot;, width=9, height=8, dpi=72)
-plotNumberSignatures(gof_nmf)
-dev.off()
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Cairo<span class="p">(</span>file<span class="o">=</span><span class="s">&quot;plotNumberOfSignatures.pdf&quot;</span><span class="p">,</span> type<span class="o">=</span><span class="s">&quot;pdf&quot;</span><span class="p">,</span> units<span class="o">=</span><span class="s">&quot;in&quot;</span><span class="p">,</span> width<span class="o">=</span><span class="m">9</span><span class="p">,</span> height<span class="o">=</span><span class="m">8</span><span class="p">,</span> dpi<span class="o">=</span><span class="m">72</span><span class="p">)</span>
+plotNumberSignatures<span class="p">(</span>gof_nmf<span class="p">)</span>
+dev.off<span class="p">()</span>
 </pre></div>
 </td></tr></table>
 
 <p>Open up the PDF and examine the curve. The plotNumberOfSignatures PDF
 that will have been made in the working directory that you set up at the
 beginning</p>
-<p>[H] <img alt="image" src="../images/numberofsignatures.png" /> [Figure 1:Number of
-signatures plot]</p>
-<p>Look at the y-axis scale on the bottom panel of Figure 1. The explained
+<p><img alt="image" src="../images/numberofsignatures.png" /> <strong>Figure 1:</strong> This plot is used to find the number of signatures that is likely to be the best grouping solution. The top plot shows the decreasing residual sum of squares for each
+increasing number of signatures and the bottom plot the increasing explained variance as
+the number of potential signatures increases. Ideally the best solution will be the lowest
+number of signatures with a low RSS and a high explained variance.</p>
+<p><br>
+Look at the y-axis scale on the bottom panel of Figure 1. The explained
 variance is already very high and so close to finding the correct
 solution for the number of signatures even with just 2. The error bars
 around each point are fairly small considering we have a very small
@@ -1289,7 +1305,7 @@ dev.off()
 </pre></div>
 </td></tr></table>
 
-<p>open up the plot3Signatures pdf that will have been made in the working
+<p>Open up <code class="codehilite">plot3Signatures.pdf</code> that will have been made in the working
 directory.</p>
 <p>You should have generated a plot with three signature profiles obtained
 from the NMF processing of the test dataset.</p>
@@ -1299,76 +1315,70 @@ height of the bars indicates the frequency of those particular mutation
 and context combinations in each signature.</p>
 <p>Although the section colours are different to the plot you have
 generated the mutations are still in the same order across the plot.</p>
+<hr />
 <h2 id="interpreting-the-signature-results">Interpreting the signature results<a class="headerlink" href="#interpreting-the-signature-results" title="Permanent link">&para;</a></h2>
-<p>In their paper Alexandrov et al used this analysis to generate profiles
+<p>In their paper Alexandrov <em>et al.</em> used this analysis to generate profiles
 from the data for more than 7000 tumour samples sequenced through both
 exome and whole genome approaches. They were able to group the data to
 reveal which genomes have been exposed to similar mutational processes
 contributing to the genome mutations.</p>
-<p>[H] <img alt="image" src="../images/alexandrov_nature.png" /> [Figure 2. 21 signature
-patterns identified from the analysis of more than 7000 different
-tumours from Alexandrov et al. Nature 2013.]</p>
+<p><img alt="image" src="../images/alexandrov_nature.png" /> <strong>Figure 2.</strong> The 96 possible mutation/context
+combinations are plotted along the x axis arranged in blocks of 6 lots of 16.
+The y axis indicates the frequency of those particular mutation and context
+combinations in each signature. <em>Source</em>: Alexandrov <em>et al.</em> Nature 2013</p>
+<p><br>  </p>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
 <p>Can you match up, by eye, the profile shapes against a selection of
-known mutational signatures supplied (figure 2)?</p>
-<p>Try to match up the patterns made by the positions of the highest peaks
-for each signature.</p>
-<ul>
-<li>
-<p>Alexandrov signature 7 matches with our signature 1</p>
-</li>
-<li>
-<p>Alexandrov signature 13 matches with our signature 2</p>
-</li>
-<li>
-<p>Alexandrov signature 3 matches with our signature 3</p>
-</li>
-</ul>
-<p>Now use the table from Alexandrov et al to identify which mutational
+known mutational signatures supplied (Figure 2)?</p>
+<p>Try to match up the patterns made by the positions of the highest peaks for each signature.</p>
+<div class="admonition success"><details><summary><strong>Answer</strong></summary><ul><li><p>Alexandrov signature 7 matches with our signature 1</p></li><li><p>Alexandrov signature 13 matches with our signature 2</p></li><li><p>Alexandrov signature 3 matches with our signature 3</p></li></ul></details></div>
+</div>
+<p><br>
+Now use the table from Alexandrov <em>et al.</em> to identify which mutational
 processes our three generated signatures have been associated with.</p>
-<p>[H] <img alt="image" src="../images/mutational_processes.png" /> [Figure 3 Table
-indicating the probable association of the identified signatures with
-mutational processes and the origin site of the cancer samples from
-Alexandrov et al. Nature 2013.]</p>
+<p><img alt="image" src="../images/mutational_processes.png" /> <strong>Figure 3.</strong> The 21 signatures identified
+are indicated as rows with the number corresponding to Figure 2 on the left. The
+types of tumours used in the analysis are listed as columns. A green dot at the
+intersection of a signature and tumour indicates the signature was identified in
+that sample type. Where verified the mutational process is listed on the right.
+<em>Source</em>: Alexandrov <em>et al.</em> Nature 2013</p>
+<p><br></p>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
 <p>What mutational mechanisms have been associated with the signatures that
 you have generated?</p>
-<ul>
-<li>
-<p>Our signature 1 (AS7) is associated with Ultraviolet radiation
+<div class="admonition success"><details><summary><strong>Answer</strong></summary><ul><li><p>Our signature 1 (AS7) is associated with Ultraviolet radiation
     damage to DNA. This has previously been identified in Head and Neck
-    and Melanoma cancer samples.</p>
-</li>
-<li>
-<p>Our signature 2 (AS 13) is associated with the activity of
+    and Melanoma cancer samples.</p></li><li><p>Our signature 2 (AS 13) is associated with the activity of
     anti-viral APOBEC enzymes. This has previously been seen in Breast
-    and Bladder cancer samples.</p>
-</li>
-<li>
-<p>Our signature 3 (AS3) is associated with BRCA1 and BRCA2 mutations,
+    and Bladder cancer samples.</p></li><li><p>Our signature 3 (AS3) is associated with BRCA1 and BRCA2 mutations,
     i.e. the homologous recombination repair pathway not working
     properly. This has been seen in Breast, Ovarian and Pancreas cancer
-    samples.</p>
-</li>
-</ul>
-<p>Now we can plot out the results for the individual samples in our
+    samples.</p></li></ul></details></div>
+</div>
+<p><br>
+Now we can plot out the results for the individual samples in our
 dataset to show what proportion of their mutations have been assigned to
 each of the signatures.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Cairo(file=&quot;PlotSampleContribution3Signatures.pdf&quot;, type=&quot;pdf&quot;, units=&quot;in&quot;, width=9, height=6, dpi=72)
-plotSamples(sigs_nmf, normalize=TRUE) + scale_y_continuous(breaks=seq(0, 1, 0.2), expand = c(0,0))+ theme(axis.text.x = element_text(size=6))
-dev.off()
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Cairo<span class="p">(</span>file<span class="o">=</span><span class="s">&quot;PlotSampleContribution3Signatures.pdf&quot;</span><span class="p">,</span> type<span class="o">=</span><span class="s">&quot;pdf&quot;</span><span class="p">,</span> units<span class="o">=</span><span class="s">&quot;in&quot;</span><span class="p">,</span> width<span class="o">=</span><span class="m">9</span><span class="p">,</span> height<span class="o">=</span><span class="m">6</span><span class="p">,</span> dpi<span class="o">=</span><span class="m">72</span><span class="p">)</span>
+plotSamples<span class="p">(</span>sigs_nmf<span class="p">,</span> normalize<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span> <span class="o">+</span> scale_y_continuous<span class="p">(</span>breaks<span class="o">=</span><span class="kp">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0.2</span><span class="p">),</span> expand <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">))</span><span class="o">+</span> theme<span class="p">(</span>axis.text.x <span class="o">=</span> element_text<span class="p">(</span>size<span class="o">=</span><span class="m">6</span><span class="p">))</span>
+dev.off<span class="p">()</span>
 </pre></div>
 </td></tr></table>
 
 <p>If you don’t have time to carry out the advanced questions you can exit
 R and return to the normal terminal command line.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>quit()
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">quit</span><span class="p">()</span>
 n
 </pre></div>
 </td></tr></table>
 
-<p>Open the resulting PlotSampleContribution3Signatures.pdf.</p>
+<p><br>
+Open the resulting <code class="codehilite">PlotSampleContribution3Signatures.pdf</code>.  </p>
 <p>This shows the results for the mutation grouping for each sample. The
 samples are listed on the x-axis and the proportion of all mutations for
 that sample is shown on the y-axis. The colours of the bars indicate
@@ -1376,44 +1386,44 @@ what proportion of the mutations for that sample were grouped into each
 of the signatures. The colour that makes up most of the bar for each
 sample is called its &ldquo;major signature&rdquo;.</p>
 <p>The data you have been using contains samples from High Grade Serous
-Ovarian Carcinomas and Cutaneous Melanoma.</p>
+Ovarian Carcinomas and Cutaneous Melanoma.
+<br></p>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
 <p>Using the major signature found for each sample can you guess which are
 ovarian and which are melanoma samples?</p>
-<ul>
-<li>
-<p>Samples 9-12 have the majority signature of our signature 1. This is
-    the UV signature and so these are likely to be Melanoma samples.</p>
-</li>
-<li>
-<p>Samples 4-8 have the majority signature of our signature 3. This is
-    the BRCA signature and these are most likely to be ovarian samples.</p>
-</li>
-<li>
-<p>Samples 1-3 have the majority signature of our signature 2. This is
+<div class="admonition success"><details><summary><strong>Answer</strong></summary><ul><li><p>Samples 9-12 have the majority signature of our signature 1. This is
+    the UV signature and so these are likely to be Melanoma samples.</p></li><li><p>Samples 4-8 have the majority signature of our signature 3. This is
+    the BRCA signature and these are most likely to be ovarian samples.</p></li><li><p>Samples 1-3 have the majority signature of our signature 2. This is
     the APOBEC signature indicating activity of the anti-viral APOBEC
     enzymes. These are less likely to be from cutaneous melanoma because
     they have very few UV associated mutations although it could
     possibly be from a different subtype. However it is much more likely
     that these will be ovarian tumours as this APOBEC signature has been
     seen in breast tumours which can be similar to ovarian cancers in
-    terms of the mutated genes.</p>
-</li>
-</ul>
+    terms of the mutated genes.</p></li></ul></details></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
 <p>This is an open question for discussion at the end of the practical.</p>
 <p>How can this analysis be useful for cancer genomics studies?</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><em>Advanced exercise</em></p>
 <p>Now rerun the process this time using 4 signatures as the solution.</p>
-<p>Hint: you don’t have to start back at the beginning but you can jump to
+<div class="admonition hint"><details><summary><strong>Hint</strong></summary><p>You don’t have to start back at the beginning but you can jump to
 the step where you run the NMF but this time for 4 instead of 3
-signatures. Then continue through making the plots.</p>
-<p>You will need to change the name of each plot you remake with 4
-signatures because Cairo won’t let you overwrite and existing file.</p>
-<p>Can you find a good match in the set of known signatures for all 4
-patterns?</p>
+signatures. Then continue through making the plots. You will need to
+change the name of each plot you remake with 4 signatures because
+Cairo won’t let you overwrite and existing file.</p></details></div>
+<p>Can you find a good match in the set of known signatures for all 4 patterns?</p>
 <p>Can you find a verified process for all of the profiles you are seeing?</p>
+</div>
+<hr />
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
-<p>Alexandrov et al. Nature 2013: <br />
+<p>Alexandrov <em>et al.</em> Nature 2013: <br />
 <a href="http://www.nature.com/nature/journal/v500/n7463/pdf/nature12477.pdf">http://www.nature.com/nature/journal/v500/n7463/pdf/nature12477.pdf</a></p>
-<p>Gehring et al. Bioinformatics 2015: <br />
+<p>Gehring <em>et al.</em> Bioinformatics 2015: <br />
 <a href="http://bioinformatics.oxfordjournals.org/content/early/2015/07/31/bioinformatics.btv408.full">http://bioinformatics.oxfordjournals.org/content/early/2015/07/31/bioinformatics.btv408.full</a></p>
                 
                   
@@ -1488,12 +1498,14 @@ patterns?</p>
       
     </div>
     
-      <script src="../../../assets/javascripts/application-6b4ff16fa7.js"></script>
+      <script src="../../../assets/javascripts/application-b30566c560.js"></script>
+      
+      
       <script>app.initialize({url:{base:"../../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
-        <script src="../../../js/spoilers.js"></script>
+        <script src="../../../js/details.js"></script>
       
     
     
