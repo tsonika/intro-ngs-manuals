@@ -1,7 +1,7 @@
 # Long-read Data Analysis Workshop
 
 ---
-**Sydney - 6th - 7th July 2017**
+**Sydney - 18th - 19th July 2017**
 
 ## Instructors
 
