@@ -90,15 +90,15 @@ pages:
 #     - Metagenomics Visualisation: modules/metagenomics-module-vis/vis.md
 #     - Metagenomics WGA: modules/metagenomics-module-wga/wga.md
 
-- BTP Modules:
-    - ChIP-seq: modules/btp-module-chip-seq/chip-seq.md
-    - DeNovo Canu: modules/btp-module-denovo-canu/denovo_canu.md
+- Introduction to NGS Modules:
     - Introduction to Command Line: modules/btp-module-ngs-cli/commandline.md
     - Data Quality: modules/btp-module-ngs-qc/ngs-qc.md
     - Read Alignment: modules/btp-module-ngs-mapping/alignment.md
+    - ChIP-seq: modules/btp-module-chip-seq/chip-seq.md
     - RNA-Seq: modules/btp-module-rna-seq/rna-seq.md
+        - NGS Biological Insight: modules/btp-module-ngs-bio/biol.md
     - de novo Genome Assembly: modules/btp-module-velvet/velvet.md
-    - NGS Biological Insight: modules/btp-module-ngs-bio/biol.md
+        - DeNovo Canu: modules/btp-module-denovo-canu/denovo_canu.md      
 
 - Cancer Genomics Modules:
     - Read Alignment: modules/cancer-module-alignment/alignment.md
