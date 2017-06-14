@@ -8,13 +8,15 @@ This tutorial demonstrates how to use long Pacbio sequence reads to assemble a b
 
 Tools (and versions) used in this tutorial include:
 
-- canu 1.5 [recently updated]
+- canu 1.5 (requires java 1.8)
 - infoseq and sizeseq (part of EMBOSS) 6.6.0.0
-- circlator 1.5.1 [recently updated]
+- circlator 1.5.1 
 - bwa 0.7.15
 - samtools 1.3.1
 - makeblastdb and blastn (part of blast) 2.4.0+
 - pilon 1.20
+- spades 3.10.1
+- prokka 1.12
 
 ## Learning objectives
 
