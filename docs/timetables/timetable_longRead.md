@@ -14,7 +14,7 @@
 
 ## Timetable
 ### Day 1
-**6th July** - [Room M020, The Red Centre, Kensington Campus, UNSW, Sydney](https://goo.gl/maps/XGNDvUkSCV72)
+**18th July** - [Room M020, The Red Centre, Kensington Campus, UNSW, Sydney](https://goo.gl/maps/XGNDvUkSCV72)
 
 | **Time** | **Topic** | **Links** | **Instructor** |
 | -------- | --------- | --------- | ----------- |
@@ -32,7 +32,7 @@
 
 
 ### Day 2
-**7th July** - [Room M020, The Red Centre, Kensington Campus, UNSW, Sydney](https://goo.gl/maps/XGNDvUkSCV72)
+**19th July** - [Room M020, The Red Centre, Kensington Campus, UNSW, Sydney](https://goo.gl/maps/XGNDvUkSCV72)
 
 | **Time** | **Topic** | **Links** | **Instructor** |
 | -------- | --------- | --------- | ----------- |
