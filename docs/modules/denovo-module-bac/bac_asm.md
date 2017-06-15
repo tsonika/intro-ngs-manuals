@@ -1,5 +1,4 @@
-Key Learning Outcomes
-=====================
+## Key Learning Outcomes
 
 After completing this module the trainee should be able to:
 
@@ -12,11 +11,10 @@ After completing this module the trainee should be able to:
 
 -   Understand that genome assembly produces a graph structure
 
-Resources You’ll be Using
-=========================
+***
+## Resources You’ll be Using
 
-Tools Used
-----------
+### Tools Used
 
 Velvet:  
 https://www.ebi.ac.uk/~zerbino/velvet/
@@ -24,28 +22,39 @@ https://www.ebi.ac.uk/~zerbino/velvet/
 Bandage:  
 https://rrwick.github.io/Bandage/
 
-Data Source and Useful Links
-============================
+***
+## Data Source and Useful Links
 
-Data used in this tutorial is from ENA accession SRR2054105  
+Data used in this tutorial is from ENA accession SRR2054105:    
 http://www.ebi.ac.uk/ena/data/view/SRR2054105
 
 Spreadsheet used in the group activity:  
-https://docs.google.com/spreadsheets/d/1iFbCCihawpY1LClsAB-OJ66lyeW7EsdJyaMo1HCetF8/edit?usp=sharing>
+https://docs.google.com/spreadsheets/d/1iFbCCihawpY1LClsAB-OJ66lyeW7EsdJyaMo1HCetF8/edit?usp=sharing
 
-Introduction
-============
+***
+## Author Information
+
+*Primary Author(s):*  
+Torsten Seemann tseemann@unimelb.edu.au  
+Paul Berkman Paul.Berkman@csiro.au  
+Philippe Moncuquet Philippe.Moncuquet@csiro.au  
+
+*Contributor(s):*  
+Zhiliang Chen zhiliang.chen@unsw.edu.au  
+Sonika Tyagi Sonika.Tyagi@agrf.org.au  
+
+***
+## Introduction
 
 In this tutorial we will take raw sequencing reads and *de novo*
 assemble them into contigs. We will also explore the internal assembly
 graph structure to aid our understanding of why assemblies are
 incomplete.
 
-Before the assembly
-===================
+***
+## Before the assembly
 
-Sequence data
--------------
+### Sequence data
 
 We have sequenced the genome of a bacterium using paired-end chemistry
 on an Illumina HiSeq 2000 instrument at the University of Oxford and
@@ -58,25 +67,30 @@ Let’s have a look at the datasets by doing:
 
 You should see the following two files:
 
-R1.fastq.gz
+    R1.fastq.gz
+    R2.fastq.gz
 
-R2.fastq.gz
 
-How many reads are in this data set?\
+!!! note "Questions"
+    How many reads are in this data set?
 
-2100778 pairs
+    !!! success ""
+        ??? "**Answer**"  
+            2100778 pairs
 
-What is the yield in basepairs?\
+    What is the yield in basepairs?
 
-210077800 bp = 210 Mbp
+    !!! success ""
+        ??? "**Answer**"
+            210077800 bp = 210 Mbp
 
-Assuming an average bacterial genome size of 4 Mbp, what depth of
-coverage do we have?\
+    Assuming an average bacterial genome size of 4 Mbp, what depth of coverage do we have?
 
-210 / 4 = 53x
+    !!! success ""
+        ??? "**Answer**"
+            210 / 4 = 53x
 
-Trim or clip reads
-------------------
+### Trim or clip reads
 
 There are two distinct reasons one may wish to trim or clip the raw
 reads.
@@ -96,32 +110,31 @@ trimming is warranted and for the presence of sequencing adaptors. The
 data set in this exercise is 99% free of adaptors and is good quality
 overall so we will skip those steps.
 
-How do you know which adaptor sequence to trim?\
 
-You either ask the sequencing provider or use a tool that tries all
-known adapters.
+!!! note "Questions"
+    How do you know which adaptor sequence to trim?
 
-How are are quality values in `FASTQ` files calculated? Can we trust
-them?\
+    !!! success ""
+        ??? "**Answer**"
+            You either ask the sequencing provider or use a tool that tries all known adapters.
 
-The are calculated using formulas calibrated to the physical
-measurements the sequencing instrument takes. In the case of Illumina
-sequencing, these measurements will include pixel light intensities from
-the images the camera/scanner takes of the flow cell.
+    How are are quality values in `FASTQ` files calculated? Can we trust them?
 
-Allocate yourself to a `K` value on the spreadsheet
----------------------------------------------------
+    !!! success ""
+        ??? "**Answer**"
+            The are calculated using formulas calibrated to the physical measurements the sequencing instrument takes. In the case of Illumina sequencing, these measurements will include pixel light intensities from the images the camera/scanner takes of the flow cell.
+
+### Allocate yourself to a `K` value on the spreadsheet
 
 An important parameter to most genome assemblers is `K` which is the
 k-mer size used to construct the *de Bruijn* graph (pronounced *de
-Brown*) .
+Brown*).
 
-Please go to this shared online
-spreadsheet https://docs.google.com/spreadsheets/d/1iFbCCihawpY1LClsAB-OJ66lyeW7EsdJyaMo1HCetF8/edit?usp=sharing
+Please go to this shared online [spreadsheet](https://docs.google.com/spreadsheets/d/1iFbCCihawpY1LClsAB-OJ66lyeW7EsdJyaMo1HCetF8/edit?usp=sharing)
 and choose **a K value** and put your name next to it.
 
-Assemble the reads using Velvet
-===============================
+***
+## Assemble the reads using Velvet
 
 The `Velvet` software performs the assembly in two steps. The first
 `velveth` step hashes the reads. The second `velvetg` step builds,
@@ -134,23 +147,12 @@ on the spreadsheet and assemble the reads.
 
 Description of the arguments used in the command:
 
-DIR
-:   = Directory name you chose to write the output to
-
-K
-:   = K-mer value; it must be an odd number
-
--shortPaired
-:   = The read types are short and paired-end
-
--fastq.gz
-:   = The format of the input files
-
--separate
-:   = R1 and R2 reads are in separate files
-
-input file names
-:   = input FASTQ file names
+  > **DIR**: Directory name you chose to write the output to  
+  > **K**: K-mer value; it must be an odd number  
+  > **-shortPaired**: The read types are short and paired-end  
+  > **-fastq.gz**: The format of the input files  
+  > **-separate**: R1 and R2 reads are in separate files  
+  > **input file names**: input FASTQ file names  
 
 Run the velvetg step now:
 
@@ -158,41 +160,25 @@ Run the velvetg step now:
 
 Description of the arguments used in the command:
 
-time
-:   = to capture the `velvetg` command run time
+  > **time**: to capture the `velvetg` command run time  
+  > **DIR**: Directory name you chose to write the velvet output to  
+  > **-exp_cov**: expected coverage is set to `auto`. To be determined by `velvet`  
+  > **-cov_cutoff**: coverage cutoff is set to `auto`. To be determined by `velvet`  
 
-DIR
-:   = Directory name you chose to write the velveth output to
+### Add your results to the spreadsheet
 
--exp\_cov
-:   = expected coverage is set to `auto`. To be determined by `velvet`
+|**Column** | **Where to find the value**|
+|-----------|----------------------------|
+|K-mer size|You chose this earlier and used it in the velveth command|
+|How long it took to run|Look at the final output line for the user time in seconds: NN.N|
+|Average K-mer coverage|Look for Estimated Coverage = NN.N|
+|Number of contigs|Look for text Final graph has NNN nodes|
+|N50 contig size|Look for n50 of NNNNN|
+|Largest contig size|Look for max NNNNN|
+|Total number of basepairs (sum of contig lengths)|Look for total NNNNNNN|
 
--cov\_cutoff
-:   = coverage cutoff is set to `auto`. To be determined by `velvet`
 
-Add your results to the spreadsheet
------------------------------------
-
-[H]
-
-ll
-
-**Column** & **Where to find the value**\
-`K-mer size` & You chose this earlier and used it in the velveth
-command\
-`How long it took to run` & Look at the final output line for the user
-time in seconds: NN.N\
-`Average K-mer coverage ` & Look for Estimated Coverage = NN.N\
-`Number of contigs` & Look for text Final graph has NNN nodes\
-`N50 contig size` & Look for n50 of NNNNN\
-`Largest contig size` & Look for max NNNNN\
-`Total number of basepairs (sum of contig lengths)` & Look for total
-NNNNNNN\
-
-[tab:results]
-
-Effect of K on assembly
------------------------
+### Effect of K on assembly
 
 Examine the spreadsheet and look for patterns in the tabular data and
 corresponding bar/line charts.
@@ -200,22 +186,19 @@ corresponding bar/line charts.
 How does K affect each of the statistics? Which value of K do you think
 is doing the best job? Why?
 
-Output Files
-------------
+### Output Files
 
-[H]
+**Table:** Output Files
 
-ll
+|**Filename**|**Description**|
+|------------|---------------|
+|contigs.fa|This is a FASTA file with your contigs|
+|Log| Has most of the metrics in it that we recorded|
+|stats.txt| TSV file of length and coverage of individual contigs|
+|Sequences| A copy of the input FASTQ sequences in FASTA format|
+|Pregraph Roadmaps Graph2| Interim assembly graph structure|
+|LastGraph| Final graph structure|
 
-**Filename** & **Description**\
-`contigs.fa` & this is a FASTA file with your contigs\
-`Log` & has most of the metrics in it that we recorded\
-`stats.txt` & TSV file of length and coverage of individual contigs\
-`Sequences` & A copy of the input FASTQ sequences in FASTA format\
-`Pregraph Roadmaps Graph2` & Interim assembly graph structure\
-`LastGraph` & Final graph structure\
-
-[tab:velvet~o~ut]
 
 Let’s examine the `stats.txt` file and look at the `short1_cov` column
 which is the k-mer coverage of each contig:
@@ -224,29 +207,39 @@ which is the k-mer coverage of each contig:
 
 Press `SPACE` and `b` to scroll up and down, and press `q` to quote.
 
-What do you notice about the k-mer coverages?\
 
-They all appear to have a similar value, but there are some that do not
-fit the pattern.
+!!! note "Questions"
+    What do you notice about the k-mer coverages?
 
-What do the outliers correspond to?\
+    !!! success ""
+        ??? "**Answer**"
+            They all appear to have a similar value, but there are some that do not fit the pattern.
 
-Repetitive elements of the genome including gene duplications. Also
-replicons with differing copy numbers, like bacterial plasmids.
+    What do the outliers correspond to?
 
-    grep NN dir/contigs.fa
+    !!! success ""
+        ??? "**Answer**"
+             Repetitive elements of the genome including gene duplications. Also
+             replicons with differing copy numbers, like bacterial plasmids.
 
-Why is there N letters in the assembly?\
+```bash
+grep NN dir/contigs.fa
+```
 
-Paired-end reads come from each end of the same original fragment of
-DNA. The unsequenced gap in the middle is variable, and unknown. The
-assembler sometimes struggles to resolve these gaps. So it knows two
-sections of the genome are connected, but it doesn’t quite know what is
-between them. So it pads them with its best guess of how many bases
-there are, and uses N to denote them as unknown.
+!!! note "Question"
+    Why is there N letters in the assembly?
 
-Visualising the assembly graph using Bandage
-============================================
+    !!! success ""
+        ??? "**Answer**"
+            Paired-end reads come from each end of the same original fragment of DNA.
+            The unsequenced gap in the middle is variable, and unknown.
+            The assembler sometimes struggles to resolve these gaps.
+            So it knows two sections of the genome are connected, but it doesn’t
+            quite know what is between them. So it pads them with its best guess
+            of how many bases there are, and uses N to denote them as unknown.
+
+***
+## Visualising the assembly graph using Bandage
 
 The final graph that `Velvet` uses is stored in the file `LastGraph`.
 The `Bandage` software allows us to view and explore the assembly graph.
@@ -267,28 +260,32 @@ Now get up out of your chair and walks around and look at all the
 different graphs the other participants obtained with different values
 of `K`.
 
-How does `K` affect the graph?\
+!!! note "Questions"
+    How does `K` affect the graph?
 
-Small K produces higher k-mer coverage but also more connectivity as
-smaller K is more ambiguous.
+    !!! success ""
+        ??? "**Answer**"
+            Small K produces higher k-mer coverage but also more connectivity as smaller K is more ambiguous.
 
-What would the graph look like in an ideal situtation?\
+    What would the graph look like in an ideal situtation?
 
-If the genome had M replicons, we would like to see only M sub-graphs.
-Each sub-graph would be linear or circular, depending on the form of the
-replicon in the original organism.
+    !!! success ""
+        ??? "**Answer**"
+            If the genome had M replicons, we would like to see only M sub-graphs. Each sub-graph would be linear or circular, depending on the form of the replicon in the original organism.
 
-Why didn’t anyone achieve perfection?\
+    Why didn’t anyone achieve perfection?
 
-Short reads are unable to disambiguate repeats longer than the read
-length (or read span). Most genomes have repeats beyond 500 bp.
+    !!! success ""
+        ??? "**Answer**"
+            Short reads are unable to disambiguate repeats longer than the read
+            length (or read span). Most genomes have repeats beyond 500 bp.
 
-Here is another example
-<https://github.com/rrwick/Bandage/wiki/Effect-of-kmer-size> from the
-Bandage web site on how K can affect assembly graphs.
 
-Explore the graph
------------------
+Here is another [example](https://github.com/rrwick/Bandage/wiki/Effect-of-kmer-size)
+from the Bandage web site on how K can affect assembly graphs.
+
+
+### Explore the graph
 
 `Bandage` is designed to be an interactive tool. It allows you to see
 relationships between parts of your genome that are lost when you only
@@ -303,39 +300,43 @@ look at the FASTA file of contigs.
 
 Feel free to play around a bit and ask questions.
 
-Features of the assembly graph
-------------------------------
+
+### Features of the assembly graph
 
 The graph is quite tangled. The long stretches correspond to contigs.
 The intersections correspond to shared k-mers in the graph, which occur
 due to repeated sequences within the genome.
 
 Select an node (rectangle) in the graph. It’s length is reported in the
-right hand panel as `Length: NNN`.
+right hand panel as  
+`Length: NNN`.
 
 On the menu choose `Output -> Web BLAST selected node`. Your browser
-should open the NCBI BLAST Website
-http://blast.ncbi.nlm.nih.gov/Blast.cgi?PROGRAM=blastn&PAGE_TYPE=BlastSearch&LINK_LOC=blasthome.
+should open the [NCBI BLAST Website](http://blast.ncbi.nlm.nih.gov/Blast.cgi?PROGRAM=blastn&PAGE_TYPE=BlastSearch&LINK_LOC=blasthome).
 
 Click the `BLAST` button at the bottom, and wait for the result.
 
-Did your node match anything in the Genbank database?\
+!!! note "Questions"
+    Did your node match anything in the Genbank database?
 
-You will need to examine the BLAST report on the trainee browser window.
+    !!! success ""
+        ??? "**Answer**"
+            You will need to examine the BLAST report on the trainee browser window.
 
-Can you determine what species of bacteria was sequenced?\
+    Can you determine what species of bacteria was sequenced?
 
-The top hit of the small segment of DNA the trainee chose may not
-necessarily reflect the true species of bacteria. But if multiple
-segments produce consistent top hits to the same species you would have
-some confidence.
+    !!! success ""
+        ??? "**Answer**"
+            The top hit of the small segment of DNA the trainee chose may not
+            necessarily reflect the true species of bacteria. But if multiple
+            segments produce consistent top hits to the same species you would have some confidence.
 
-Conclusion
-==========
+***
+## Conclusion
 
 You should now:
 
--   know how to use Velvet to assemble a simpel genome from Illumina
+-   know how to use Velvet to assemble a simple genome from Illumina
     sequences
 
 -   understand the role of the k-mer length K in the assembly process

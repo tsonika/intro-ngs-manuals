@@ -20,6 +20,14 @@ R package circlize:
 https://cran.r-project.org/web/packages/circlize/index.html
 
 ***
+## Author Information
+
+*Primary Author(s):*  
+Mathieu Bourgey mathieu.bourgey@mcgill.ca  
+
+*Contributor(s):*    
+
+***
 ##Introduction
 
 This short workshop will show you how to visualize your data.

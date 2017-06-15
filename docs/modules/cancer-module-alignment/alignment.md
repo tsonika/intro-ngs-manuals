@@ -31,6 +31,16 @@ http://picard.sourceforge.net/explain-flags.html
 
 http://sra.dnanexus.com/studies/ERP001071
 
+
+***
+## Author Information
+
+*Primary Author(s):*  
+Sonika Tyagi sonika.tyagi@agrf.org.au  
+Gayle Philip gkphilip@unimelb.edu.au
+
+*Contributor(s):*
+
 ***
 ## Introduction
 

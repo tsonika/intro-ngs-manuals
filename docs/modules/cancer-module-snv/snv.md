@@ -50,6 +50,19 @@ http://sra.dnanexus.com/studies/ERP001071
 http://www.ncbi.nlm.nih.gov/pubmed/22194472
 
 ***
+## Author Information
+
+*Primary Author(s):*  
+Matt Field matt.field@anu.edu.au  
+Dan Andrews dan.andrews@anu.edu.au  
+Velimir Gayevskiy v.gayevskiy@garvan.org.au  
+Mathieu Bourgey mathieu.bourgey@mcgill.ca  
+
+*Contributor(s):*  
+Gayle Philip Sonika.Tyagi@agrf.org.au  
+Sonika Tyagi gkphilip@unimelb.edu.au  
+
+***
 ## Introduction
 
 The goal of this hands-on session is to present the main steps that are
