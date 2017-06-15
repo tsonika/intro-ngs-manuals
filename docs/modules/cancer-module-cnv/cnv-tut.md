@@ -32,6 +32,15 @@ Data publication:
 http://www.ncbi.nlm.nih.gov/pubmed/22194472
 
 ***
+## Author Information
+
+*Primary Author(s):*  
+Velimir Gayevskiy, Garvan Institute v.gayevskiy@garvan.org.au  
+Sonika Tyagi, AGRF sonika.tyagi@agrf.org.au  
+
+*Contributor(s):*  
+
+***
 ## Introduction
 
 The goal of this hands-on session is to perform a copy number variation

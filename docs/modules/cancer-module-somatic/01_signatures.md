@@ -50,6 +50,16 @@ Variant Call Format (VCF) specification:
 http://samtools.github.io/hts-specs/VCFv4.2.pdf
 
 ***
+## Author Information
+
+*Primary Author(s):*  
+Ann-Marie Patch, QIMR Berghofer ann-marie.patch@qimrberghofer.edu.au  
+Erdahl Teber, CMRI eteber@cmri.org.au  
+
+*Contributor(s):*  
+Martha Zakrzewski Martha.Zakrzewski@qimrberghofer.edu.au
+
+***
 ## Introduction
 
 The most common genetic model for cancer development is the accumulation

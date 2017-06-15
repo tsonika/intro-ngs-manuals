@@ -58,6 +58,17 @@ Explain SAM Flags:
 http://picard.sourceforge.net/explain-flags.html
 
 ***
+## Author Information
+
+*Primary Author(s):*    
+Erdahl Teber eteber@cmri.org.au  
+Ann-Marie Patch Ann-Marie.Patch@qimrberghofer.edu.au
+
+*Contributor(s):*    
+Sonika Tyagi sonika.tyagi@agrf.org.au
+
+
+***
 ## Alignment Quality Control
 
 For structural variant calling several alignment quality control metrics

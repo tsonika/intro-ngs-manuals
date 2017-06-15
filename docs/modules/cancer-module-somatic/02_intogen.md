@@ -29,6 +29,16 @@ Mutation Annotation Format (MAF) specification:
 https://wiki.nci.nih.gov/display/TCGA/Mutation+Annotation+Format+(MAF)+Specification
 
 ***
+## Author Information
+
+*Primary Author(s):*  
+Ann-Marie Patch, QIMR Berghofer ann-marie.patch@qimrberghofer.edu.au  
+Erdahl Teber, CMRI eteber@cmri.org.au  
+
+*Contributor(s):*  
+Scott Wood scott.wood@qimrberghofer.edu.au  
+
+***
 ## Introduction
 
 Cancer driver genes are commonly described as genes that when mutated
