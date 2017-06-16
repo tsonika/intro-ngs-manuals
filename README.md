@@ -64,8 +64,12 @@ cd btp-manuals-md
 
 ### Syncing a fork
 
-Sync a fork of a repository to keep it up-to-date with the upstream repository (i.e. changes that have been made to the BPA repository since you forked and cloned it).
+1) First configure a remote for a fork (i.e let git know what the original upstream BPA repo is): https://help.github.com/articles/configuring-a-remote-for-a-fork/
+  a) git remote -v
+  b) git remote add upstream https://github.com/BPA-CSIRO-Workshops/btp-manuals-md.git
+  c) git remote -v
 
+2) Sync a fork of a repository to keep it up-to-date with the upstream repository (i.e. changes that have been made to the BPA repository since you forked and cloned it).
 https://help.github.com/articles/syncing-a-fork/
 
 Tip: Syncing your fork only updates your local copy of the repository. To update your fork on GitHub, you must push your changes.
