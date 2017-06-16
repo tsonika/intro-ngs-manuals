@@ -195,16 +195,14 @@ into a WIG file that can be read with genome browsers, such as IGV
 (Note: the tags are shifted by half of the peak separation distance):
 
     tag.shift <- round(binding.characteristics$peak$x/2)
-    smoothed.density <- get.smoothed.tag.density
-    (chip.data,control.tags=gfpcontrol.data,bandwidth=200,step=100,tag.shift=tag.shift);
+    smoothed.density <- get.smoothed.tag.density(chip.data,control.tags=gfpcontrol.data,bandwidth=200,step=100,tag.shift=tag.shift);
     writewig(smoothed.density,"oct4.density.wig","Smoothed, background-subtracted tag density");
     rm(smoothed.density);
 
 To provide a rough estimate of the enrichment profile (i.e. ChIP signal
 over input), we can use the get.smoothed.enrichment.mle() method:
 
-    smoothed.enrichment.estimate <- get.smoothed.enrichment.mle
-    (chip.data,gfpcontrol.data,bandwidth=200,step=100,tag.shift=tag.shift);
+    smoothed.enrichment.estimate <- get.smoothed.enrichment.mle(chip.data,gfpcontrol.data,bandwidth=200,step=100,tag.shift=tag.shift);
     writewig(smoothed.enrichment.estimate,"oct4.enrichment.wig","Smoothed maximum likelihood log2 enrichment estimate");
 
 Next, we will scan ChIP and signal tag density to estimate lower bounds
@@ -246,7 +244,7 @@ BED format:
 
     bp <- find.binding.positions(signal.data=chip.data,control.data=gfpcontrol.data,fdr=fdr,whs=detection.window.halfsize);
     print(paste("detected",sum(unlist(lapply(bp$npl,function(d) length(d$x)))),"peaks"));
-    bp.short <- add.broad.peak.regions(chip.data,gfpcontrol.data,bp,window.size=500,z.thr=3); //set the window size to 500.
+    bp.short <- add.broad.peak.regions(chip.data,gfpcontrol.data,bp,window.size=500,z.thr=3);
     write.table(na.omit(data.frame(cbind(rep("1", length(bp.short$npl$chr1$rs)), bp.short$npl$chr1$rs, bp.short$npl$chr1$re))), file = paste0("oct4","_enrich_narrow_chr1.bed"),quote = FALSE, row.names = FALSE, col.names = FALSE, sep = "\t");  
 
 ### STEP3 Comparing Binding Sites to Annotations Using the biomaRt package
@@ -398,83 +396,87 @@ each track is auto-scaled independently of each other, so bigger-looking
 peaks may not actually be bigger! Always look at the values on the left
 hand side axis.
 
-What can you say about the profile of Oct4 peaks in this region?
+!!! note "Question"
+    What can you say about the profile of Oct4 peaks in this region?
 
-There are no significant Oct4 peaks over the selected region.
+??? "**Answer**"
+    !!! success "Answer"	
+        There are no significant Oct4 peaks over the selected region.
 
 Compare it with H3K4me3 histone modification wig file we have generated
 at <http://www.ebi.ac.uk/~remco/ChIP-Seq_course/H3K4me3.bw>.
 
 H3K4me3 has a region that contains relatively high peaks than Oct4.
 
-Jump to `1:36066594-36079728` for a sample peak. Do you think H3K4me3
-peaks regions contain one or more modification sites? What about Oct4?
+!!! note "Question"
+    Jump to `1:36066594-36079728` for a sample peak. Do you think H3K4me3 peaks regions contain one or more modification sites? What about Oct4?
 
-Yes. There are roughly three peaks, which indicate the possibility of
-having more than one modification sites in this region.
-
-For Oct4, no peak can be observed.
+??? "**Answer**"
+    !!! success "Answer"
+        Yes. There are roughly three peaks, which indicate the possibility of having more than one modification sites in this region. For Oct4, no peak can be observed.
 
 ### Advanced Session
+!!! note "*Advanced exercise*"
 
-**Ensembl Visualization**
+	
+	**Ensembl Visualization**
 
-Launch a web browser and go to the Ensembl website at
-<http://www.ensembl.org/index.html>. Choose the genome of interest (in
-this case, mouse) on the left side of the page, browse to any location
-in the genome or click one of the demo links provided on the web page.
-Click on the **Add your data** link on the left, then choose **Attach
-remote file**.
+	Launch a web browser and go to the Ensembl website at
+	<http://www.ensembl.org/index.html>. Choose the genome of interest (in
+	this case, mouse) on the left side of the page, browse to any location
+	in the genome or click one of the demo links provided on the web page.
+	Click on the **Add your data** link on the left, then choose **Attach
+	remote file**.
 
-Wig files are large so are inconvenient for uploading directly to the
-Ensemble Genome browser. Instead, we will convert it to an indexed
-binary format and put this into a web accessible place such as on a
-HTTP, HTTPS, or FTP server. This makes all the browsing process much
-faster. Detailed instructions for generating a bigWig from a wig type
-file can be found at:
+	Wig files are large so are inconvenient for uploading directly to the
+	Ensemble Genome browser. Instead, we will convert it to an indexed
+	binary format and put this into a web accessible place such as on a
+	HTTP, HTTPS, or FTP server. This makes all the browsing process much
+	faster. Detailed instructions for generating a bigWig from a wig type
+	file can be found at:
 
-<http://genome.ucsc.edu/goldenPath/help/bigWig.html>.
+	<http://genome.ucsc.edu/goldenPath/help/bigWig.html>.
 
-We have generated bigWig files in advance for you to upload to the
-Ensembl browser. They are at the following URL:
-<http://www.ebi.ac.uk/~remco/ChIP-Seq_course/Oct4.bw>
+	We have generated bigWig files in advance for you to upload to the
+	Ensembl browser. They are at the following URL:
+	<http://www.ebi.ac.uk/~remco/ChIP-Seq_course/Oct4.bw>
 
-To visualise the data:
+	To visualise the data:
 
--   Paste the location above in the field File URL.
+	-   Paste the location above in the field File URL.
 
--   Choose data format bigWig.
+	-   Choose data format bigWig.
 
--   Choose some informative name and in the next window choose the
-    colour of your preference.
+	-   Choose some informative name and in the next window choose the
+	    colour of your preference.
 
--   Click **Save** and close the window to return to the genome browser.
+	-   Click **Save** and close the window to return to the genome browser.
 
-Repeat the process for the gfp control sample, located at:
+	Repeat the process for the gfp control sample, located at:
 
-<http://www.ebi.ac.uk/~remco/ChIP-Seq_course/gfp.bw>.
+	<http://www.ebi.ac.uk/~remco/ChIP-Seq_course/gfp.bw>.
 
-If can not see your tracks: Click on ’Configure this page’ in left
-panel. In ’Configure region Overview’ tab click on ’Ypur data’ in left
-panel. Check the boxes in ’Enable/Disable all tracks’ for you \*.bw
-files by selecting ’wiggle plot in the pop up menu.
+	If can not see your tracks: Click on ’Configure this page’ in left
+	panel. In ’Configure region Overview’ tab click on ’Ypur data’ in left
+	panel. Check the boxes in ’Enable/Disable all tracks’ for you \*.bw
+	files by selecting ’wiggle plot in the pop up menu.
 
-After uploading, choose **Configure this page**, and under **Your data**
-tick both boxes. Closing the window will save these changes.
+	After uploading, choose **Configure this page**, and under **Your data**
+	tick both boxes. Closing the window will save these changes.
 
-Go to a region on chromosome 1 (e.g. `1:34823162-35323161`), and zoom in
-and out to view the signal and peak regions. Be aware that the y-axis of
-each track is auto-scaled independently of each other, so bigger-looking
-peaks may not actually be bigger! Always look at the values on the left
-hand side axis.
+	Go to a region on chromosome 1 (e.g. `1:34823162-35323161`), and zoom in
+	and out to view the signal and peak regions. Be aware that the y-axis of
+	each track is auto-scaled independently of each other, so bigger-looking
+	peaks may not actually be bigger! Always look at the values on the left
+	hand side axis.
 
-MACS generates its peak files in a file format called bed file. This is
-a simple text format containing genomic locations, specified by
-chromosome, begin and end positions, and some more optional information.
+	MACS generates its peak files in a file format called bed file. This is
+	a simple text format containing genomic locations, specified by
+	chromosome, begin and end positions, and some more optional information.
 
-See <http://genome.ucsc.edu/FAQ/FAQformat.html#format1> for details.
+	See <http://genome.ucsc.edu/FAQ/FAQformat.html#format1> for details.
 
-Bed files can also be uploaded to the Ensembl browser.
+	Bed files can also be uploaded to the Ensembl browser.
 
 Motif analysis
 --------------
@@ -510,9 +512,12 @@ Running Trawler
 -   Download both sample and background files in FASTA format. Right
     click and choose: ’Save the link as...’ ![image](images/Trawler3.PNG)
 
-Which motif was found to be the most similar to your motif?
+!!! note "Question"
+    Which motif was found to be the most similar to your motif?
 
-Sox2
+??? "**Answer**"
+    !!! success "Answer"
+        Sox2
 
 ### Optional: Motif discovery with RSAT peak-motif
 
@@ -525,7 +530,7 @@ Trawler (up to 20 minutes depending on the size of the files).
 Running RSAT peak-motifs
 
 -   Go to the website
-    http://floresta.eead.csic.es/rsat/peak-motifs~f~orm.cgi
+    http://floresta.eead.csic.es/rsat/peak-motifs_form.cgi
 
 -   Upload input and background FASTA files just downloaded from Trawler
     ![image](images/RSAT1.PNG)
