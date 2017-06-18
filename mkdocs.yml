@@ -57,6 +57,7 @@ extra_javascript:
 
 pages:
 - Home: index.md
+- The Trainers: trainers/trainers.md
 - Timetable:
   - Intro to NGS: timetables/timetable_introNGS.md
   - Cancer Genomics: timetables/timetable_cancer.md
@@ -96,9 +97,9 @@ pages:
     - Read Alignment: modules/btp-module-ngs-mapping/alignment.md
     - ChIP-seq: modules/btp-module-chip-seq/chip-seq.md
     - RNA-Seq: modules/btp-module-rna-seq/rna-seq.md
-        - NGS Biological Insight: modules/btp-module-ngs-bio/biol.md
+    - NGS Biological Insight: modules/btp-module-ngs-bio/biol.md
     - de novo Genome Assembly: modules/btp-module-velvet/velvet.md
-        - DeNovo Canu: modules/btp-module-denovo-canu/denovo_canu.md      
+    - DeNovo Canu: modules/btp-module-denovo-canu/denovo_canu.md
 
 - Cancer Genomics Modules:
     - Read Alignment: modules/cancer-module-alignment/alignment.md
@@ -111,14 +112,14 @@ pages:
         - Cohort analysis for the identification of driver genes: modules/cancer-module-somatic/02_intogen.md
 
 - DeNovo Modules:
-    - DeNovo Command Line: modules/denovo-module-cli/commandline.md
+#    - DeNovo Command Line: modules/denovo-module-cli/commandline.md
     - Bacterial Assembly: modules/denovo-module-bac/bac_asm.md
     - Eukaryote Assembly: modules/denovo-module-euk/eukaryotic_assem.md
     - Scaffolding: modules/denovo-module-scaffolding/scaffold.md
 
 - Metagenomics Modules:
     - Metagenomics QC: modules/metagenomics-module-qc/ngs-qc.md
-    - Metagenomics Taxonomic : modules/metagenomics-module-tax/tax.md
+    - Metagenomics Taxonomic: modules/metagenomics-module-tax/tax.md
     - Metagenomics Visualisation: modules/metagenomics-module-vis/vis.md
     - Metagenomics WGA: modules/metagenomics-module-wga/wga.md
     - Metagenomics Functional Analysis: modules/metagenomics-module-fda/fda.md
