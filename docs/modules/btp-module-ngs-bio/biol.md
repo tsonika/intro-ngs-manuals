@@ -55,16 +55,39 @@ Gene ontology analysis with GOana
 First we will go back to the R environment and use the function GOana
 associated with the limma package. To use this function we need to have
 our DEGs annotated with the entrez gene identifier for each gene.We did
-this early on in our data processing. We use the fit object generated
+this early on in our data processing. We use the fit object (fit_v) generated
 using the voom function in limma for this analysis. To obtain more
 information regarding the goana function type ?goana within your R
 session.
+
+Open the Terminal and go to the `rnaseq/edgeR` working directory:
+
+    cd /home/trainee/rnaseq/edgeR
+
+!!! failure "STOP"
+    All commands entered into the terminal for this tutorial should be from
+    within the **`/home/trainee/rnaseq/edgeR`** directory.
+
+R (press enter)
+
+Check that the directory you are in contains the above-mentioned fit_v file by
+typing:
+
+    ls()
+    library(limma)
+    library(RColorBrewer)
+    library(gplots)
+    library(org.Hs.eg.db)
+
+We will use the goana function to obtain the gene ontology terms associated with the DEGs.
 
     DE_GOana<-goana(fit_v, coef=2, geneid=fit_v$genes$Entrez, FDR=0.05, species = "Hs", trend=F, plot=F )
 
 Now we will look at the most significant biological process (BP)ontology
 terms
 
+    DE_GOana_top_BP<- topGO(DE_GOana, ontology=c("BP"), number=150L, truncate.term=50)
+    head(DE_GOana_top_BP, 20)      
     DE_GOana_top_BP_down<- topGO(DE_GOana, ontology=c("BP"), sort = "down", number=150L, truncate.term=50)
     head(DE_GOana_top_BP_down, 10)
     DE_GOana_top_BP_up<- topGO(DE_GOana, ontology=c("BP"), sort = "up", number=150L, truncate.term=50)
@@ -73,6 +96,7 @@ terms
 Rather than looking at biological process (BP) let’s now look at
 molecular function (MF) terms
 
+      
     DE_GOana_top_MF_down<- topGO(DE_GOana, ontology=c("MF"), sort = "down", number=150L, truncate.term=50)
     head(DE_GOana_top_MF_down, 10)
     DE_GOana_top_MF_up<- topGO(DE_GOana, ontology=c("MF"), sort = "up", number=150L, truncate.term=50)
@@ -80,28 +104,28 @@ molecular function (MF) terms
 
 ### Questions and Answers
 
-Based on the above section, we have a little quiz for you:
+Based on the above section:
 
-What is the general theme emerging when we look at biological process in
-the down-regulated genes and the up-regulated genes?
+!!! note "Question"
+    What is the general theme emerging when we look at biological process in the down-regulated genes and the up-regulated genes?
 
-Hint: Have a look at the top GO categories you are getting in the
-results.
 
-How many of the upregulated DEGs are annotated with the biological
-process term emphcell division: GO:0051301 ?
+!!! success ""
+    ??? "**Answer**"
+       We see terms involving the cell cycle and cell division are enriched in the down-regulated genes and terms involving ER stress and protein folding are enriched in the up-regulated genes. 
 
-Answer = 76.
+!!! note "Question"
+    Looking at the biological process (BP) term “cell division: GO:0051301”, how many down-regulated and up-regulated DEGs are annotated with this term, and what statistical significance is associated with this enrichment?
 
-How many of the down-regulated DEGs are annotated with this term?
 
-Answer = 112
+!!! success ""
+    ??? "**Answer**"
+       Look for the row for GO:0051301 in the top 20 BP ontology terms. 
+
 
 There are a number of tools and packages available with the
 R-bioconductor repositories that you can use with your R code to run
-ontologies and pathway analysis. Remember to marry up the annotation
-versions used to the annotation database versions to get the correct
-annotations.
+ontologies and pathway analysis. 
 
 Gene ontology analysis with DAVID
 ---------------------------------
@@ -111,18 +135,18 @@ Click on your Firefox web browser. Go to the DAVID website:
 file `voom_res_sig_lfc.txt` using LibreOffice Calc. For the separator
 options in LibreOffice Calc choose *Separated by tab*. Once you have
 opened this file copy the *Ensembl Gene Ids* (Column A). This list can
-then be pasted into DAVID.\
-\
+then be pasted into DAVID.  
+
 Screenshots of the DAVID website and the steps to move through the
 website are provided in the presentation prepared for this session. Use
-that material to work through this exercise.\
-\
+that material to work through this exercise.  
+
 We will use the Functional Annotation Clustering tool in DAVID. First we
 will uncheck all the defaults and look only at the GO terms involving
 biological process. After unchecking all the defaults, expand Gene
-Ontology and select GOTERM\_BP\_FAT. Then select the button Functional
-Annotation Clustering.\
-\
+Ontology and select GOTERM\_BP\_5. Then select the button Functional
+Annotation Clustering.  
+
 This will bring up a screen where GO terms are clustered. Statistical
 testing is performed to assess whether the GO terms are more enriched in
 the list of DEGs than would be expected by chance. You will see a column
@@ -132,35 +156,45 @@ description of the statistical test used in DAVID
 
 ### Questions and Answers
 
-Based on the above section, we have a small quiz for you:
+Based on the above section:
 
-What is the enrichment score of the most enriched cluster?
+!!! note "Question"
+    What functional themes emerge in Cluster 1 and Cluster 2?
 
-Answers may vary based on the genes entered and the options selected.
 
-How many of the down-regulated DEGs are annotated with this term?
+!!! success ""
+    ??? "**Answer**"
+       Cluster 1 is enriched for cell singling and Cluster 2 is enriched for cell cycle. Note that answers may vary based on the genes entered and the options selected. 
 
-Answers may vary based on the genes entered and the options selected.
+!!! note "Question"
+    How many of the DEGs are annotated with the term “intracellular signal transduction” and name five genes?
 
-Does this seem to be sensible in an experiment that looks at the
-response of cancer cells to a stimulant?
 
-Answers may vary based on the genes entered and the options selected.
+!!! success ""
+    ??? "**Answer**"
+       Looking at the first row of the DAVID results we see that 181 DEGs are annotated with “Intracellular signal transduction”. The first 5 genes listed are DHCR24, HMGCR, ADAP12, ARL5A, ARFGEF3.
+
+!!! note "Question"
+    Does this seem to be sensible in an experiment that looks at the response of cancer cells to a stimulant?
+
 
 ### Gene ontology analysis with GOrilla
 
 Click on your Firefox web browser. Go to the GOrilla website:
-<http://cbl-gorilla.cs.technion.ac.il>\
+<http://cbl-gorilla.cs.technion.ac.il>  
+
 For this tool we will use a background list of genes. Open the file
 `voom_res.txt` using LibreOffice Calc. Copy the *Ensembl Gene Ids*
-(Column A) and paste this into GOrilla as the background set.\
+(Column A) and paste this into GOrilla as the background set.
+
+
 As in the previous exercise we will use the DEGs found by voom
-(`voom_res_sig_lfc.txt`) as the Target set.\
-\
+(`voom_res_sig_lfc.txt`) as the Target set.  
+
 We will firstly look for enriched GO process terms. Screenshots of the
 website showing the steps you need to follow are in the presentation for
-this session.\
-\
+this session.  
+
 GOrilla will display the GO term hierarchy. This shows you which terms
 are parent and child terms and how the terms are related.Under this you
 will find a table of the most significantly enriched GO terms. Have a
@@ -168,34 +202,40 @@ look at the DEGs associated with the most enriched clusters.
 
 ### Questions and Answers
 
-Based on the above section, we have a little quiz for you:
+Based on the above section:
 
-Find the GO term *regulation of cell proliferation* trace the parent
-terms back as far as you can go.
+!!! note "Question"
+    Find the GO term *regulation of cell proliferation* how far can you trace this back to the parent terms. 
 
-regulation of cell proliferation – regulation of cellular process –
-regulation of biological process – biological regulation – biological
-process
+!!! success ""
+    ??? "**Answer**"
+    regulation of cell proliferation – regulation of cellular process – regulation of biological process – biological regulation – biological process
 
-What are the direct child terms of *regulation of cell proliferation*?
+!!! note "Question"
+    What are the direct child terms of *regulation of cell proliferation*?. 
 
-regulation of stem cell proliferation, regulation of sooth muscle cell
-proliferation, positive regulation of cell proliferation
+!!! success ""
+    ??? "**Answer**"
+    regulation of stem cell proliferation, regulation of sooth muscle cell proliferation, positive regulation of cell proliferation, regulation of mesenchymal cell proliferation
 
-What is the enrichment score for *regulation of cell proliferation* ?
-How is this calculated (Hint: scroll down the page for the heading
-Enrichment).
+!!! note "Question"
+    What is the enrichment score for *regulation of cell proliferation* ? How is this calculated (Hint: scroll down the page for the heading Enrichment). 
 
-Answer: 1.58 ((101/867)/(893/12099))
+!!! success ""
+    ??? "**Answer**"
+    1.58 ((104/870)/(919/12137))
+
 
 ### REVIGO to reduce redundancy and visualise
 
 We can use the results generated by the GOrilla web tool as input to
 REVIGO which will summarise the GO data and allow us to visualize the
-simplified data.Click on the link Visualize output in REViGO. Follow the
+simplified data. Click on the link Visualize output in REViGO. Follow the
 screen shots in the presentation.Go to the treemap view.
 
-What are the main functional categories emerging in this analysis?
+!!! note "Question"
+    What are the main functional categories emerging in this analysis? 
+
 
 STRING
 ------
@@ -205,17 +245,21 @@ your Firefox web browser. Go to the STRING website:
 http://string-db.org. For this exercise we will only use the top 500
 DEGs. Go to the file (`voom_res_sig_lfc.txt`) copy only the top 500.
 These will be pasted as input to the STRING website. Follow the screen
-shots in the presentation.\
-\
+shots in the presentation.  
+
 You will see a large interaction network being built from the 500
 DEGs.We will refine this by clicking on the Data settings tab and
 selecting *high confidence* (see the screen shot in the presentation).
 Look at the gene clusters that are generated.
 
 Find the gene CDK1. Look at the cluster generated around this gene. What
-other DEGs are interaction partners of CDK1.\
+other DEGs are interaction partners of CDK1.  
+
 Click on CDK1 and find what functions it is involved in. Click on the
-interaction partners of CDK1 and find their functions.\
-Does this help in further explaining some of the gene ontology results?
+interaction partners of CDK1 and find their functions. 
+
+!!! note "Question"
+    Does this help in further explaining some of the gene ontology results? 
+
 
 Explore other clusters that are formed in this analysis.

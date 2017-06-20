@@ -1,6 +1,8 @@
 Key Learning Outcomes
 ---------------------
 
+
+
 After completing this practical the trainee should be able to:
 
 -   Understand and perform a simple RNA-Seq analysis workflow.
@@ -70,7 +72,7 @@ Introduction
 ------------
 
 The goal of this hands-on session is to perform some basic tasks in the
-downstream analysis of RNA-seq data.\
+downstream analysis of RNA-seq data.
 
 First we will use RNA-seq data from zebrafish. You will align one set of
 reads to the zebrafish using Tophat2. You will then view the aligned
@@ -100,11 +102,9 @@ The data files are contained in the subdirectory called `data` and are
 the following:
 
 `2cells_1.fastq` and `2cells_2.fastq`
-:   \
     These files are based on RNA-seq data of a 2-cell zebrafish embryo
 
 `6h_1.fastq` and `6h_2.fastq`
-:   \
     These files are based on RNA-seq data of zebrafish embryos 6h post
     fertilization
 
@@ -189,7 +189,7 @@ below:
     same, we specify different directories for each run.
 
 It takes some time (approx. 20 min) to perform tophat spliced
-alignments, even for this subset of reads. Therefore, we have
+alignments, on this small subset of reads. Therefore, we have
 pre-aligned the `2cells` data for you using the following command:
 
 You DO NOT need to run this command yourself - we have done this for
@@ -265,30 +265,40 @@ Some useful IGV manuals can be found below
 http://www.broadinstitute.org/software/igv/interpreting_insert_size  
 http://www.broadinstitute.org/software/igv/alignmentdata  
 
-Does the file ’align\_summary.txt’ look interesting? What information
-does it provide?
+!!! note "Question"
+    Does the file ’align\_summary.txt’ look interesting? What information does it provide?
 
-As the name suggests, the file provides a details summary of the
-alignment statistics.
+
+!!! success ""
+    ??? "**Answer**"
+       As the name suggests, the file provides a details summary of the alignment statistics.
+
+
 
 One other important file is ’unmapped.bam’. This file contains the
 unampped reads.
 
-Can you identify the splice junctions from the BAM file?
+!!! note "Question"
+    Can you identify the splice junctions from the BAM file?
 
-Splice junctions can be identified in the alignment BAM files. These are
-the aligned RNA-Seq reads that have skipped-bases from the reference
-genome (most likely introns).
 
-Are the junctions annotated for `CBY1` consistent with the annotation?
+!!! success ""
+    ??? "**Answer**"
+       Splice junctions can be identified in the alignment BAM files. These are the aligned RNA-Seq reads that have skipped-bases from the reference genome (most likely introns).
 
-Read alignment supports an extended length in exon 5 to the gene model
-(cby1-001)
+!!! note "Question"
+    Are the junctions annotated for `CBY1` consistent with the annotation?
+
+
+!!! success ""
+    ??? "**Answer**"
+       Read alignment supports an extended length in exon 5 to the gene model(cby1-001)
+
 
 Once tophat finishes aligning the 6h data you will need to sort the
 alignments found in the BAM file and then index the sorted BAM file.
 
-    samtools sort tophat/ZV9_6h/accepted_hits.bam tophat/ZV9_6h/accepted_hits.sorted
+    samtools sort tophat/ZV9_6h/accepted_hits.bam -o tophat/ZV9_6h/accepted_hits.sorted.bam
     samtools index tophat/ZV9_6h/accepted_hits.sorted.bam
 
 Load the sorted BAM file into IGV, as described previously, and rename
@@ -296,7 +306,7 @@ the track appropriately.
 
 ### Generating Gene Counts
 
-In RNAseq experiments the digital gene expression is recorded as the
+In RNA-seq experiments the digital gene expression is recorded as the
 gene counts or number of reads aligning to a known gene feature. If you
 have a well annotated genome, you can use the gene structure file in a
 standard gene annotation format (GTF or GFF)) along with the spliced
@@ -310,10 +320,10 @@ Isoform Expression and Transcriptome Assembly
 ---------------------------------------------
 
 For non-model organisms and genomes with draft assemblies and incomplete
-annotations, it is a common practice to take and assembly based approach
+annotations, it is a common practice to take an assembly based approach
 to generate gene structures followed by the quantification step. There
 are a number of reference based transcript assemblers available that can
-be used for this purpose such as, cufflinks, stringy. These assemblers
+be used for this purpose such as, cufflinks and stringy. These assemblers
 can give gene or isoform level assemblies that can be used to perform a
 gene/isoform level quantification. These assemblers require an alignment
 of reads with a reference genome or transcriptome as an input. The
@@ -430,13 +440,15 @@ we generated the the GTF-guided transcriptome assemblies:
 3.  In the search box type `ENSDART00000082297` in order for the browser
     to zoom in to the gene of interest.
 
-Do you observe any difference between the Ensembl GTF annotations and
-the GTF-guided transcripts assembled by cufflinks (the “2cells
-GTF-Guided Transcripts” track)?
+!!! note "Question"
+    Do you observe any difference between the Ensembl GTF annotations and the GTF-guided transcripts assembled by cufflinks (the “2cells GTF-Guided Transcripts” track)?
 
-Yes. It appears that the Ensembl annotations may have truncated the last
-exon. However, our data also doesn’t contain reads that span between the
-last two exons.
+
+!!! success ""
+    ??? "**Answer**"
+       Yes. It appears that the Ensembl annotations may have truncated the last exon. However, our data also doesn’t contain reads that span between the last two exons.
+
+
 
 Differential Gene Expression Analysis using edgeR
 -------------------------------------------------
@@ -445,31 +457,17 @@ Differential Gene Expression Analysis using edgeR
 
 The example we are working through today follows a case Study set out in
 the edgeR Users Guide (4.3 Androgen-treated prostate cancer cells
-(RNA-Seq, two groups) which is based on an experiment conducted by Li et
+(RNA-Seq, two groups)) which is based on an experiment conducted by Li et
 al. (2008, Proc Natl Acad Sci USA, 105, 20179-84).
 
-The researches used a prostate cancer cell line (LNCaP cells). These
+The researchers used a prostate cancer cell line (LNCaP cells). These
 cells are sensitive to stimulation by male hormones (androgens). Three
 replicate RNA samples were collected from LNCaP cells treated with an
 androgen hormone (DHT). Four replicates were collected from cells
 treated with an inactive compound. Each of the seven samples was run on
 a lane (7 lanes) of an Illumina flow cell to produce 35 bp reads. The
-experimental design was therefore:
+experimental design was therefore 4 control samples vs 3 treated samples.
 
-[H]
-
-rrr
-
-**Lane** & **Treatment** & **Label**\
-1 & Control & Con1\
-2 & Control & Con2\
-3 & Control & Con3\
-4 & Control & Con4\
-5 & DHT & DHT1\
-6 & DHT & DHT2\
-7 & DHT & DHT3\
-
-[tab:experimental~d~esign]
 
 This workflow requires raw gene count files and these can be generated
 using a utility called featureCounts as demonstrated above. We are using
@@ -488,9 +486,9 @@ Once on the R prompt. Load libraries:
     library(edgeR)
     library(biomaRt)
     library(gplots)
-    library("limma")
-    library("RColorBrewer")
-    library("org.Hs.eg.db")
+    library(limma)
+    library(RColorBrewer)
+    library(org.Hs.eg.db)
 
 ### Read in Data
 
@@ -511,7 +509,8 @@ to do this.
 We start by using the useMart function of BiomaRt to access the human
 data base of ensemble gene ids.
 
-    human<-useMart(host="www.ensembl.org", "ENSEMBL_MART_ENSEMBL", dataset="hsapiens_gene_ensembl") attributes=c("ensembl_gene_id", "entrezgene","hgnc_symbol")
+    human<-useMart(host="www.ensembl.org", "ENSEMBL_MART_ENSEMBL", dataset="hsapiens_gene_ensembl") 
+    attributes=c("ensembl_gene_id", "entrezgene","hgnc_symbol")
 
 We create a vector of our ensemble gene ids.
 
@@ -560,13 +559,12 @@ samples:
     keep <-rowSums( cpm(y)>1) >=3
     y <- y[keep, ]
 
-How many rows (genes) are retained now
+Check how many rows (genes) are retained now.
 
-dim(y) would give you 16494
+    dim(y) 
 
-How many genes were filtered out?
+This gives you 16494 rows indicating that 20941 (37435-16494) genes were filtered out.
 
-do 37435-16494.
 
 As we have removed the lowly expressed genes the total number of counts
 per sample has not changed greatly. Let us check the total number of
@@ -575,7 +573,9 @@ reads per sample in the original data (data) and now after filtering.
 Before:
 
     colSums(data[,1:7])
-    After filtering:
+
+After filtering:
+
     colSums(y$counts)
 
 We will now perform normalization to take account of different library
@@ -594,12 +594,14 @@ should produce a plot as shown in Figure 4):
 
 [H] ![image](images/MDS.png) [fig:MDS plot]
 
-Does the MDS plot indicate a difference in gene expression between the
-Controls and the DHT treated samples?
+!!! note "Question"
+    Does the MDS plot indicate a difference in gene expression between the Controls and the DHT treated samples?
 
-The MDS plot shows us that the controls are separated from the DHT
-treated cells. This indicates that there is a difference in gene
-expression between the conditions.
+
+!!! success ""
+    ??? "**Answer**"
+       The MDS plot shows us that the controls are separated from the DHT treated cells. This indicates that there is a difference in gene expression between the conditions.
+
 
 We will now estimate the dispersion. We start by estimating the common
 dispersion. The common dispersion estimates the overall Biological
@@ -633,14 +635,16 @@ low expression) can be much higher than the common dispersion. For
 example we see genes with a reasonable level of expression with tagwise
 dispersion of 0.4 indicating 40% variation between samples.
 
-If we used the common dispersion for these genes instead of the tagwise
-dispersion what effect would this have?
+!!! note "Question"
+    If we used the common dispersion for these genes instead of the tagwise dispersion what effect would this have?
 
-If we simply used the common dispersion for these genes we would
-underestimate biological variability, which in turn affects whether
-these genes would be identified as being differentially expressed
-between conditions.It is recommended to use the tagwise dispersion,
-which takes account of gene-to-gene variability.
+
+!!! success ""
+    ??? "**Answer**"
+       If we simply used the common dispersion for these genes we would underestimate biological variability, which in turn affects whether these genes would be identified as being differentially expressed between conditions. 
+
+
+It is recommended to use the tagwise dispersion,which takes account of gene-to-gene variability.
 
 Now that we have normalized our data and also calculated the variability
 of gene expression between samples we are in a position to perform
@@ -670,27 +674,31 @@ use the decideTestsDGE function.
 
     summary(de <- decideTestsDGE(et))
 
-This tells us that 2096 genes are downregulated and 2339 genes are
+This tells us that 2086 genes are downregulated and 2345 genes are
 upregulated at 5% FDR.We will now make subsets of the most significant
-upregulated and downregulated genes.
+upregulated and downregulated genes using a log fold change threshhold of 1.5.
 
     alpha=0.05
     lfc=1.5
     edgeR_res_sig<-res[res$FDR<alpha,]
-    edgeR_res_sig_lfc <-edgeR_res_sig[abs(edgeR_res_sig$logFC) >= lfc,]head(edgeR_res_sig, n=20)nrow(edgeR_res_sig)nrow(edgeR_res_sig_lfc)
+    edgeR_res_sig_lfc <-edgeR_res_sig[abs(edgeR_res_sig$logFC) >= lfc,]
+    head(edgeR_res_sig, n=20)
+    nrow(edgeR_res_sig)
+    nrow(edgeR_res_sig_lfc)
 
 We can write out these results to our current directory.
 
     write.table(edgeR_res_sig , "edgeR_res_sig.txt", sep="\t", col.names=NA, quote=F)
     write.table(edgeR_res_sig_lfc , "edgeR_res_sig_lfc.txt", sep="\t", col.names=NA, quote=F)
 
-How many differentially expressed genes are there?
+!!! note "Question"
+     How many differentially expressed genes are are found by edgeR before and after requiring the log fold change of 1.5?
 
-4435
+!!! success ""
+    ??? "**Answer**"
+       There are 4431 DEGs at an FDR = 0.05 which reduces to 1148 if we require a log fold change of 1.5.
 
-How many upregulated genes and downregulated genes do we have?
 
-2339 2096
 
 Differential expression using the Voom function and the limma package
 ---------------------------------------------------------------------
@@ -729,7 +737,16 @@ of alpha (0.05) and log fold change (1.5) used previously.
 
 How many differentially expressed genes are identified?
 
-    nrow(voom_res_sig)nrow(voom_res_sig_lfc)
+    nrow(voom_res_sig)
+    nrow(voom_res_sig_lfc)
+    
+!!! note "Question"
+     How many differentially expressed genes are found using voom before and after requiring the log fold change of 1.5?
+
+!!! success ""
+    ??? "**Answer**"
+       There are 4103 DEGs at an FDR = 0.05 which reduces to 1109 if we require a log fold change of 1.5.
+
 
 We will write out these results.
 
@@ -772,6 +789,8 @@ Differential Expression using cuffdiff
 --------------------------------------
 
 This is optional exercise and will be run if time permits.
+
+NOTE: If this exercise is to be attempted it is necessary to leave the directory we have been working in and go back to the zebra fish data. Commands should be executed from the rnaseq directory.
 
 One of the stand-alone tools that perform differential expression
 analysis is Cuffdiff. We use this tool to compare between two
@@ -896,8 +915,7 @@ Load the require R package.
 
 Read in the cuffdiff output
 
-    cuff<-readCufflinks(dir="/home/trainee/Desktop/rnaseq/cuffdiff", \
-    gtfFile='Danio_rerio.Zv9.66.gtf',genome="Zv9", rebuild=T)
+    cuff<-readCufflinks(dir="/home/trainee/rnaseq/cuffdiff”, gtfFile='Danio_rerio.Zv9.66.gtf',genome="Zv9", rebuild=T)
 
 Assess the distribution of FPKM scores across samples
 
