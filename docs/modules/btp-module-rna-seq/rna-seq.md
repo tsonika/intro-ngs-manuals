@@ -298,7 +298,7 @@ unampped reads.
 Once tophat finishes aligning the 6h data you will need to sort the
 alignments found in the BAM file and then index the sorted BAM file.
 
-    samtools sort tophat/ZV9_6h/accepted_hits.bam tophat/ZV9_6h/accepted_hits.sorted
+    samtools sort tophat/ZV9_6h/accepted_hits.bam -o tophat/ZV9_6h/accepted_hits.sorted.bam
     samtools index tophat/ZV9_6h/accepted_hits.sorted.bam
 
 Load the sorted BAM file into IGV, as described previously, and rename
@@ -460,7 +460,7 @@ the edgeR Users Guide (4.3 Androgen-treated prostate cancer cells
 (RNA-Seq, two groups)) which is based on an experiment conducted by Li et
 al. (2008, Proc Natl Acad Sci USA, 105, 20179-84).
 
-The researches used a prostate cancer cell line (LNCaP cells). These
+The researchers used a prostate cancer cell line (LNCaP cells). These
 cells are sensitive to stimulation by male hormones (androgens). Three
 replicate RNA samples were collected from LNCaP cells treated with an
 androgen hormone (DHT). Four replicates were collected from cells
@@ -790,7 +790,7 @@ Differential Expression using cuffdiff
 
 This is optional exercise and will be run if time permits.
 
-NOTE: If this exercise is to be attempted it is necessary to leave the directory we have been working in and go back to the zebra fish data.
+NOTE: If this exercise is to be attempted it is necessary to leave the directory we have been working in and go back to the zebra fish data. Commands should be executed from the rnaseq directory.
 
 One of the stand-alone tools that perform differential expression
 analysis is Cuffdiff. We use this tool to compare between two
@@ -915,8 +915,7 @@ Load the require R package.
 
 Read in the cuffdiff output
 
-    cuff<-readCufflinks(dir="/home/trainee/Desktop/rnaseq/cuffdiff", \
-    gtfFile='Danio_rerio.Zv9.66.gtf',genome="Zv9", rebuild=T)
+    cuff<-readCufflinks(dir="/home/trainee/rnaseq/cuffdiff”, gtfFile='Danio_rerio.Zv9.66.gtf',genome="Zv9", rebuild=T)
 
 Assess the distribution of FPKM scores across samples
 
