@@ -68,10 +68,16 @@ Open the Terminal and go to the `rnaseq/edgeR` working directory:
     All commands entered into the terminal for this tutorial should be from
     within the **`/home/trainee/rnaseq/edgeR`** directory.
 
+R (press enter)
+
 Check that the directory you are in contains the above-mentioned fit_v file by
 typing:
 
-    ls data
+    ls()
+    library(limma)
+    library(RColorBrewer)
+    library(gplots)
+    library(org.Hs.eg.db)
 
 We will use the goana function to obtain the gene ontology terms associated with the DEGs.
 
@@ -81,7 +87,7 @@ Now we will look at the most significant biological process (BP)ontology
 terms
 
     DE_GOana_top_BP<- topGO(DE_GOana, ontology=c("BP"), number=150L, truncate.term=50)
-    head(DE_GOana_top_BP, 15)      
+    head(DE_GOana_top_BP, 20)      
     DE_GOana_top_BP_down<- topGO(DE_GOana, ontology=c("BP"), sort = "down", number=150L, truncate.term=50)
     head(DE_GOana_top_BP_down, 10)
     DE_GOana_top_BP_up<- topGO(DE_GOana, ontology=c("BP"), sort = "up", number=150L, truncate.term=50)
@@ -114,7 +120,7 @@ Based on the above section:
 
 !!! success ""
     ??? "**Answer**"
-       Down-regulated DEGs, n=104 (PVal = 2.12e-09), up-regulated DEGs, n=62 (PVal = 9.69e-01). 
+       Look for the row for GO:0051301 in the top 20 BP ontology terms. 
 
 
 There are a number of tools and packages available with the
