@@ -45,11 +45,6 @@ http://www.r-project.org/
 
 -  ftp://ftp.ensemblgenomes.org/pub/release-8/bacteria/fasta/Staphylococcus/s_aureus_mrsa252/dna/s_aureus_mrsa252.EB1_s_aureus_mrsa252.dna.chromosome.Chromosome.fa.gz
 
--   http://www.ebi.ac.uk/ena/data/view/SRS004748
-
--   ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR022/SRR022825/SRR022825.fastq.gz
-
--   ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR022/SRR022823/SRR022823.fastq.gz
 
 -   http://www.ebi.ac.uk/ena/data/view/SRX008042
 
@@ -61,17 +56,6 @@ http://www.r-project.org/
 
 -   ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR023/SRR023408/SRR023408_2.fastq.gz
 
--   http://www.ebi.ac.uk/ena/data/view/SRX000181
-
--   ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR000/SRR000892/SRR000892.fastq.gz
-
--   ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR000/SRR000893/SRR000893.fastq.gz
-
--   http://www.ebi.ac.uk/ena/data/view/SRX007709
-
--   ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR022/SRR022863/SRR022863_1.fastq.gz
-
--   ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR022/SRR022863/SRR022863_2.fastq.gz
 
 Introduction
 ------------
@@ -109,7 +93,6 @@ directories one-at-a-time by doing this instead:
     mkdir NGS/velvet
     mkdir NGS/velvet/part1
     mkdir NGS/velvet/part2
-    mkdir NGS/velvet/part3
 
 After creating the directories, examine the structure and move into the
 directory ready for the first velvet exercise by typing:
