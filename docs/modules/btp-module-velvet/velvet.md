@@ -247,7 +247,7 @@ they’re worth it!
 
 The data you will examine in this exercise is again from Staphylococcus
 aureus which has a genome of around 3MBases. The reads are Illumina
-paired end with an insert size of $~$350 bp.
+paired end with an insert size of ~350 bp.
 
 The required data can be downloaded from the SRA. Specifically, the run
 data (SRR022852) from the SRA Sample SRS004748.
@@ -297,24 +297,28 @@ as reported by `top`. Time the `velvetg` stage:
     velveth run_25 25 -fmtAuto -create_binary -shortPaired -separate SRR022852_1.fastq.gz SRR022852_2.fastq.gz
     time velvetg run_25
 
-What does `-fmtAuto` and `-create_binary` do? (see help menu)
+!!! note "Question"
+    What does `-fmtAuto` and `-create_binary` do? (see help menu)
 
-`-fmtAuto` tries to detect the correct format of the input files e.g.
-FASTA, FASTQ and whether they are compressed or not.
+!!! success ""
+    ??? "Answer"
+        `-fmtAuto` tries to detect the correct format of the input files e.g. FASTA, FASTQ and whether they are compressed or not.     
+        `-create_binary` outputs sequences as a binary file. That means that `velvetg` can read the sequences from the binary file more quickly that from the original sequence files.
 
-`-create_binary` outputs sequences as a binary file. That means that
-`velvetg` can read the sequences from the binary file more quickly that
-from the original sequence files.
+!!! note "Question"
+    Comment on the use of memory and CPU for `velveth` and `velvetg`?
 
-Comment on the use of memory and CPU for `velveth` and `velvetg`?
+!!! success ""
+    ??? "Answer"
+        `velveth` uses only one CPU while `velvetg` uses all possible CPUs for some parts of the calculation.
 
-`velveth` uses only one CPU while `velvetg` uses all possible CPUs for
-some parts of the calculation.
+!!! note "Question"
+    How long did `velvetg` take?
 
-How long did `velvetg` take?
-
-My own measurements are:\
-`real 1m8.877s; user 4m15.324s; sys 0m4.716s`
+!!! success ""
+    ??? "Answer"
+        My own measurements are:     
+        `real 1m8.877s; user 4m15.324s; sys 0m4.716s`
 
 Next, after saving your `contigs.fa` file from being overwritten, set
 the cut-off parameters that you investigated in the previous exercise
@@ -333,14 +337,19 @@ will see in the `velvetg` output. The command is, of course:
     mv run_25/contigs.fa run_25/contigs.fa.1
     time velvetg run_25 -cov_cutoff 16 -exp_cov 26
 
-Comment on the time required, use of memory and CPU for `velvetg`?
+!!! note "Question"
+    Comment on the time required, use of memory and CPU for `velvetg`?
 
-Runtime is lower when velvet can reuse previously calculated data. By
-using `-exp_cov`, the memory usage increases.
+!!! success ""
+    ??? "Answer"
+        Runtime is lower when velvet can reuse previously calculated data. By using `-exp_cov`, the memory usage increases.
 
-Which insert length does Velvet estimate?
+!!! note "Question"
+    Which insert length does Velvet estimate?
 
-Paired-end library 1 has length: 228, sample standard deviation: 26
+!!! success ""
+    ??? "Answer"
+        Paired-end library 1 has length: 228, sample standard deviation: 26
 
 Next try running `velvetg` in ‘paired-end mode‘. This entails running
 `velvetg` specifying the insert length with the parameter `-ins_length`
@@ -353,67 +362,71 @@ version of `contigs.fa`. The commands are:
     time velvetg run_25 -cov_cutoff 16 -exp_cov 26 -ins_length 350
     mv run_25/contigs.fa run_25/contigs.fa.3
 
-How fast was this run?
+!!! note "Question"
+    How fast was this run?
 
-My own measurements are:\
-`real 0m29.792s; user 1m4.372s; sys 0m3.880s`
+!!! success ""
+    ??? "Answer"
+        My own measurements are:     
+        `real 0m29.792s; user 1m4.372s; sys 0m3.880s`
 
 Take a look into the Log file.
 
-What is the N50 value for the `velvetg` runs using the switches:\
-
-Base run: 19,510 bp
-
-`-cov_cutoff 16`
-
-24,739 bp
-
-`-cov_cutoff 16 -exp_cov 26`
-
-61,793 bp
-
-`-cov_cutoff 16 -exp_cov 26 -ins_length 350`
-
-n50 of 62,740 bp; max 194,649 bp; total 2,871,093 bp
+!!! note "Question"
+    What is the N50 value for the `velvetg` runs using the switches
+!!! success ""
+    ??? "Answer"
+        Base run: 19,510 bp    
+        `-cov_cutoff 16`: 24,739 bp     
+        `-cov_cutoff 16 -exp_cov 26`: 61,793 bp     
+        `-cov_cutoff 16 -exp_cov 26 -ins_length 350`: n50 of 62,740 bp; max 194,649 bp; total 2,871,093 bp     
 
 Try giving the `-cov_cutoff` and/or `-exp_cov` parameters the value
 `auto`. See the `velvetg` help to show you how. The information Velvet
 prints during running includes information about the values used
 (coverage cut-off or insert length) when using the `auto` option.
 
-What coverage values does Velvet choose (hint: look at the output that
-Velvet produces while running)?
+!!! note "Question"
+    What coverage values does Velvet choose (hint: look at the output that Velvet produces while running)?
 
-Median coverage depth = 26.021837\
-Removing contigs with coverage $<$ 13.010918 …
+!!! success ""
+    ??? "Answer"
+        Median coverage depth = 26.021837    
+        Removing contigs with coverage < 13.010918 …
 
-How does the N50 value change?
+!!! note "Question"
+    How does the N50 value change?
 
-n50 of 68,843 bp; max 194,645 bp; total 2,872,678 bp
+!!! success ""
+    ??? "Answer"
+        n50 of 68,843 bp; max 194,645 bp; total 2,872,678 bp
 
 Run `gnx` on all the `contig.fa` files you have generated in the course
 of this exercise. The command will be:
 
     gnx -min 100 -nx 25,50,75 run_25/contigs.fa*
 
-For which runs are there Ns in the `contigs.fa` file and why?
+!!! note "Question"
+    For which runs are there Ns in the `contigs.fa` file and why?
 
-contigs.fa.2, contigs.fa.3, contigs.fa\
+!!! success ""
+    ??? "Answer"
+        contigs.fa.2, contigs.fa.3, contigs.fa
+
 Velvet tries to use the provided (or infers) the insert length and fills
 ambiguous regions with Ns.
 
 Comment on the number of contigs and total length generated for each
 run.
 
-  Filename       No. contigs   Total length   No. Ns
-  -------------- ------------- -------------- --------
-  Contigs.fa.0   631           2,830,659      0
-  Contigs.fa.1   580           2,832,670      0
-  Contigs.fa.2   166           2,849,919      4,847
-  Contigs.fa.3   166           2,856,795      11,713
-  Contigs.fa     163           2,857,439      11,526
+| Filename    |  No. contigs |  Total length  |  No. Ns  |
+| ----------  | - -----------| --------------:|: -------:|
+| Contigs.fa.0|   631        |  2,830,659     | 0        |
+| Contigs.fa.1|   580        |  2,832,670     | 0        |
+| Contigs.fa.2|   166        |  2,849,919     | 4,847    |
+| Contigs.fa.3|   166        |  2,856,795     | 11,713   |
+| Contigs.fa  |   163        |  2,857,439     | 11,526   |
 
-  : \[tab:velvetrunresults\]
 
 AMOS Hawkeye
 ------------
@@ -434,18 +447,19 @@ Looking at the scaffold view of a contig, comment on the proportion of
 Nearly all mates are compressed with no stretched mates and very few
 happy mates.
 
-What is the mean and standard deviation of the insert size reported
-under the Libraries tab?
+!!! note "Question"
+    What is the mean and standard deviation of the insert size reported under the Libraries tab?
 
-Mean: 350 bp SD: 35 bp
+!!! success ""
+    ??? "Answer"
+        Mean: 350 bp SD: 35 bp
 
-Look at the actual distribution of insert sizes for this library. Can
-you explain where there is a difference between the mean and SD reported
-in those two places?
+!!! note "Question"
+    Look at the actual distribution of insert sizes for this library. Can you explain where there is a difference between the mean and SD reported in those two places?
 
-We specified `-ins_length 350` to the `velvetg` command. Velvet uses
-this value, in the AMOS message file that it outputs, rather than its
-own estimate.
+!!! success ""
+    ??? "Answer"
+        We specified `-ins_length 350` to the `velvetg` command. Velvet uses this value, in the AMOS message file that it outputs, rather than its own estimate.
 
 You can get AMOS to re-estimate the mean and SD of insert sizes using
 intra-contig pairs. First, close Hawkeye and then run the following
@@ -460,26 +474,27 @@ Looking at the scaffold view of a contig, comment on the proportion of
 There are only a few compressed and stretched mates compared to happy
 mates. There are similar numbers of stretched and compressed mates.
 
-What is the mean and standard deviation of the insert size reported
-under the Libraries tab?
+!!! note "Question"
+    What is the mean and standard deviation of the insert size reported under the Libraries tab?
 
-TODO Mean: 226 bp SD: 25 bp
+!!! success ""
+    ??? "Answer"
+        Mean: 226 bp SD: 25 bp
 
-Look at the actual distribution of insert sizes for this library. Does
-the mean and SD reported in both places now match?
+!!! note "Question"
+    Look at the actual distribution of insert sizes for this library. Does the mean and SD reported in both places now match?
 
-Yes
+!!! success ""
+    ??? "Answer"
+        Yes
 
-Can you find a region with an unusually high proportion of stretched,
-compressed, incorrectly orientated or linking mates? What might this
-situation indicate?
+!!! note "Question"
+    Can you find a region with an unusually high proportion of stretched, compressed, incorrectly orientated or linking mates? What might this situation indicate?
 
-This would indicate a possible misassembly and worthy of further
-investigation.
-
-Look at the largest scaffold, there are stacks of stretched pairs which
-span contig boundaries. This indicates that the gap size has been
-underestimated during the scaffolding phase.
+!!! success ""
+    ??? "Answer"
+        This would indicate a possible misassembly and worthy of further investigation.     
+        Look at the largest scaffold, there are stacks of stretched pairs which span contig boundaries. This indicates that the gap size has been underestimated during the scaffolding phase.
 
 Velvet and Data Quality
 -----------------------
@@ -520,49 +535,63 @@ commands:
 
     fastqc &
 
-Open the two compressed FASTQ files (File $->$ Open) by selecting them
+Open the two compressed FASTQ files (File -> Open) by selecting them
 both and clicking OK). Look at tabs for both files:
 
-![\[fig:paired\_fastqc\]](handout/velvet/paired_fastqc.png){width="80.00000%"}
+![image](images/paired_fastqc.png)
 
-Are the quality scores the same for both files?
+!!! note "Question"
+    Are the quality scores the same for both files?
 
-Overall yes
+!!! success ""
+    ??? "Answer"
+        Overall yes
 
-Which value varies?
+!!! note "Question"
+    Which value varies?
 
-Per sequence quality scores
+!!! success ""
+    ??? "Answer"
+        Per sequence quality scores
 
-Take a look at the Per base sequence quality for both files. Did you
-note that it is not good for either file?
+!!! note "Question"
+    Take a look at the Per base sequence quality for both files. Did you note that it is not good for either file?
 
-The quality score of both files drop very fast. Qualities of the REV
-strand drop faster than the FWD strand. This is because the template has
-been sat around while the FWD strand was sequenced.
+!!! success ""
+    ??? "Answer"
+        The quality score of both files drop very fast. Qualities of the REV strand drop faster than the FWD strand. This is because the template has been sat around while the FWD strand was sequenced.
 
-At which positions would you cut the reads if we did “fixed length
-trimming”?
+!!! note "Question"
+    At which positions would you cut the reads if we did “fixed length trimming”?
 
-Looking at the “Per base quality" and “Per base sequence content”, I
-would choose around 27
+!!! success ""
+    ??? "Answer"
+        Looking at the “Per base quality" and “Per base sequence content”, I would choose around 27
 
-Why does the quality deteriorate towards the end of the read?
+!!! note "Question"
+    Why does the quality deteriorate towards the end of the read?
 
-Errors more likely for later cycles
+!!! success ""
+    ??? "Answer"
+        Errors more likely for later cycles
 
-Does it make sense to trim the 5’ start of reads?
+!!! note "Question"
+    Does it make sense to trim the 5’ start of reads?
 
-Looking at the “Per base sequence content", yes - there is a clear
-signal at the beginning.
+!!! success ""
+    ??? "Answer"
+        Looking at the “Per base sequence content", yes - there is a clear signal at the beginning.
 
 Have a look at the other options that FastQC offers.
 
-Which other statistics could you use to support your trimming strategy?
+!!! note "Question"
+    Which other statistics could you use to support your trimming strategy?
 
-“Per base sequence content", “Per base GC content", “Kmer content", “Per
-base sequence quality"
+!!! success ""
+    ??? "Answer" 
+        “Per base sequence content", “Per base GC content", “Kmer content", “Per base sequence quality"
 
-![\[fig:paired\_fastqc\_quality\_plots\]](handout/velvet/paired_fastqc_quality_plots.png){width="80.00000%"}
+![image](images/paired_fastqc_quality_plots.png)
 
 Once you have decided what your trim points will be, close FastQC. We
 will use `fastx_trimmer` from the FASTX-Toolkit to perform fixed-length
@@ -606,19 +635,28 @@ two executions of `velveth` into suitably named directories, followed by
     velveth run_21trim 21 -fmtAuto -create_binary -shortPaired -separate SRR023408_trim1.fastq SRR023408_trim2.fastq
     time velvetg run_21trim
 
-How long did the two `velvetg` runs take?
+!!! note "Question"
+    How long did the two `velvetg` runs take?
 
-run\_25: `real 3m16.132s; user 8m18.261s; sys 0m7.317s`\
-run\_25trim: `real 1m18.611s; user 3m53.140s; sys 0m4.962s`
+!!! success ""
+    ??? "Answer"
+        run_25: `real 3m16.132s; user 8m18.261s; sys 0m7.317s`     
+        run_25trim: `real 1m18.611s; user 3m53.140s; sys 0m4.962s`
 
-What N50 scores did you achieve?
+!!! note "Question"
+    What N50 scores did you achieve?
 
-Untrimmed: 11\
-Trimmed: 15
+!!! success ""
+    ??? "Answer"
+        Untrimmed: 11     
+        Trimmed: 15
 
-What were the overall effects of trimming?
+!!! note "Question"
+    What were the overall effects of trimming?
 
-Time saving, increased N50, reduced coverage
+!!! success ""
+    ??? "Answer"
+        Time saving, increased N50, reduced coverage
 
 The evidence is that trimming improved the assembly. The thing to do
 surely, is to run `velvetg` with the `-cov_cutoff` and `-exp_cov`. In
@@ -626,19 +664,18 @@ order to use `-cov_cutoff` and `-exp_cov` sensibly, you need to
 investigate with R, as you did in the previous exercise, what parameter
 values to use. Start up R and produce the weighted histograms:
 
-``` {style="R"}
-R --no-save
-library(plotrix) 
-data <- read.table("run_21/stats.txt", header=TRUE) 
-data2 <- read.table("run_21trim/stats.txt", header=TRUE) 
-par(mfrow=c(1,2))
-weighted.hist(data$short1_cov, data$lgth, breaks=0:50)
-weighted.hist(data2$short1_cov, data2$lgth, breaks=0:50)
-```
+    R --no-save
+    library(plotrix) 
+    data <- read.table("run_21/stats.txt", header=TRUE) 
+    data2 <- read.table("run_21trim/stats.txt", header=TRUE) 
+    par(mfrow=c(1,2))
+    weighted.hist(data$short1_cov, data$lgth, breaks=0:50)
+    weighted.hist(data2$short1_cov, data2$lgth, breaks=0:50)
 
-![\[fig:velvet\_Rplot002\] Weighted k-mer coverage histograms of the
-paired-end reads pre-trimmed (left) and post-trimmed
-(right).](handout/velvet/velvet_Rplot002.png){width="80.00000%"}
+Weighted k-mer coverage histograms of the paired-end reads pre-trimmed (left) and post-trimmed
+(right).
+
+![image](images/velvet_Rplot002.png)
 
 For the untrimmed read histogram (left) there is an expected coverage of
 around 13 with a coverage cut-off of around 7. For the trimmed read
@@ -648,63 +685,66 @@ coverage cut-off of around 5.
 If you disagree, feel free to try different settings, but first quit R
 before running `velvetg`:
 
-``` {style="R"}
-q()
-```
+    q()
 
     time velvetg run_21 -cov_cutoff 7 -exp_cov 13 -ins_length 92
     time velvetg run_21trim -cov_cutoff 5 -exp_cov 9 -ins_length 92
 
-How good does it look now?\
+!!! note "Question"
+    How good does it look now?
 
-Still not great
+!!! success ""
+    ??? "Answer" 
+        Still not great     
+        Runtime: Reduced runtime     
+        Memory: Lower memory usage
 
-Comment on:\
-Runtime
+!!! note "Question"
+    K-mer choice (Can you use k-mer 31 for a read of length 30 bp?)
 
-Reduced runtime
+!!! success ""
+    ??? "Answer"
+        K-mer has to be lower than the read length and the K-mer coverage should be sufficient to produce results.
 
-Memory
+!!! note "Question"
+    Does less data mean “worse" results?
 
-Lower memory usage
+!!! success ""
+    ??? "Answer"
+        Not necessarily. If you have lots of data you can safely remove poor data without too much impact on overall coverage.
 
-k-mer choice (Can you use k-mer 31 for a read of length 30 bp?)
 
-K-mer has to be lower than the read length and the K-mer coverage should
-be sufficient to produce results.
+Compare the results, produced during the last exercises, with each other, 
 
-Does less data mean “worse" results?
+| Metric                  | SRR022852                   | SRR023408             | SRR023408.trimmed      |
+|:----------------------- |:-------------------------- :|:-------------------- :|: ---------------------:|
+| Overall Quality (1-5)   | 2                           | 5                     | 4                      |
+| bp Coverage             | 136 x (36 bp;11,374,488)    | 95x (37bp; 7761796)   | 82x (32bp; 7761796)    |
+| k-mer Coverage          | 45x                         | 43x (21); 33x (25)    | 30x (21); 20.5x (25)   |
+| N50 (k-mer used)        | 68,843 (25)                 | 2,803 (21)            | 2,914 (21)             |
 
-Not necessarily. If you have lots of data you can safely remove poor
-data without too much impact on overall coverage.
 
-How would a smaller/larger k-mer size behave?
+!!! note "Question"
+    What would you consider as the “best" assembly?
 
-Compare the results, produced during the last exercises, with each
-other:
+!!! success ""
+    ??? "Answer"
+        SRR022852
 
-[0.9]{}[l|l|l|l]{} Metric & SRR022852 & SRR023408 & SRR023408.trimmed\
-Overall Quality (1-5) & & &\
-bp Coverage & & &\
-k-mer Coverage & & &\
-N50 (k-mer used) & & &\
+!!! note "Question"
+    If you found a candidate, why do you consider it as “best" assembly?
 
-[0.9]{}[l|l|l|l]{} Metric & SRR022852 & SRR023408 & SRR023408.trimmed\
-Overall Quality (1-5) & 2 & 5 & 4\
-bp Coverage & 136 x (36 bp;11,374,488) & 95x (37bp; 7761796) & 82x
-(32bp; 7761796)\
-k-mer Coverage & 45x & 43x (21); 33x (25) & 30x (21); 20.5x (25)\
-N50 (k-mer used) & 68,843 (25) & 2,803 (21) & 2,914 (21)\
+!!! success ""
+    ??? "Answer"
+       Overall data quality and coverage
 
-What would you consider as the “best" assembly?
+!!! note "Question"
+    How else might you assess the the quality of an assembly? 
 
-SRR022852
+!!! hint ""
+    ??? "**Hint**"
+        Hawkeye
 
-If you found a candidate, why do you consider it as “best" assembly?
-
-Overall data quality and coverage
-
-How else might you assess the the quality of an assembly? Hint: Hawkeye.
-
-By trying to identify paired-end constraint violations using AMOS
-Hawkeye.
+!!! success ""
+    ??? "Answer"
+        By trying to identify paired-end constraint violations using AMOS Hawkeye.
