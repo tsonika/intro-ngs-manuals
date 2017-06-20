@@ -8,14 +8,10 @@ After completing this practical the trainee should be able to:
 
 -   Be able to choose appropriate assembly parameters
 
--   Assemble a set of single-ended reads
-
 -   Assemble a set of paired-end reads from a single insert-size library
 
 -   Be able to visualise an assembly in AMOS Hawkeye
 
--   Understand the importance of using paired-end libraries in *de novo*
-    genome assembly
 
 Resources You’ll be Using
 -------------------------
@@ -217,8 +213,8 @@ For a further description of velvet compile and runtime parameters
 please see the velvet Manual:
 https://github.com/dzerbino/velvet/wiki/Manual
 
-Assembling Paired-end Reads
----------------------------
+Assembling Paired-end Reads using Velvet
+----------------------------------------
 
 The use of paired-end data in *de novo* genome assembly results in
 better quality assemblies, particularly for larger, more complex
