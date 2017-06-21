@@ -18,13 +18,7 @@ extra:
   feature:
     tabs: true
 
-  logo: 'media/logos/bpalogo.png'
-
-  site_favicon: 'media/logos/bpalogo.png'
-
-#  social:
-#    - type: github
-#      link: https://bpa-csiro-workshops.github.io/intro-ngs-manuals
+  site_favicon: 'media/logos/Bioplatforms-Australia-favicon2.png'
 
 markdown_extensions:
     - admonition
@@ -60,8 +54,8 @@ pages:
 - The Trainers: trainers/trainers.md
 - Timetable:
   - Intro to NGS: timetables/timetable_introNGS.md
-  - Cancer Genomics: timetables/timetable_cancer.md
-  - Long Read: timetables/timetable_longRead.md
+  #- Cancer Genomics: timetables/timetable_cancer.md
+  #- Long Read: timetables/timetable_longRead.md
 - Workshop Information: preamble.md
 
 # - All Modules:
@@ -101,25 +95,25 @@ pages:
     - de novo Genome Assembly: modules/btp-module-velvet/velvet.md
     - DeNovo Canu: modules/btp-module-denovo-canu/denovo_canu.md
 
-- Cancer Genomics Modules:
-    - Read Alignment: modules/cancer-module-alignment/alignment.md
-    - Single Nucleotide Variant Calling and Annotation: modules/cancer-module-snv/snv.md
-    - Copy Number Variation: modules/cancer-module-cnv/cnv-tut.md
-    - Structural Variant Analysis: modules/cancer-module-sv/sv_tut.md
-    - Variant Visualisation: modules/cancer-module-viz/visu.md
-    - Somatic Mutations:
-        - Assessing somatic mutational signatures: modules/cancer-module-somatic/01_signatures.md
-        - Cohort analysis for the identification of driver genes: modules/cancer-module-somatic/02_intogen.md
+#- Cancer Genomics Modules:
+#    - Read Alignment: modules/cancer-module-alignment/alignment.md
+#    - Single Nucleotide Variant Calling and Annotation: modules/cancer-module-snv/snv.md
+#    - Copy Number Variation: modules/cancer-module-cnv/cnv-tut.md
+#    - Structural Variant Analysis: modules/cancer-module-sv/sv_tut.md
+#    - Variant Visualisation: modules/cancer-module-viz/visu.md
+#    - Somatic Mutations:
+#        - Assessing somatic mutational signatures: modules/cancer-module-somatic/01_signatures.md
+#        - Cohort analysis for the identification of driver genes: modules/cancer-module-somatic/02_intogen.md
 
-- DeNovo Modules:
+#- DeNovo Modules:
 #    - DeNovo Command Line: modules/denovo-module-cli/commandline.md
-    - Bacterial Assembly: modules/denovo-module-bac/bac_asm.md
-    - Eukaryote Assembly: modules/denovo-module-euk/eukaryotic_assem.md
-    - Scaffolding: modules/denovo-module-scaffolding/scaffold.md
+#    - Bacterial Assembly: modules/denovo-module-bac/bac_asm.md
+#    - Eukaryote Assembly: modules/denovo-module-euk/eukaryotic_assem.md
+#    - Scaffolding: modules/denovo-module-scaffolding/scaffold.md
 
-- Metagenomics Modules:
-    - Metagenomics QC: modules/metagenomics-module-qc/ngs-qc.md
-    - Metagenomics Taxonomic: modules/metagenomics-module-tax/tax.md
-    - Metagenomics Visualisation: modules/metagenomics-module-vis/vis.md
-    - Metagenomics WGA: modules/metagenomics-module-wga/wga.md
-    - Metagenomics Functional Analysis: modules/metagenomics-module-fda/fda.md
+#- Metagenomics Modules:
+#    - Metagenomics QC: modules/metagenomics-module-qc/ngs-qc.md
+#    - Metagenomics Taxonomic: modules/metagenomics-module-tax/tax.md
+#    - Metagenomics Visualisation: modules/metagenomics-module-vis/vis.md
+#    - Metagenomics WGA: modules/metagenomics-module-wga/wga.md
+#    - Metagenomics Functional Analysis: modules/metagenomics-module-fda/fda.md
