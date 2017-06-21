@@ -25,18 +25,6 @@
      <changefreq>daily</changefreq>
     </url>
         
-    <url>
-     <loc>/timetables/timetable_cancer/</loc>
-     <lastmod>2017-06-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/timetables/timetable_longRead/</loc>
-     <lastmod>2017-06-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
     
 
     
@@ -93,102 +81,6 @@
         
     <url>
      <loc>/modules/btp-module-denovo-canu/denovo_canu/</loc>
-     <lastmod>2017-06-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>/modules/cancer-module-alignment/alignment/</loc>
-     <lastmod>2017-06-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/modules/cancer-module-snv/snv/</loc>
-     <lastmod>2017-06-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/modules/cancer-module-cnv/cnv-tut/</loc>
-     <lastmod>2017-06-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/modules/cancer-module-sv/sv_tut/</loc>
-     <lastmod>2017-06-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/modules/cancer-module-viz/visu/</loc>
-     <lastmod>2017-06-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc></loc>
-     <lastmod></lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>/modules/denovo-module-bac/bac_asm/</loc>
-     <lastmod>2017-06-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/modules/denovo-module-euk/eukaryotic_assem/</loc>
-     <lastmod>2017-06-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/modules/denovo-module-scaffolding/scaffold/</loc>
-     <lastmod>2017-06-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>/modules/metagenomics-module-qc/ngs-qc/</loc>
-     <lastmod>2017-06-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/modules/metagenomics-module-tax/tax/</loc>
-     <lastmod>2017-06-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/modules/metagenomics-module-vis/vis/</loc>
-     <lastmod>2017-06-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/modules/metagenomics-module-wga/wga/</loc>
-     <lastmod>2017-06-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/modules/metagenomics-module-fda/fda/</loc>
      <lastmod>2017-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
