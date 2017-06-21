@@ -5,12 +5,12 @@ To see information on the initial Mkdocs setup see: https://bpa-csiro-workshops.
 
 ## Deployment
 
-The tutorials have been deployed here: https://bpa-csiro-workshops.github.io/btp-manuals-md  
+The tutorials have been deployed here: https://bpa-csiro-workshops.github.io/intro-ngs-manuals  
 The template has been depolyed here: https://bpa-csiro-workshops.github.io/btp-module-template-md/
 
 ## Github Repository
 
-The tutorials Github repo is here: https://github.com/BPA-CSIRO-Workshops/btp-manuals-md  
+The tutorials Github repo is here: https://github.com/BPA-CSIRO-Workshops/intro-ngs-manuals  
 The template GitHub repo is here: https://github.com/BPA-CSIRO-Workshops/btp-module-template-md
 
 ## How to work on them locally
@@ -51,13 +51,13 @@ pip install -U package_name
 
 We will be using a fork and pull collaborative model: https://github.com/BPA-CSIRO-Workshops/btp-workshop-template#fork-and-pull-collaborative-model
 
-First fork https://github.com/BPA-CSIRO-Workshops/btp-manuals-md to your own GitHub account.  
+First fork https://github.com/BPA-CSIRO-Workshops/intro-ngs-manuals to your own GitHub account.  
 
 You can then clone the repo from your GitHub account
 
 ```
-git clone https://github.com/*Your_GitHub*/btp-manuals-md
-cd btp-manuals-md
+git clone https://github.com/*Your_GitHub*/intro-ngs-manuals
+cd intro-ngs-manuals
 ```
 
 [GitHub Desktop](https://desktop.github.com/) is an alternative for command line git.
@@ -66,7 +66,7 @@ cd btp-manuals-md
 
 1) First configure a remote for a fork (i.e let git know what the original upstream BPA repo is): https://help.github.com/articles/configuring-a-remote-for-a-fork/
   a) git remote -v
-  b) git remote add upstream https://github.com/BPA-CSIRO-Workshops/btp-manuals-md.git
+  b) git remote add upstream https://github.com/BPA-CSIRO-Workshops/intro-ngs-manuals.git
   c) git remote -v
 
 2) Sync a fork of a repository to keep it up-to-date with the upstream repository (i.e. changes that have been made to the BPA repository since you forked and cloned it).
@@ -99,7 +99,7 @@ master document `mkdocs.yml` in the correct section under pages:
 
 #### If editing an existing module
 
-Existing modules are located in https://github.com/BPA-CSIRO-Workshops/btp-manuals-md/tree/master/docs/modules.
+Existing modules are located in https://github.com/BPA-CSIRO-Workshops/intro-ngs-manuals/tree/master/docs/modules.
 Navigate to the appropriate module and directly edit the .md file. Images relating to
 the .md file should be located in module_name/images
 
@@ -162,4 +162,4 @@ mkdocs gh-deploy --clean --message "Added canu"
 ```
 This first builds a web HTML version of our Markdown hierarchy into the `site/` folder, then pushes it to a special
 branch of the github repo called `gh-pages` which GitHub makes available at the public URL
-https://bpa-csiro-workshops.github.io/btp-manuals-md
+https://bpa-csiro-workshops.github.io/intro-ngs-manuals
