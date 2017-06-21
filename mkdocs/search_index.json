@@ -2,12 +2,12 @@
     "docs": [
         {
             "location": "/",
-            "text": "Welcome\n\u00b6\n\n\nSome welcome text should appear here.\n\n\nPerhaps the logos should be added here as well?",
+            "text": "Welcome\n\u00b6\n\n\nIntroduction to NGS Data Analysis is a three-day, hands-on workshop that offers attendees a basic understanding of NGS data analysis workflows.\n\n\nPlaceholder for NeCTAR, R@CMon, Bioplatforms Australia, CSIRO and Intersect logos.",
             "title": "Home"
         },
         {
             "location": "/#welcome",
-            "text": "Some welcome text should appear here.  Perhaps the logos should be added here as well?",
+            "text": "Introduction to NGS Data Analysis is a three-day, hands-on workshop that offers attendees a basic understanding of NGS data analysis workflows.  Placeholder for NeCTAR, R@CMon, Bioplatforms Australia, CSIRO and Intersect logos.",
             "title": "Welcome"
         },
         {
