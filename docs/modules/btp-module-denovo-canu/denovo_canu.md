@@ -95,6 +95,12 @@ mv longfilename_R2.fastq.gz illumina_R2.fastq.gz
 ```
 -->
 
+### NGS Workshop
+
+Some of these tools will take too long to run in this workshop. For these tools, we have pre-computed the output files. In this workshop, we will still enter in the commands and set the tool running, but will sometimes then stop the run and move on to pre-computed output files.
+
+In your directory, along with the PacBio and Illumina files, you may also see folders of pre-computed data.
+
 ### Sample information
 
 The sample used in this tutorial is a gram-positive bacteria called *Staphylococcus aureus* (sample number 25747). This particular sample is from a strain that is resistant to the antibiotic methicillin (a type of penicillin). It is also called MRSA: methicillin-resistant *Staphylococcus aureus*. It was isolated from (human) blood and caused bacteraemia, an infection of the bloodstream.
@@ -118,12 +124,9 @@ canu -p canu -d canu_outdir_NGS genomeSize=2.8m -pacbio-raw pacbio.fastq.gz
 - Canu will correct, trim and assemble the reads.
 - Various output will be displayed on the screen.
 
-### Check the output
+_NGS workshop: As we don't have time for Canu to complete, stop the run by typing `Ctrl-C`. We will look at pre-computed data in the folder **canu_outdir**._
 
-NGS workshop: As we don't have time for Canu to complete, stop the run by typing `Ctrl-C`.
-
-We will look at pre-computed data in the folder **canu_outdir**.
-
+### Canu output
 
 Move into **<fn>canu_outdir</fn>** and `ls` to see the output files.
 
@@ -202,13 +205,9 @@ circlator all --threads 4 --verbose canu_outdir/canu.contigs.fasta canu_outdir/c
 - `canu_outdir/canu.correctedReads.fasta.gz` is the file path to the corrected Pacbio reads - note, fastA not fastQ
 - `circlator_outdir_NGS` is the name of the output directory.
 
-Some output will print to screen. When finished, it should say "Circularized x of x contig(s)".
+_NGS workshop: Stop the run by typing `Ctrl-C`. We will look at pre-computed data in the folder **circlator_outdir**._
 
-### Check the output
-
-NGS workshop: As we don't have time for Circlator to complete, stop the run by typing `Ctrl-C`.
-
-We will look at pre-computed data in the folder **circlator_outdir**.
+### Circlator output
 
 Move into the **<fn>circlator_outdir</fn>** directory and `ls` to list files.
 
@@ -275,6 +274,7 @@ If all the contigs have not circularised with Circlator, an option is to change 
 
 
 ## Find smaller plasmids
+
 Pacbio reads are long, and may have been longer than small plasmids. We will look for any small plasmids using the Illumina reads.
 
 This section involves several steps:
@@ -305,11 +305,9 @@ bwa mem -t 4 contig1.fasta illumina_R1.fastq.gz illumina_R2.fastq.gz | samtools 
 - ` | samtools sort` pipes the output to samtools to sort
 - `> aln_NGS.bam` sends the alignment to the file **<fn>aln_NGS.bam</fn>**
 
+_NGS workshop: Stop the run by typing `Ctrl-C`. We will use the pre-computed file called **aln.bam**._
+
 ### Extract unmapped Illumina reads
-
-NGS workshop: As we don't have time for BWA MEM to complete, stop the run by typing `Ctrl-C`.
-
-We will use the pre-computed file called **aln.bam**.
 
 - Index the alignment file:
 
@@ -347,9 +345,7 @@ spades.py -1 unmapped.R1.fastq -2 unmapped.R2.fastq -s unmapped.RS.fastq --caref
 - `--cov-cutoff auto` computes the coverage threshold (rather than the default setting, "off")
 - `-o` is the output directory
 
-NGS workshop: As we don't have time for spades to complete, stop the run by typing `Ctrl-C`.
-
-We will use the pre-computed file in the folder **spades_assembly**.
+_NGS workshop: Stop the run by typing `Ctrl-C`. We will use the pre-computed file in the folder **spades_assembly**._
 
 Move into the output directory (**<fn>spades_assembly</fn>**) and look at the contigs:
 
@@ -525,9 +521,7 @@ bwa mem -t 4 genome.fasta illumina_R1.fastq.gz illumina_R2.fastq.gz | samtools s
 - `-t` is the number of cores <!-- set this to an appropriate number. (To find out how many you have, `grep -c processor /proc/cpuinfo`) -->
 
 
-NGS workshop: As we don't have time for BWA MEM to complete, stop the run by typing `Ctrl-C`.
-
-We will use the pre-computed file called **aln_illumina_pacbio.bam**.
+_NGS workshop: Stop the run by typing `Ctrl-C`. We will use the pre-computed file called **aln_illumina_pacbio.bam**._
 
 - Index the files:
 
@@ -555,9 +549,7 @@ pilon --genome genome.fasta --frags aln_illumina_pacbio.bam --output pilon1_NGS 
 - `--verbose` prints information to the screen during the run
 - `--threads`: the number of cores
 
-NGS workshop: As we don't have time for Pilon to complete, stop the run by typing `Ctrl-C`.
-
-We will use the pre-computed files called with the prefixes **pilon1**.
+_NGS workshop: Stop the run by typing `Ctrl-C`. We will use the pre-computed files called with the prefixes **pilon1**._
 
 
 Look at the changes file:
