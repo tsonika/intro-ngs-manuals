@@ -31,7 +31,7 @@ Useful Links
 
 [FASTQ Encoding](http://en.wikipedia.org/wiki/FASTQ_format#Encoding)
 
-Introduction
+##Introduction
 ------------
 
 Going on a blind date with your read set? For a better understanding of
@@ -107,8 +107,18 @@ encoding now follows an 8 level mapping of individual quality scores (0-40 or >4
 With the new scoring scheme the original scores 20-24 may form one bin and the quality scores in that 
 bin mapped to a new value of 22. This can be thought of as simply replacing all the 
 occurrences of scores 20, 21, 23, 24 with a new score of 22 in the output sequence.
+Illumina claims that with the new Q-scoring system the reduction in the Illumina raw sequence format (.bcl) is typically > 50% and the resulting sorted BAM  les are reduced by ~30%.
 
-
+| Quality Score Bins   |  Mapped quality scores|
+|----------|:-------------:|
+| N (no call) | N (no call) | 
+| 2-9 |    6  | 
+| 10-19 | 15  |
+| 20-24 | 22 |
+| 25-29 | 27 |
+| 30-34 | 33 |
+| 35-39 | 37 |
+| >=40 | 40 |
 
 Prepare the Environment
 -----------------------
@@ -120,12 +130,12 @@ using the Skewer. We will use one data set in this practical, which can
 be found in the QC directory on your desktop.
 
 Open the Terminal and go to the directory where the data are stored:
-
+    ```bash
     cd
     ls
     cd qc
     pwd
-
+    ```
 
 At any time, help can be displayed for FastQC using the following
 command:
