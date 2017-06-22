@@ -204,18 +204,21 @@ Table 3: Quality Error Probabilities
 
 !!! note "Question"
     How many sequences were there in your file? What is the read length?
+    
 !!! success ""
     ??? "**Answer**"
         1,000,000. read length=150bp     
-
+    
 !!! note "Question"
     How many sequences were there in your file? What is the read length?
+    
     !!! sucess ""
 	???"** Answer**"
 	1,000,000. read length=150bp     
-
+    
 !!! note "Question"
     Does the quality score values vary throughout the read length? 
+        
         !!! hint ""
         ??? "**Hint**"
         look at the ’per base sequence quality plot’
@@ -332,7 +335,7 @@ like:
 Table 4:Summary Statistics of bad_example_quality_trimmed
 
  ![image](images/bad_qcdemo_R2_quality_trimmed.png)
-[fig:bad~e~xample~q~uality~t~rimmed~p~lot]
+Figure 2:bad_example_quality_trimmed_plot
 
 Did the number of total reads in R1 and R2 change after trimming?
 
@@ -464,7 +467,7 @@ Table 5:Summary Statistics of bad_example_trimmed summary
 
 ![image](images/bad_example_trimmed_to_80bp.png "reaaaaaa")
 
-Figure 2: bad_example_trimmed_plot
+Figure 3: bad_example_trimmed_plot
 
 What values would you use for `-f` if you wanted to trim off 10 bases at
 the 5’ end of the reads?
