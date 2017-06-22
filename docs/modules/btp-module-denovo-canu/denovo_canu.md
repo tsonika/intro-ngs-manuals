@@ -155,37 +155,43 @@ canu -p prefix -d outdir corMhapSensitivity=high corMinCoverage=0 genomeSize=2.8
 !!! note "Question"
     How do long- and short-read assembly methods differ?
 
-!!! success "Answer"
-    short reads: De Bruijn graphs; long reads: a move back towards simpler overlap-layout-consensus methods.
+!!! success ""
+    ??? "**Answer**"
+        short reads: De Bruijn graphs; long reads: a move back towards simpler overlap-layout-consensus methods.
 
 !!! note "Question"
     Where can we find out the what the approximate genome size should be for the species being assembled?
 
-!!! success "Answer"
-    NCBI Genomes - enter species name - click on Genome Assembly and Annotation report - sort table by clicking on the column header Size (Mb) - look at range of sizes in this column.
+!!! success ""
+    ??? "**Answer**"
+        NCBI Genomes - enter species name - click on Genome Assembly and Annotation report - sort table by clicking on the column header Size (Mb) - look at range of sizes in this column.
 
 !!! note "Question"
     In the assembly output, what are the unassembled reads? Why are they there?
 
 
-!!! success "Answer"
+!!! success ""
+    ??? "**Answer**"
+
+
 
 !!! note "Question"
     What are the corrected reads? How did canu correct the reads?
 
-!!! success "Answer"
+!!! success ""
+    ??? "**Answer**"
 
 !!! note "Question"
     What are the corrected reads? How did canu correct the reads?
 
-!!! success "Answer"
-
+!!! success ""
+    ??? "**Answer**"
 
 !!! note "Question"
     Where could you view the output .gfa and what would it show?
 
-!!! success "Answer"
-
+!!! success ""
+    ??? "**Answer**"
 
 
 
@@ -269,13 +275,15 @@ If all the contigs have not circularised with Circlator, an option is to change 
 !!! note "Question"
     Were all the contigs circularised? Why/why not?
 
-!!! success "Answer"
+!!! success ""
+    ??? "**Answer**"
 
 !!! note "Question"
     Circlator can set the start of the sequence at a particular gene. Which gene does it use? Is this appropriate for all contigs?
 
-!!! success "Answer"
-    Uses dnaA for the chromosomal contig. For other contigs, uses a centrally-located gene. However, ideally, plasmids would be oriented on a gene such as repA. It is possible to provide a file to Circlator to do this.
+!!! success ""
+    ??? "**Answer**"
+        Uses dnaA for the chromosomal contig. For other contigs, uses a centrally-located gene. However, ideally, plasmids would be oriented on a gene such as repA. It is possible to provide a file to Circlator to do this.
 
 
 ## Find smaller plasmids
@@ -473,32 +481,37 @@ infoseq genome.fasta
 !!! note "Question"
     Why is this section so complicated?
 
-!!! success "Answer"
-    Finding small plasmids is difficult for many reasons! This paper has a nice summary: On the (im)possibility to reconstruct plasmids from whole genome short-read sequencing data. doi: https://doi.org/10.1101/086744
+!!! success ""
+    ??? "**Answer**"
+        Finding small plasmids is difficult for many reasons! This paper has a nice summary: On the (im)possibility to reconstruct plasmids from whole genome short-read sequencing data. doi: https://doi.org/10.1101/086744
 
 !!! note "Question"
     Why can PacBio sequencing miss small plasmids?
 
-!!! success "Answer"
-    Library prep size selection
+!!! success ""
+    ??? "**Answer**"
+        Library prep size selection
 
 !!! note "Question"
     We extract unmapped Illumina reads and assemble these to find small plasmids. What could they be missing?
 
-!!! success "Answer"
-    Repeats that have mapped to the PacBio assembly.
+!!! success ""
+    ??? "**Answer**"  
+        Repeats that have mapped to the PacBio assembly.
 
 !!! note "Question"
     How do you find a plasmid in a Bandage graph?
 
-!!! success "Answer"
-    It is probably circular, matches the size of a known plasmid, has a rep gene...
+!!! success ""
+    ??? "**Answer**"
+        It is probably circular, matches the size of a known plasmid, has a rep gene...
 
 !!! note "Question"
     Are there easier ways to find plasmids?
 
-!!! success "Answer"
-    Possibly. One option is the program called Unicycler which may automate many of these steps. https://github.com/rrwick/Unicycler
+!!! success ""
+    ??? "**Answer**"
+        Possibly. One option is the program called Unicycler which may automate many of these steps. https://github.com/rrwick/Unicycler
 
 ## Correct
 
@@ -583,20 +596,23 @@ cp pilon1.fasta assembly.fasta
 !!! note "Question"
     Why don't we correct earlier in the assembly process?
 
-!!! success "Answer"
-    We need to circularise the contigs and trim overhangs first.
+!!! success ""
+    ??? "**Answer**"
+        We need to circularise the contigs and trim overhangs first.
 
 !!! note "Question"
     Why can we use some reads (Illumina) to correct other reads (PacBio) ?
 
-!!! success "Answer"
-    Illumina reads have higher accuracy
+!!! success ""
+    ??? "**Answer**"
+        Illumina reads have higher accuracy
 
 !!! note "Question"
     Could we just use PacBio reads to assemble the genome?
 
-!!! success "Answer"
-    Yes, if accuracy adequate.
+!!! success ""
+    ??? "**Answer**"
+        Yes, if accuracy adequate.
 
 <!-- ## Short-read assembly: a comparison
 
