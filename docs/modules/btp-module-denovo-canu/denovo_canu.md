@@ -105,12 +105,12 @@ The sample used in this tutorial is a gram-positive bacteria called *Staphylococ
 - Run Canu with these commands:
 
 ```text
-canu -p canu -d canu_outdir genomeSize=2.8m -pacbio-raw pacbio.fastq.gz
+canu -p canu -d canu_outdir_NGS genomeSize=2.8m -pacbio-raw pacbio.fastq.gz
 ```
 
 - the first `canu` tells the program to run
 - `-p canu` names prefix for output files ("canu")
-- `-d canu_outdir` names output directory ("canu_outdir")
+- `-d canu_outdir_NGS` names output directory
 - `genomeSize` only has to be approximate.
     - e.g. *Staphylococcus aureus*, 2.8m
     - e.g. *Streptococcus pyogenes*, 1.8m
@@ -119,6 +119,11 @@ canu -p canu -d canu_outdir genomeSize=2.8m -pacbio-raw pacbio.fastq.gz
 - Various output will be displayed on the screen.
 
 ### Check the output
+
+NGS workshop: As we don't have time for Canu to complete, stop the run by typing `Ctrl-C`.
+
+We will look at pre-computed data in the folder **canu_outdir**.
+
 
 Move into **<fn>canu_outdir</fn>** and `ls` to see the output files.
 
@@ -157,43 +162,21 @@ canu -p prefix -d outdir corMhapSensitivity=high corMinCoverage=0 genomeSize=2.8
 
 !!! success ""
     ??? "**Answer**"
-        short reads: De Bruijn graphs; long reads: a move back towards simpler overlap-layout-consensus methods.
+        Short reads are usually assembled using De Bruijn graphs. With long reads, there is a move back towards simpler overlap-layout-consensus methods.
 
 !!! note "Question"
     Where can we find out the what the approximate genome size should be for the species being assembled?
 
 !!! success ""
     ??? "**Answer**"
-        NCBI Genomes - enter species name - click on Genome Assembly and Annotation report - sort table by clicking on the column header Size (Mb) - look at range of sizes in this column.
+        Go to https://www.ncbi.nlm.nih.gov/genome/ - enter species name - click on Genome Assembly and Annotation report - sort table by clicking on the column header Size (Mb) - look at range of sizes in this column.
 
 !!! note "Question"
-    In the assembly output, what are the unassembled reads? Why are they there?
-
+    Where could you view the output **filename.gfa** and what would it show?
 
 !!! success ""
     ??? "**Answer**"
-
-
-
-!!! note "Question"
-    What are the corrected reads? How did canu correct the reads?
-
-!!! success ""
-    ??? "**Answer**"
-
-!!! note "Question"
-    What are the corrected reads? How did canu correct the reads?
-
-!!! success ""
-    ??? "**Answer**"
-
-!!! note "Question"
-    Where could you view the output .gfa and what would it show?
-
-!!! success ""
-    ??? "**Answer**"
-
-
+        This is the assembly graph. You can view it using the tool "Bandage", https://rrwick.github.io/Bandage/, to see how the contigs are connected (including ambiguities).
 
 ## Trim and circularise
 
@@ -210,18 +193,22 @@ Move back into your main analysis folder.
 Run Circlator:
 
 ```text
-circlator all --threads 4 --verbose canu_outdir/canu.contigs.fasta canu_outdir/canu.correctedReads.fasta.gz circlator_outdir
+circlator all --threads 4 --verbose canu_outdir/canu.contigs.fasta canu_outdir/canu.correctedReads.fasta.gz circlator_outdir_NGS
 ```
 
 - `--threads` is the number of cores <!-- change this to an appropriate number-->
 - `--verbose` prints progress information to the screen
 - `canu_outdir/canu.contigs.fasta` is the file path to the input Canu assembly
 - `canu_outdir/canu.correctedReads.fasta.gz` is the file path to the corrected Pacbio reads - note, fastA not fastQ
-- `circlator_outdir` is the name of the output directory.
+- `circlator_outdir_NGS` is the name of the output directory.
 
 Some output will print to screen. When finished, it should say "Circularized x of x contig(s)".
 
 ### Check the output
+
+NGS workshop: As we don't have time for Circlator to complete, stop the run by typing `Ctrl-C`.
+
+We will look at pre-computed data in the folder **circlator_outdir**.
 
 Move into the **<fn>circlator_outdir</fn>** directory and `ls` to list files.
 
@@ -277,13 +264,14 @@ If all the contigs have not circularised with Circlator, an option is to change 
 
 !!! success ""
     ??? "**Answer**"
+        In this example, the contig could be circularized because it contained the entire sequence in a single contig, with overhangs that were trimmed.
 
 !!! note "Question"
     Circlator can set the start of the sequence at a particular gene. Which gene does it use? Is this appropriate for all contigs?
 
 !!! success ""
     ??? "**Answer**"
-        Uses dnaA for the chromosomal contig. For other contigs, uses a centrally-located gene. However, ideally, plasmids would be oriented on a gene such as repA. It is possible to provide a file to Circlator to do this.
+        Circlator uses dnaA for the chromosomal contig. For other contigs, it uses a centrally-located gene. However, ideally, plasmids would be oriented on a gene such as a rep gene. It is possible to provide a file to Circlator to do this.
 
 
 ## Find smaller plasmids
@@ -292,7 +280,7 @@ Pacbio reads are long, and may have been longer than small plasmids. We will loo
 This section involves several steps:
 
 1. Use the Canu+Circlator output of a trimmed assembly contig.
-2. Map all the Illumina reads against this Pacbio-assembled contig.
+2. Map all the Illumina reads against this PacBio-assembled contig.
 3. Extract any reads that *didn't* map and assemble them together: this could be a plasmid, or part of a plasmid.
 5. Look for overhang: if found, trim.
 
@@ -307,7 +295,7 @@ bwa index contig1.fasta
 - Align Illumina reads using using bwa mem:
 
 ```text
-bwa mem -t 4 contig1.fasta illumina_R1.fastq.gz illumina_R2.fastq.gz | samtools sort > aln.bam
+bwa mem -t 4 contig1.fasta illumina_R1.fastq.gz illumina_R2.fastq.gz | samtools sort > aln_NGS.bam
 ```
 
 - `bwa mem` is the alignment tool
@@ -315,9 +303,13 @@ bwa mem -t 4 contig1.fasta illumina_R1.fastq.gz illumina_R2.fastq.gz | samtools 
 - `contig1.fasta` is the input assembly file
 - `illumina_R1.fastq.gz illumina_R2.fastq.gz` are the Illumina reads
 - ` | samtools sort` pipes the output to samtools to sort
-- `> aln.bam` sends the alignment to the file **<fn>aln.bam</fn>**
+- `> aln_NGS.bam` sends the alignment to the file **<fn>aln_NGS.bam</fn>**
 
 ### Extract unmapped Illumina reads
+
+NGS workshop: As we don't have time for BWA MEM to complete, stop the run by typing `Ctrl-C`.
+
+We will use the pre-computed file called **aln.bam**.
 
 - Index the alignment file:
 
@@ -345,7 +337,7 @@ We now have three files of the unampped reads: **<fn> unmapped.R1.fastq</fn>**, 
 - Assemble with Spades:
 
 ```text
-spades.py -1 unmapped.R1.fastq -2 unmapped.R2.fastq -s unmapped.RS.fastq --careful --cov-cutoff auto -o spades_assembly
+spades.py -1 unmapped.R1.fastq -2 unmapped.R2.fastq -s unmapped.RS.fastq --careful --cov-cutoff auto -o spades_assembly_NGS
 ```
 
 - `-1` is input file forward
@@ -354,6 +346,10 @@ spades.py -1 unmapped.R1.fastq -2 unmapped.R2.fastq -s unmapped.RS.fastq --caref
 - `--careful` minimizes mismatches and short indels
 - `--cov-cutoff auto` computes the coverage threshold (rather than the default setting, "off")
 - `-o` is the output directory
+
+NGS workshop: As we don't have time for spades to complete, stop the run by typing `Ctrl-C`.
+
+We will use the pre-computed file in the folder **spades_assembly**.
 
 Move into the output directory (**<fn>spades_assembly</fn>**) and look at the contigs:
 
@@ -523,26 +519,31 @@ We will correct the Pacbio assembly with Illumina reads.
 
 ```text
 bwa index genome.fasta
-bwa mem -t 4 genome.fasta illumina_R1.fastq.gz illumina_R2.fastq.gz | samtools sort > aln.bam
+bwa mem -t 4 genome.fasta illumina_R1.fastq.gz illumina_R2.fastq.gz | samtools sort > aln_illumina_pacbio_NGS.bam
 ```
 
 - `-t` is the number of cores <!-- set this to an appropriate number. (To find out how many you have, `grep -c processor /proc/cpuinfo`) -->
 
+
+NGS workshop: As we don't have time for BWA MEM to complete, stop the run by typing `Ctrl-C`.
+
+We will use the pre-computed file called **aln_illumina_pacbio.bam**.
+
 - Index the files:
 
 ```text
-samtools index aln.bam
+samtools index aln_illumina_pacbio.bam
 samtools faidx genome.fasta
 ```
 
-- Now we have an alignment file to use in Pilon: **<fn>aln.bam</fn>**
+- Now we have an alignment file to use in Pilon: **<fn>aln_illumina_pacbio.bam</fn>**
 
 ### Run Pilon
 
 - Run:
 
 ```text
-pilon --genome genome.fasta --frags aln.bam --output pilon1 --fix all --mindepth 0.5 --changes --verbose --threads 4
+pilon --genome genome.fasta --frags aln_illumina_pacbio.bam --output pilon1_NGS --fix all --mindepth 0.5 --changes --verbose --threads 4
 ```
 
 - `--genome` is the name of the input assembly to be corrected
@@ -553,6 +554,10 @@ pilon --genome genome.fasta --frags aln.bam --output pilon1 --fix all --mindepth
 - `--changes` produces an output file of the changes made
 - `--verbose` prints information to the screen during the run
 - `--threads`: the number of cores
+
+NGS workshop: As we don't have time for Pilon to complete, stop the run by typing `Ctrl-C`.
+
+We will use the pre-computed files called with the prefixes **pilon1**.
 
 
 Look at the changes file:
