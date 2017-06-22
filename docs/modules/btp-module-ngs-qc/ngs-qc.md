@@ -99,7 +99,7 @@ For a graphical representation of the different ASCII characters used in
 the two encoding schema see:
 <http://en.wikipedia.org/wiki/FASTQ_format#Encoding>.
 
-New Illumina Q-score encoding implemented with Novaseq platform
+Q-score encoding implemented with the Novaseq platform
 ---------------------------------------------------------------
 In order to reduce the data footrpints Illumina has come up with a new
 method to reduce quality score resolution and optimise data storae. The new Q-score 
@@ -119,6 +119,7 @@ Illumina claims that with the new Q-scoring system the reduction in the Illumina
 | 30-34 | 33 |
 | 35-39 | 37 |
 | >=40 | 40 |
+Table 1: Novaseq Q-score bins mapping 
 
 Prepare the Environment
 -----------------------
@@ -130,12 +131,11 @@ using the Skewer. We will use one data set in this practical, which can
 be found in the QC directory on your desktop.
 
 Open the Terminal and go to the directory where the data are stored:
-    ```bash
+
     cd
     ls
     cd qc
     pwd
-    ```
 
 At any time, help can be displayed for FastQC using the following
 command:
@@ -164,19 +164,17 @@ firefox. The ’&’ sign puts the job in the background.
 The report file will have a Basic Statistics table and various graphs
 and tables for different quality statistics. E.g.:
 
-[H]
 
-ll
+|Filename | qcdemo_R2.fastq.gz |
+|---------|:------------------:|
+|File type | Conventional base calls|
+|Encoding | Sanger / Illumina 1.9|
+|Total Sequences | 1000000|
+|Filtered Sequences | 0|
+|Sequence length | 150|
+|%GC | 37|
 
-Filename & qcdemo\_R2.fastq.gz\
-File type & Conventional base calls\
-Encoding & Sanger / Illumina 1.9\
-Total Sequences & 1000000\
-Filtered Sequences & 0\
-Sequence length & 150\
-%GC & 37\
-
-[tab:badexampleuntrimmed]
+Table:badexampleuntrimmed
 
 [H] ![image](images/bad_qcdemo_R2.png)
 [fig:bad~e~xample~u~ntrimmed~p~lot]
