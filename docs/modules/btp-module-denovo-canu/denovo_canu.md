@@ -107,7 +107,7 @@ The sample used in this tutorial is a gram-positive bacteria called *Staphylococ
 
 ## Assemble<a name="assemble"></a>
 
-- We will use the assembly software called [Canu](http://canu.readthedocs.io/en/stable/).
+- We will use the assembly software called Canu, <https://github.com/marbl/canu>.
 - Run Canu with these commands:
 
 ```text
@@ -184,7 +184,9 @@ canu -p prefix -d outdir corMhapSensitivity=high corMinCoverage=0 genomeSize=2.8
 ## Trim and circularise
 
 ### Run Circlator
-Circlator identifies and trims overhangs (on chromosomes and plasmids) and orients the start position at an appropriate gene (e.g. dnaA). It takes in the assembled contigs from Canu, as well as the corrected reads prepared by Canu.
+
+Circlator (<https://github.com/sanger-pathogens/circlator>)
+identifies and trims overhangs (on chromosomes and plasmids) and orients the start position at an appropriate gene (e.g. dnaA). It takes in the assembled contigs from Canu, as well as the corrected reads prepared by Canu.
 
 Overhangs are shown in blue:
 
@@ -332,7 +334,7 @@ We now have three files of the unampped reads: **<fn> unmapped.R1.fastq</fn>**, 
 
 ### Assemble the unmapped reads
 
-- Assemble with Spades:
+- Assemble with Spades (<http://cab.spbu.ru/software/spades/>):
 
 ```text
 spades.py -1 unmapped.R1.fastq -2 unmapped.R2.fastq -s unmapped.RS.fastq --careful --cov-cutoff auto -o spades_assembly_NGS
@@ -507,7 +509,7 @@ infoseq genome.fasta
 
 ## Correct
 
-We will correct the Pacbio assembly with Illumina reads.
+We will correct the Pacbio assembly with Illumina reads, using the tool Pilon (<https://github.com/broadinstitute/pilon/wiki>).
 
 ### Make an alignment file
 
@@ -686,7 +688,9 @@ How can we get more information about the assembly from Spades?
 
 ### Links
 
-- [Details of bas.h5 files](https://s3.amazonaws.com/files.pacb.com/software/instrument/2.0.0/bas.h5+Reference+Guide.pdf)
+<!--- [Details of bas.h5 files](https://s3.amazonaws.com/files.pacb.com/software/instrument/2.0.0/bas.h5+Reference+Guide.pdf)
+-->
+
 - Canu [manual](http://canu.readthedocs.io/en/stable/quick-start.html) and [gitub repository](https://github.com/marbl/canu)
 - Circlator [article](http://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0849-0) and [github repository](http://sanger-pathogens.github.io/circlator/)
 - Pilon [article](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0112963) and [github repository](https://github.com/broadinstitute/pilon/wiki)
