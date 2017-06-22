@@ -203,18 +203,18 @@ demonstrated with the following table:
 Table 3: Quality Error Probabilities
 
 !!! note "Question"
-    How many sequences were there in your file? What is the read length?
+    How many sequences were there in your file? What is the read length?   
     
 !!! success ""
     ??? "**Answer**"
-        1,000,000. read length=150bp     
+        1,000,000. read length=150bp        
     
 !!! note "Question"
-    How many sequences were there in your file? What is the read length?
+    How many sequences were there in your file? What is the read length?   
     
-    !!! sucess ""
-	???"** Answer**"
-	1,000,000. read length=150bp     
+!!! sucess ""
+    ???"** Answer**"
+        1,000,000. read length=150bp     
     
 !!! note "Question"
     Does the quality score values vary throughout the read length? 
