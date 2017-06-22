@@ -75,7 +75,7 @@ exclamation mark (!). In Phred+33 encoded quality values the exclamation
 mark takes the Phred quality score of zero.
 
 Early Solexa (now Illumina) sequencing needed to encode negative quality
-values. Because ASCII characters $<$ 33 are non-printable, using the
+values. Because ASCII characters < 33 are non-printable, using the
 Phred+33 encoding was not possible. Therefore, they simply moved the
 offset from 33 to 64 thus inventing the Phred+64 encoded quality values.
 In this encoding a Phred quality of zero is denoted by the ASCII number
@@ -182,17 +182,17 @@ Figure 1:bad_example_untrimmed_QC_plot
 
 A Phred quality score (or Q-score) expresses an error probability. In
 particular, it serves as a convenient and compact way to communicate
-very small error probabilities. The probability that base $A$ is wrong
-($P(\sim A)$) is expressed by a quality score, $Q(A)$, according to the
+very small error probabilities. The probability that base A is wrong
+(P(\sim A)) is expressed by a quality score, Q(A), according to the
 relationship:\
 \
-$Q(A) =-10 log10(P(\sim A))$\
+Q(A) =-10 log10(P(\sim A))\
 \
 The relationship between the quality score and error probability is
 demonstrated with the following table:
 
 
-|Quality score, Q(A) | Error probability, P($\sim$A) | Accuracy of base call|
+|Quality score, Q(A) | Error probability, P(\simA) | Accuracy of base call|
 |----------------------|:---------------------------------:|:----------|
 |10 | 0.1 | 90%|
 |20 | 0.01 | 99%|
@@ -243,7 +243,7 @@ Table 3: Quality Error Probabilities
 !!! note "Question"
     How can we trim the reads to filter out the low quality data?
     !!! sucess ""
-	???"** Answer**"
+    ???"** Answer**"
         By trimming off the bases after a fixed position of the read or by trimming off bases based on the quality score.
 
 ### Good Quality Data
@@ -335,30 +335,31 @@ like:
 Table 4:Summary Statistics of bad_example_quality_trimmed
 
  ![image](images/bad_qcdemo_R2_quality_trimmed.png)
+
 Figure 2:bad_example_quality_trimmed_plot
 
 Did the number of total reads in R1 and R2 change after trimming?
 
-Quality trimming discarded $>$25000 reads. However, We retain a lot of
+Quality trimming discarded >25000 reads. However, We retain a lot of
 maximal length reads which have good quality all the way to the ends.
 
 What reads lengths were obtained after quality based trimming?
 
 50-150
 
-Reads $<$50 bp, following quality trimming, were discarded.
+Reads <50 bp, following quality trimming, were discarded.
 
 !!! note "Question"
     Did you observe adapter sequences in the data?
 
-??? "**Answer**"
-    No. (Hint: look at the overrepresented sequences)    
+    ??? "**Answer**"
+        No. (Hint: look at the overrepresented sequences)    
 
 !!! note "Question"
     How can you use -a option with fastqc? (Hint: try fastqc -h).
 
-??? "**Answer**"
-    Adaptors can be supplied in a file for screening.
+    ??? "**Answer**"
+        Adaptors can be supplied in a file for screening.
 
 ### Adapter Clipping
 
