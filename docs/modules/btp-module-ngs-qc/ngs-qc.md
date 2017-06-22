@@ -31,6 +31,16 @@ Useful Links
 
 [FASTQ Encoding](http://en.wikipedia.org/wiki/FASTQ_format#Encoding)
 
+***
+## Author Information
+
+*Primary Author(s):*
+Sonika Tyagi sonika.tyagi@agrf.org.au 
+
+*Contributor(s):*
+Nandan Deshpande
+***
+
 ##Introduction
 ------------
 
