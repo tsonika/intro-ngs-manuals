@@ -57,7 +57,7 @@ as, sequence length distribution, base composition, sequence complexity,
 presence of ambiguous bases etc. to assess the overall quality of the
 data set.
 
-Highly redundant coverage ($>$15X) of the genome can be used to correct
+Highly redundant coverage (>15X) of the genome can be used to correct
 sequencing errors in the reads before assembly. Various k-mer based
 error correction methods exist but are beyond the scope of this
 tutorial.
@@ -177,7 +177,8 @@ and tables for different quality statistics. E.g.:
 Table 2: Summary statistics for bad_example_untrimmed
 
 ![image](images/bad_qcdemo_R2.png)
-[Figure 1:bad_example_untrimmed_QC_plot]
+
+Figure 1:bad_example_untrimmed_QC_plot
 
 A Phred quality score (or Q-score) expresses an error probability. In
 particular, it serves as a convenient and compact way to communicate
@@ -201,12 +202,17 @@ demonstrated with the following table:
 
 Table 3: Quality Error Probabilities
 
+!!! note "Question"
+    How many sequences were there in your file? What is the read length?
+!!! success ""
+    ??? "**Answer**"
+        1,000,000. read length=150bp     
 
 !!! note "Question"
     How many sequences were there in your file? What is the read length?
     !!! sucess ""
 	???"** Answer**"
-	    1,000,000. read length=150bp     
+	1,000,000. read length=150bp     
 
 !!! note "Question"
     Does the quality score values vary throughout the read length? 
@@ -323,7 +329,7 @@ like:
 |Sequence length | 50-150 |
 |%GC | 37 |
 
-Table :bad_example_quality_trimmed_stats
+Table 4:Summary Statistics of bad_example_quality_trimmed
 
  ![image](images/bad_qcdemo_R2_quality_trimmed.png)
 [fig:bad~e~xample~q~uality~t~rimmed~p~lot]
@@ -443,22 +449,22 @@ trimmed file.
 
 The output should look like:
 
-[H]
 
-ll
+|Property  | Value         |
+|----------|:-------------:|
+|Filename | bad_example_trimmed01.fastq|
+|File type | Conventional base calls|
+|Encoding | Sanger / Illumina 1.9|
+|Total Sequences | 40000|
+|Filtered Sequences | 0|
+|Sequence length | 80|
+|%GC | 48|
 
-Filename & bad\_example\_trimmed01.fastq\
-File type & Conventional base calls\
-Encoding & Sanger / Illumina 1.9\
-Total Sequences & 40000\
-Filtered Sequences & 0\
-Sequence length & 80\
-%GC & 48\
-
-[tab:badexampletrimmed]
+Table 5:Summary Statistics of bad_example_trimmed summary 
 
 ![image](images/bad_example_trimmed_to_80bp.png "reaaaaaa")
-[fig:bad~e~xample~t~rimmed~p~lot]
+
+Figure 2: bad_example_trimmed_plot
 
 What values would you use for `-f` if you wanted to trim off 10 bases at
 the 5’ end of the reads?
