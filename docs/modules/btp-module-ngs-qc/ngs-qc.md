@@ -103,7 +103,7 @@ Q-score encoding implemented with the Novaseq platform
 ---------------------------------------------------------------
 In order to reduce the data footrpints Illumina has come up with a new
 method to reduce quality score resolution and optimise data storae. The new Q-score 
-encoding now follows an 8 level mapping of individual quality scores (0-40 or >40) [See Table ].
+encoding now follows an 8 level mapping of individual quality scores (0-40 or >40) [See Table 1].
 With the new scoring scheme the original scores 20-24 may form one bin and the quality scores in that 
 bin mapped to a new value of 22. This can be thought of as simply replacing all the 
 occurrences of scores 20, 21, 23, 24 with a new score of 22 in the output sequence.
@@ -166,7 +166,6 @@ and tables for different quality statistics. E.g.:
 
 
 |Filename | qcdemo_R2.fastq.gz |
-|---------|:------------------:|
 |File type | Conventional base calls|
 |Encoding | Sanger / Illumina 1.9|
 |Total Sequences | 1000000|
@@ -174,10 +173,10 @@ and tables for different quality statistics. E.g.:
 |Sequence length | 150|
 |%GC | 37|
 
-Table:badexampleuntrimmed
+Table 2: Summary statistics for bad_example_untrimmed
 
-[H] ![image](images/bad_qcdemo_R2.png)
-[fig:bad~e~xample~u~ntrimmed~p~lot]
+[image](images/bad_qcdemo_R2.png)
+[Figure 1:bad_example_untrimmed_QC_plot]
 
 A Phred quality score (or Q-score) expresses an error probability. In
 particular, it serves as a convenient and compact way to communicate
@@ -190,42 +189,53 @@ $Q(A) =-10 log10(P(\sim A))$\
 The relationship between the quality score and error probability is
 demonstrated with the following table:
 
-[H]
 
-rrr
+|Quality score, Q(A) | Error probability, P($\sim$A) | Accuracy of base call|
+|----------------------|:---------------------------------:|:----------|
+|10 | 0.1 | 90%|
+|20 | 0.01 | 99%|
+|30 | 0.001 | 99.9%|
+|40  | 0.0001 | 99.99%|
+|50 | 0.00001 | 99.999%|
 
-**Quality score, Q(A)** & **Error probability, P($\sim$A)** & **Accuracy
-of the base call**\
-10 & 0.1 & 90%\
-20 & 0.01 & 99%\
-30 & 0.001 & 99.9%\
-40 & 0.0001 & 99.99%\
-50 & 0.00001 & 99.999%\
+Table 3: Quality Error Probabilities
 
-[tab:quality~e~rror~p~robs]
 
-How many sequences were there in your file? What is the read length?
+!!! note "Question"
+    How many sequences were there in your file? What is the read length?
+    !!! sucess ""
+	???"** Answer**"
+	    1,000,000. read length=150bp 
 
-1,000,000. read length=150bp
+!!! note "Question"
+    Does the quality score values vary throughout the read length? 
+        !!! hint ""
+        ??? "**Hint**"
+	    look at the ’per base sequence quality plot’)
 
-Does the quality score values vary throughout the read length? (hint:
-look at the ’per base sequence quality plot’)
+    !!! sucess ""
+	???"** Answer**"
+            Yes. Quality scores are dropping towards the end of the reads.
 
-Yes. Quality scores are dropping towards the end of the reads.
+!!! note "Question"
+    What is the quality score range you see?
+    !!! sucess ""
+	???"** Answer**"
+            2-40
 
-What is the quality score range you see?
 
-2-40
+!!! note "Question"
+    At around which position do the scores start falling below Q20 for the 25% quartile range (25%of reads below Q20)?
+    !!! sucess ""
+	???"** Answer**"
+	    Around 30 bp position
 
-At around which position do the scores start falling below Q20 for the
-25% quartile range (25%of reads below Q20)?
 
-Around 30 bp position
-
-How can we trim the reads to filter out the low quality data?
-
-By trimming off the bases after a fixed position of the read or by
-trimming off bases based on the quality score.
+!!! note "Question"
+    How can we trim the reads to filter out the low quality data?
+    !!! sucess ""
+	???"** Answer**"
+            By trimming off the bases after a fixed position of the read or by trimming off bases based on the quality score.
 
 ### Good Quality Data
 
@@ -302,12 +312,9 @@ Visualise the fastqc results:
 Let’s look at the quality from the second reads. The output should look
 like:
 
-[H]
 
-ll
-
-Filename & qcdemo\_R1.fastq-trimmed-pair2.fastq\
-File type & Conventional base calls\
+|Filename | qcdemo_R1.fastq-trimmed-pair2.fastq|
+|File type | Conventional base calls|
 Encoding & Sanger / Illumina 1.9\
 Total Sequences & 742262\
 Filtered Sequences & 0\
