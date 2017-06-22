@@ -193,16 +193,16 @@ Figure 1:bad_example_untrimmed_QC_plot
 A Phred quality score (or Q-score) expresses an error probability. In
 particular, it serves as a convenient and compact way to communicate
 very small error probabilities. The probability that base A is wrong
-(P(\sim A)) is expressed by a quality score, Q(A), according to the
+(P(A)) is expressed by a quality score, Q(A), according to the
 relationship:\
 \
-Q(A) =-10 log10(P(\sim A))\
+Q(A) =-10 log10(P(A))\
 \
 The relationship between the quality score and error probability is
 demonstrated with the following table:
 
 
-|Quality score, Q(A) | Error probability, P(\simA) | Accuracy of base call|
+|Quality score, Q(A) | Error probability, P(A) | Accuracy of base call|
 |----------------------|:---------------------------------:|:----------|
 |10 | 0.1 | 90%|
 |20 | 0.01 | 99%|
@@ -212,47 +212,49 @@ demonstrated with the following table:
 
 Table 3: Quality Error Probabilities
 
+
 !!! note "Question"
-    How many sequences were there in your file? What is the read length?   
-    
+    How many sequences were there in your file? What is the read length?
+
+!!! hint ""
+    ??? "**Hint**"
+        Here is a hint
+
 !!! success ""
     ??? "**Answer**"
-        1,000,000. read length=150bp        
-    
-!!! note "Question"
-    How many sequences were there in your file? What is the read length?   
-    
-!!! sucess ""
-    ???"** Answer**"
-        1,000,000. read length=150bp     
+        1,000,000. read length=150bp
+
     
 !!! note "Question"
     Does the quality score values vary throughout the read length? 
         
-        !!! hint ""
-        ??? "**Hint**"
+!!! hint ""
+    ??? "**Hint**"
         look at the ’per base sequence quality plot’
-    !!! sucess ""
-	???"** Answer**"
+!!! sucess ""
+    ???"** Answer**"
         Yes. Quality scores are dropping towards the end of the reads.
 
 !!! note "Question"
     What is the quality score range you see?
-    !!! sucess ""
-        ???"** Answer**"
+!!! sucess ""
+    ???"** Answer**"
         2-40
 
 
 !!! note "Question"
     At around which position do the scores start falling below Q20 for the 25% quartile range (25%of reads below Q20)?
-    !!! sucess ""
-	???"** Answer**"
+
+     
+!!! sucess ""
+    ???"** Answer**"
 	Around 30 bp position
 
 
 !!! note "Question"
     How can we trim the reads to filter out the low quality data?
-    !!! sucess ""
+    
+!!! sucess ""
     ???"** Answer**"
         By trimming off the bases after a fixed position of the read or by trimming off bases based on the quality score.
 
