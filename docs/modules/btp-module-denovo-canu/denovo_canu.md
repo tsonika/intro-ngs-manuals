@@ -210,10 +210,10 @@ Move back into your main analysis folder.
 Run Circlator:
 
 ```text
-circlator all --threads 8 --verbose canu_outdir/canu.contigs.fasta canu_outdir/canu.correctedReads.fasta.gz circlator_outdir
+circlator all --threads 4 --verbose canu_outdir/canu.contigs.fasta canu_outdir/canu.correctedReads.fasta.gz circlator_outdir
 ```
 
-- `--threads` is the number of cores: change this to an appropriate number
+- `--threads` is the number of cores <!-- change this to an appropriate number-->
 - `--verbose` prints progress information to the screen
 - `canu_outdir/canu.contigs.fasta` is the file path to the input Canu assembly
 - `canu_outdir/canu.correctedReads.fasta.gz` is the file path to the corrected Pacbio reads - note, fastA not fastQ
@@ -307,11 +307,11 @@ bwa index contig1.fasta
 - Align Illumina reads using using bwa mem:
 
 ```text
-bwa mem -t 8 contig1.fasta illumina_R1.fastq.gz illumina_R2.fastq.gz | samtools sort > aln.bam
+bwa mem -t 4 contig1.fasta illumina_R1.fastq.gz illumina_R2.fastq.gz | samtools sort > aln.bam
 ```
 
 - `bwa mem` is the alignment tool
-- `-t 8` is the number of cores: choose an appropriate number
+- `-t 4` is the number of cores <!-- choose an appropriate number -->
 - `contig1.fasta` is the input assembly file
 - `illumina_R1.fastq.gz illumina_R2.fastq.gz` are the Illumina reads
 - ` | samtools sort` pipes the output to samtools to sort
@@ -523,10 +523,10 @@ We will correct the Pacbio assembly with Illumina reads.
 
 ```text
 bwa index genome.fasta
-bwa mem -t 32 genome.fasta illumina_R1.fastq.gz illumina_R2.fastq.gz | samtools sort > aln.bam
+bwa mem -t 4 genome.fasta illumina_R1.fastq.gz illumina_R2.fastq.gz | samtools sort > aln.bam
 ```
 
-- `-t` is the number of cores: set this to an appropriate number. (To find out how many you have, `grep -c processor /proc/cpuinfo`).
+- `-t` is the number of cores <!-- set this to an appropriate number. (To find out how many you have, `grep -c processor /proc/cpuinfo`) -->
 
 - Index the files:
 
@@ -542,7 +542,7 @@ samtools faidx genome.fasta
 - Run:
 
 ```text
-pilon --genome genome.fasta --frags aln.bam --output pilon1 --fix all --mindepth 0.5 --changes --verbose --threads 32
+pilon --genome genome.fasta --frags aln.bam --output pilon1 --fix all --mindepth 0.5 --changes --verbose --threads 4
 ```
 
 - `--genome` is the name of the input assembly to be corrected
@@ -552,7 +552,7 @@ pilon --genome genome.fasta --frags aln.bam --output pilon1 --fix all --mindepth
 - `--mindepth` gives a minimum read depth to use
 - `--changes` produces an output file of the changes made
 - `--verbose` prints information to the screen during the run
-- `--threads` : set this to an appropriate number
+- `--threads`: the number of cores
 
 
 Look at the changes file:
