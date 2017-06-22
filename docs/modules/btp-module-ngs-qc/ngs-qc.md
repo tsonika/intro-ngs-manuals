@@ -34,14 +34,14 @@ Useful Links
 ***
 ## Author Information
 
-*Primary Author(s):*
+*Primary Author(s):*    
 Sonika Tyagi sonika.tyagi@agrf.org.au 
 
-*Contributor(s):*
+*Contributor(s):*    
 Nandan Deshpande
 ***
 
-##Introduction
+Introduction
 ------------
 
 Going on a blind date with your read set? For a better understanding of
