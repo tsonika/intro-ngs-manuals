@@ -164,7 +164,8 @@ firefox. The ’&’ sign puts the job in the background.
 The report file will have a Basic Statistics table and various graphs
 and tables for different quality statistics. E.g.:
 
-
+|Property  | Value         |
+|----------|:-------------:|
 |Filename | qcdemo_R2.fastq.gz |
 |File type | Conventional base calls|
 |Encoding | Sanger / Illumina 1.9|
@@ -175,7 +176,7 @@ and tables for different quality statistics. E.g.:
 
 Table 2: Summary statistics for bad_example_untrimmed
 
-[image](images/bad_qcdemo_R2.png)
+![image](images/bad_qcdemo_R2.png)
 [Figure 1:bad_example_untrimmed_QC_plot]
 
 A Phred quality score (or Q-score) expresses an error probability. In
@@ -205,37 +206,36 @@ Table 3: Quality Error Probabilities
     How many sequences were there in your file? What is the read length?
     !!! sucess ""
 	???"** Answer**"
-	    1,000,000. read length=150bp 
+	    1,000,000. read length=150bp     
 
 !!! note "Question"
     Does the quality score values vary throughout the read length? 
         !!! hint ""
         ??? "**Hint**"
-	    look at the ’per base sequence quality plot’)
-
+        look at the ’per base sequence quality plot’
     !!! sucess ""
 	???"** Answer**"
-            Yes. Quality scores are dropping towards the end of the reads.
+        Yes. Quality scores are dropping towards the end of the reads.
 
 !!! note "Question"
     What is the quality score range you see?
     !!! sucess ""
-	???"** Answer**"
-            2-40
+        ???"** Answer**"
+        2-40
 
 
 !!! note "Question"
     At around which position do the scores start falling below Q20 for the 25% quartile range (25%of reads below Q20)?
     !!! sucess ""
 	???"** Answer**"
-	    Around 30 bp position
+	Around 30 bp position
 
 
 !!! note "Question"
     How can we trim the reads to filter out the low quality data?
     !!! sucess ""
 	???"** Answer**"
-            By trimming off the bases after a fixed position of the read or by trimming off bases based on the quality score.
+        By trimming off the bases after a fixed position of the read or by trimming off bases based on the quality score.
 
 ### Good Quality Data
 
@@ -313,17 +313,19 @@ Let’s look at the quality from the second reads. The output should look
 like:
 
 
+|Property  | Value         |
+|----------|:-------------:|
 |Filename | qcdemo_R1.fastq-trimmed-pair2.fastq|
 |File type | Conventional base calls|
-Encoding & Sanger / Illumina 1.9\
-Total Sequences & 742262\
-Filtered Sequences & 0\
-Sequence length & 50-150\
-%GC & 37\
+|Encoding | Sanger / Illumina 1.9|
+|Total Sequences | 742262|
+|Filtered Sequences | 0|
+|Sequence length | 50-150 |
+|%GC | 37 |
 
-[tab:badexamplequalitytrimmed]
+Table :bad_example_quality_trimmed_stats
 
-[H] ![image](images/bad_qcdemo_R2_quality_trimmed.png)
+ ![image](images/bad_qcdemo_R2_quality_trimmed.png)
 [fig:bad~e~xample~q~uality~t~rimmed~p~lot]
 
 Did the number of total reads in R1 and R2 change after trimming?
