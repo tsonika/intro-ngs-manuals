@@ -217,11 +217,11 @@ Table 3: Quality Error Probabilities
     How many sequences were there in your file? What is the read length?
 
 !!! hint ""
-    ??? "**Hint**"
+    ??? "** Hint **"
         Here is a hint
 
 !!! success ""
-    ??? "**Answer**"
+    ??? "** Answer**"
         1,000,000. read length=150bp
 
     
@@ -229,7 +229,7 @@ Table 3: Quality Error Probabilities
     Does the quality score values vary throughout the read length? 
         
 !!! hint ""
-    ??? "**Hint**"
+    ??? "** Hint **"
         look at the ’per base sequence quality plot’
 !!! success ""
     ???  "** Answer**"
@@ -364,13 +364,13 @@ Reads <50 bp, following quality trimming, were discarded.
 !!! note "Question"
     Did you observe adapter sequences in the data?
 
-    ??? "**Answer**"
+    ??? "** Answer**"
         No. (Hint: look at the overrepresented sequences)    
 
 !!! note "Question"
     How can you use -a option with fastqc? (Hint: try fastqc -h).
 
-    ??? "**Answer**"
+    ??? "** Answer**"
         Adaptors can be supplied in a file for screening.
 
 ### Adapter Clipping

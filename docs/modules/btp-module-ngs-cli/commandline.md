@@ -59,10 +59,11 @@ wc -l 1000gp.vcf
 !!! hint
     (Hint: `man ls`, `man wc`)
 
-!!! success "Answer"
-    3.6M
+!!! success ""
+    ??? "** Answer**"
+        3.6M
 
-    45034 lines
+        45034 lines
 
 Because this file is so large, you’re going to almost always want to
 pipe ('|') the result of any command to less (a simple text viewer, type
@@ -111,16 +112,18 @@ To start analyzing the actual data, we have to remove the header.
 !!! hint
     Hint: `man grep` (remember to use pipes '|')
 
-!!! success "Answer"
-    grep -v "^\#" 1000gp.vcf | head  
+!!! success ""
+    ??? "** Answer**"
+        grep -v "^\#" 1000gp.vcf | head  
 
 !!! note "Question"
     How many lines of data are in the file (rather than counting the number
     of header lines and subtracting, try just counting the number of data
     lines)?
 
-!!! success "Answer"
-    grep -v "^\#" 1000gp.vcf | wc -l (should print 45024)
+!!! success ""
+    ??? "** Answer**"
+        grep -v "^\#" 1000gp.vcf | wc -l (should print 45024)
 
 Where these differences are located can be important. If all the
 differences between two encyclopedias were in just the first volume,
@@ -132,8 +135,9 @@ of the chromosome that the difference occurs on (which volume we’re on).
 !!! hint
     Hint: `man cut` (remember to remove header lines first)
 
-!!! success "Answer"
-    grep -v "\^\#" 1000gp.vcf | cut -f 1 | head
+!!! success ""
+    ??? "** Answer**"
+        grep -v "\^\#" 1000gp.vcf | cut -f 1 | head
 
 As you should have observed, the first 10 lines are on numbered
 chromosomes. Every normal cell in your body has 23 pairs of chromosomes,
@@ -149,8 +153,9 @@ Let’s look at which chromosomes these variations are on.
 !!! hint
     Hint: remove all duplicates from your previous answer (`man sort`)
 
-!!! success "Answer"
-    grep -v "\^\#" 1000gp.vcf | cut -f 1 | sort -u
+!!! success ""
+    ??? "** Answer**"
+        grep -v "\^\#" 1000gp.vcf | cut -f 1 | sort -u
 
 Rather than using `sort` to print unique results, a common pipeline is
 to first sort and then pipe to another UNIX command, `uniq`. The `uniq`
@@ -164,8 +169,9 @@ input isn’t sorted, `uniq` won’t work properly.
 !!! hint
     Hint: `man uniq`
 
-!!! success "Answer"
-    grep -v "\^\#" 1000gp.vcf | cut -f 1 | sort | uniq -c
+!!! success ""
+    ??? "** Answer**"
+        grep -v "\^\#" 1000gp.vcf | cut -f 1 | sort | uniq -c
 
 !!! note "Question"
     Add to your previous solution to list the chromosomes from most
@@ -174,8 +180,9 @@ input isn’t sorted, `uniq` won’t work properly.
     Hint: Make sure you’re sorting in descending order. By default, sort
     sorts in ascending order.
 
-!!! success "Answer"
-    grep -v "\^\#" 1000gp.vcf | cut -f 1 | sort | uniq -c | sort -n -r
+!!! success ""
+    ??? "** Answer**"
+        grep -v "\^\#" 1000gp.vcf | cut -f 1 | sort | uniq -c | sort -n -r
 
 This is great, but biologists might also like to see the chromosomes
 ordered by their number (not dictionary order), since different
@@ -189,5 +196,6 @@ find a specific chromosome more easily.
     specify which fields to sort on, and the order in which to sort them. In
     this case you only need to sort on one field.
 
-!!! success "Answer"
-    grep -v "\^\#" 1000gp.vcf | cut -f 1 | sort | uniq -c | sort -k 2n
+!!! success ""
+    ??? "** Answer**"
+        grep -v "\^\#" 1000gp.vcf | cut -f 1 | sort | uniq -c | sort -k 2n
