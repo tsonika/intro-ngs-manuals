@@ -133,7 +133,7 @@ Move into **<fn>canu_outdir</fn>** and `ls` to see the output files.
 - The **<fn>canu.contigs.fasta</fn>** are the assembled sequences.
 - The **<fn>canu.unassembled.fasta</fn>** are the reads that could not be assembled.
 - The **<fn>canu.correctedReads.fasta.gz</fn>** are the corrected Pacbio reads that were used in the assembly.
-- The **<fn>canu.file.gfa</fn>** is the graph of the assembly.
+- The **<fn>canu.contigs.gfa</fn>** is the graph of the assembly.
 - Display summary information about the contigs: (`infoseq` is a tool from [EMBOSS](http://emboss.sourceforge.net/index.html))
 
 ```text
@@ -247,7 +247,7 @@ This trimmed part is the overlap.
 - Re-name it **<fn>contig1.fasta</fn>**:
 
 ```text
-mv 06.fixstart.fasta contig1.fasta
+cp 06.fixstart.fasta contig1.fasta
 ```
 
 Open this file in a text editor (e.g. nano: `nano contig1.fasta`) and change the header to ">chromosome".
@@ -357,7 +357,6 @@ infoseq contigs.fasta
 
 - 78 contigs were assembled, with the max length of 2250 (the first contig).  
 - All other nodes are < 650kb so we will disregard as they are unlikely to be plasmids.
-- Type "q" to exit.
 - We will extract the first sequence (NODE_1):
 
 ```text
@@ -404,6 +403,7 @@ less contig2.bls
 - The second hit is at 2474 all the way to the end - 2550.
 - This is the overhang.
 - Trim to position 2473.
+- Type 'q' to exit.
 - Index the plasmid.fa file:
 
 ```text
@@ -419,6 +419,7 @@ samtools faidx contig2.fasta plasmid:1-2473 > plasmid.fa.trimmed
 - `plasmid` is the name of the contig, and we want the sequence from 1-2473.
 
 - Open this file in nano (`nano plasmid.fa.trimmed`) and change the header to ">plasmid", save.
+- (Use the side scroll bar to see the top of the file.)
 - We now have a trimmed plasmid.
 - Move file back into main folder:
 
