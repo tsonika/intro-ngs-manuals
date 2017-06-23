@@ -133,7 +133,7 @@ and BAM format (Note: because BAM standard doesn’t specify a flag for a
 uniquely-mapped read, the aligner has to generate a BAM file that would
 contain only unique reads.)
 
-### STEP1 Loading data and quality filter the informative tags
+### STEP 1. Loading data and quality filter the informative tags
 
 First load Oct4 and gfp bam files. Here GFP are the control or input
 samples, these are usually mock IP DNA where you do not expect to see
@@ -193,7 +193,7 @@ high tag count relative to the neighborhood:
     chip.data <- remove.local.tag.anomalies(chip.data);
     gfpcontrol.data <- remove.local.tag.anomalies(gfpcontrol.data);
 
-### STEP2 Calculating genome-wide tag density and tag enrichment/depletion profiles
+### STEP 2. Calculating genome-wide tag density and tag enrichment/depletion profiles
 
 The following commands will calculate smoothed tag density and output it
 into a WIG file that can be read with genome browsers, such as IGV
@@ -252,7 +252,7 @@ BED format:
     bp.short <- add.broad.peak.regions(chip.data,gfpcontrol.data,bp,window.size=500,z.thr=3);
     write.table(na.omit(data.frame(cbind(rep("1", length(bp.short$npl$chr1$rs)), bp.short$npl$chr1$rs, bp.short$npl$chr1$re))), file = paste0("oct4","_enrich_narrow_chr1.bed"),quote = FALSE, row.names = FALSE, col.names = FALSE, sep = "\t");  
 
-### STEP3 Comparing Binding Sites to Annotations Using the biomaRt package
+### STEP 3. Comparing Binding Sites to Annotations Using the biomaRt package
 
 In order to biologically interpret the results of ChIP-seq experiments,
 it is usually recommended to look at the genes and other annotated
