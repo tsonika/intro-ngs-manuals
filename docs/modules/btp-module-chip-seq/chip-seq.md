@@ -49,7 +49,6 @@ http://gostat.wehi.edu.au
 
 http://www.ebi.ac.uk/arrayexpress/experiments/E-GEOD-11431
 
-***
 ## Author Information
 
 *Primary Author(s):*
@@ -58,7 +57,6 @@ Sean Li sean.li@anu.edu.au
 *Contributor(s):*
 Mirana Ramialison mirana.ramialison@monash.edu
 Markus Tondl markus.tondl@monash.edu
-***
 
 
 Introduction
