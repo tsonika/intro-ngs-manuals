@@ -63,7 +63,7 @@ binding regions.
 Prepare the Environment
 -----------------------
 
-The material for this practical can be found in the `ChIP-seq` directory
+The material for this practical can be found in the `ChIPseq` directory
 on your desktop. Please make sure that this directory also contains the
 SAM/BAM files you produced during the alignment practical.
 
@@ -86,12 +86,14 @@ Open the Terminal and go to the `chipseq` directory:
 Finding enriched areas using SPP
 --------------------------------
 
-Terminology used in the tutorial: `fragment:` overlapping fragments
-obtaining in the IP (immuno precipitation) experiments. `tag:` sequenced
-part of the fragment which could be from one end (in case of single end
-sequencing ) or both ends in the paired end data. `alignment:` a process
-to determine the position of the tags, which typically should be around
-the binding site. `peaks:` spatial distribution of the tags densities
+Terminology used in the tutorial: 
+-`fragment:` overlapping fragments
+obtaining in the IP (immuno precipitation) experiments. 
+-`tag:` sequenced part of the fragment which could be from one end (in case of single end
+sequencing ) or both ends in the paired end data. 
+-`alignment:` a process to determine the position of the tags, which typically should be around
+the binding site. 
+-`peaks:` spatial distribution of the tags densities
 around the binding sites on the genome. You would see two separate peaks
 of tags on the positive and negative strand around the binding site. The
 distance between the two peaks should reflect the size of the protected
@@ -119,10 +121,11 @@ your working directory correctly:
     library(biomaRt);
     setwd('/home/trainee/chipseq');
 
-**1. Loading tag data, selecting choosing alignment quality, removing
-anomalies**\
-The first stage in SPP are 1) load input data; 2) choose alignment
-quality and 3) remove anomalies. SPP can read output from the following
+
+The first stage in SPP are:
+-1) load input data; 
+-2) choose alignment quality and 
+-3) remove anomalies. SPP can read output from the following
 aligners and file formats: ELAND, MAQ, bowtie, Arachne, tagAlign format
 and BAM format (Note: because BAM standard doesn’t specify a flag for a
 uniquely-mapped read, the aligner has to generate a BAM file that would

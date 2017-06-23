@@ -232,13 +232,13 @@ Table 3: Quality Error Probabilities
     ??? "**Hint**"
         look at the ’per base sequence quality plot’
 !!! success ""
-    ???"** Answer**"
+    ???  "** Answer**"
         Yes. Quality scores are dropping towards the end of the reads.
 
 !!! note "Question"
     What is the quality score range you see?
 !!! success ""
-    ???"** Answer**"
+    ??? "** Answer**"
         2-40
 
 
@@ -247,7 +247,7 @@ Table 3: Quality Error Probabilities
 
      
 !!! success ""
-    ???"** Answer**"
+    ??? "** Answer**"
 	Around 30 bp position
 
 
@@ -255,7 +255,7 @@ Table 3: Quality Error Probabilities
     How can we trim the reads to filter out the low quality data?
     
 !!! success ""
-    ???"** Answer**"
+    ??? "** Answer**"
         By trimming off the bases after a fixed position of the read or by trimming off bases based on the quality score.
 
 ### Good Quality Data
