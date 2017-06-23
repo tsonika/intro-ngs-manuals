@@ -49,6 +49,18 @@ http://gostat.wehi.edu.au
 
 http://www.ebi.ac.uk/arrayexpress/experiments/E-GEOD-11431
 
+***
+## Author Information
+
+*Primary Author(s):*
+Sonika Tyagi sonika.tyagi@agrf.org.au
+Sean Li sean.li@anu.edu.au
+*Contributor(s):*
+Mirana Ramialison mirana.ramialison@monash.edu
+Markus Tondl markus.tondl@monash.edu
+***
+
+
 Introduction
 ------------
 
