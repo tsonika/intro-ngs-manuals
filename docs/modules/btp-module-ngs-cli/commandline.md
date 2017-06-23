@@ -60,7 +60,7 @@ wc -l 1000gp.vcf
     (Hint: `man ls`, `man wc`)
 
 !!! success ""
-    ??? "** Answer**"
+    ??? "Answer"
         3.6M
 
         45034 lines
@@ -113,7 +113,7 @@ To start analyzing the actual data, we have to remove the header.
     Hint: `man grep` (remember to use pipes '|')
 
 !!! success ""
-    ??? "** Answer**"
+    ??? "Answer"
         grep -v "^\#" 1000gp.vcf | head  
 
 !!! note "Question"
@@ -122,7 +122,7 @@ To start analyzing the actual data, we have to remove the header.
     lines)?
 
 !!! success ""
-    ??? "** Answer**"
+    ??? "Answer"
         grep -v "^\#" 1000gp.vcf | wc -l (should print 45024)
 
 Where these differences are located can be important. If all the
@@ -136,7 +136,7 @@ of the chromosome that the difference occurs on (which volume we’re on).
     Hint: `man cut` (remember to remove header lines first)
 
 !!! success ""
-    ??? "** Answer**"
+    ??? "Answer"
         grep -v "\^\#" 1000gp.vcf | cut -f 1 | head
 
 As you should have observed, the first 10 lines are on numbered
@@ -154,7 +154,7 @@ Let’s look at which chromosomes these variations are on.
     Hint: remove all duplicates from your previous answer (`man sort`)
 
 !!! success ""
-    ??? "** Answer**"
+    ??? "Answer"
         grep -v "\^\#" 1000gp.vcf | cut -f 1 | sort -u
 
 Rather than using `sort` to print unique results, a common pipeline is
@@ -170,7 +170,7 @@ input isn’t sorted, `uniq` won’t work properly.
     Hint: `man uniq`
 
 !!! success ""
-    ??? "** Answer**"
+    ??? "Answer"
         grep -v "\^\#" 1000gp.vcf | cut -f 1 | sort | uniq -c
 
 !!! note "Question"
@@ -181,7 +181,7 @@ input isn’t sorted, `uniq` won’t work properly.
     sorts in ascending order.
 
 !!! success ""
-    ??? "** Answer**"
+    ??? "Answer"
         grep -v "\^\#" 1000gp.vcf | cut -f 1 | sort | uniq -c | sort -n -r
 
 This is great, but biologists might also like to see the chromosomes
@@ -197,5 +197,5 @@ find a specific chromosome more easily.
     this case you only need to sort on one field.
 
 !!! success ""
-    ??? "** Answer**"
+    ??? "Answer"
         grep -v "\^\#" 1000gp.vcf | cut -f 1 | sort | uniq -c | sort -k 2n
