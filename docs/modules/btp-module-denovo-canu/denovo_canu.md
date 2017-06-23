@@ -265,7 +265,7 @@ If all the contigs have not circularised with Circlator, an option is to change 
 
 !!! success ""
     ??? "**Answer**"
-        In this example, the contig could be circularized because it contained the entire sequence in a single contig, with overhangs that were trimmed.
+        In this example, the contig could be circularized because it contained the entire sequence, with overhangs that were trimmed.
 
 !!! note "Question"
     Circlator can set the start of the sequence at a particular gene. Which gene does it use? Is this appropriate for all contigs?
@@ -498,7 +498,7 @@ infoseq genome.fasta
 
 !!! success ""
     ??? "**Answer**"
-        It is probably circular, matches the size of a known plasmid, has a rep gene...
+        It is probably circular, matches the size of a known plasmid, and has a rep gene.
 
 !!! note "Question"
     Are there easier ways to find plasmids?
