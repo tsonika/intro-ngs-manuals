@@ -101,6 +101,8 @@ Some of these tools will take too long to run in this workshop. For these tools,
 
 In your directory, along with the PacBio and Illumina files, you may also see folders of pre-computed data.
 
+<!-- list of precomputed data: illuminaR1 and R2, pacbio.fastq.gz, canu_outdir, circlator_outdir, aln.bam, spades_assembly, aln_illumina_pacbio.bam, pilon1.fasta, pilon1.changes -->
+
 ### Sample information
 
 The sample used in this tutorial is a gram-positive bacteria called *Staphylococcus aureus* (sample number 25747). This particular sample is from a strain that is resistant to the antibiotic methicillin (a type of penicillin). It is also called MRSA: methicillin-resistant *Staphylococcus aureus*. It was isolated from (human) blood and caused bacteraemia, an infection of the bloodstream.
