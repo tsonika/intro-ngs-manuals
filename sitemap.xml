@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2017-06-21</lastmod>
+     <lastmod>2017-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,7 @@
     
     <url>
      <loc>/trainers/trainers/</loc>
-     <lastmod>2017-06-21</lastmod>
+     <lastmod>2017-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -21,7 +21,7 @@
         
     <url>
      <loc>/timetables/timetable_introNGS/</loc>
-     <lastmod>2017-06-21</lastmod>
+     <lastmod>2017-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -30,7 +30,7 @@
     
     <url>
      <loc>/preamble/</loc>
-     <lastmod>2017-06-21</lastmod>
+     <lastmod>2017-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -39,49 +39,49 @@
         
     <url>
      <loc>/modules/btp-module-ngs-cli/commandline/</loc>
-     <lastmod>2017-06-21</lastmod>
+     <lastmod>2017-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/modules/btp-module-ngs-qc/ngs-qc/</loc>
-     <lastmod>2017-06-21</lastmod>
+     <lastmod>2017-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/modules/btp-module-ngs-mapping/alignment/</loc>
-     <lastmod>2017-06-21</lastmod>
+     <lastmod>2017-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/modules/btp-module-chip-seq/chip-seq/</loc>
-     <lastmod>2017-06-21</lastmod>
+     <lastmod>2017-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/modules/btp-module-rna-seq/rna-seq/</loc>
-     <lastmod>2017-06-21</lastmod>
+     <lastmod>2017-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/modules/btp-module-ngs-bio/biol/</loc>
-     <lastmod>2017-06-21</lastmod>
+     <lastmod>2017-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/modules/btp-module-velvet/velvet/</loc>
-     <lastmod>2017-06-21</lastmod>
+     <lastmod>2017-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/modules/btp-module-denovo-canu/denovo_canu/</loc>
-     <lastmod>2017-06-21</lastmod>
+     <lastmod>2017-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
