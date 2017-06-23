@@ -38,7 +38,7 @@ Useful Links
 Sonika Tyagi sonika.tyagi@agrf.org.au 
 
 *Contributor(s):*    
-Nandan Deshpande
+Nandan Deshpande n.deshpande@unsw.edu.au
 ***
 
 Introduction
@@ -231,13 +231,13 @@ Table 3: Quality Error Probabilities
 !!! hint ""
     ??? "**Hint**"
         look at the ’per base sequence quality plot’
-!!! sucess ""
+!!! success ""
     ???"** Answer**"
         Yes. Quality scores are dropping towards the end of the reads.
 
 !!! note "Question"
     What is the quality score range you see?
-!!! sucess ""
+!!! success ""
     ???"** Answer**"
         2-40
 
@@ -246,7 +246,7 @@ Table 3: Quality Error Probabilities
     At around which position do the scores start falling below Q20 for the 25% quartile range (25%of reads below Q20)?
 
      
-!!! sucess ""
+!!! success ""
     ???"** Answer**"
 	Around 30 bp position
 
@@ -254,7 +254,7 @@ Table 3: Quality Error Probabilities
 !!! note "Question"
     How can we trim the reads to filter out the low quality data?
     
-!!! sucess ""
+!!! success ""
     ???"** Answer**"
         By trimming off the bases after a fixed position of the read or by trimming off bases based on the quality score.
 
