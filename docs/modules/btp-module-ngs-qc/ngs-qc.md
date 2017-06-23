@@ -194,10 +194,10 @@ A Phred quality score (or Q-score) expresses an error probability. In
 particular, it serves as a convenient and compact way to communicate
 very small error probabilities. The probability that base A is wrong
 (P(A)) is expressed by a quality score, Q(A), according to the
-relationship:\
-\
-Q(A) =-10 log10(P(A))\
-\
+relationship:
+    
+    Q(A) =-10 log10(P(A))
+
 The relationship between the quality score and error probability is
 demonstrated with the following table:
 
@@ -216,12 +216,9 @@ Table 3: Quality Error Probabilities
 !!! note "Question"
     How many sequences were there in your file? What is the read length?
 
-!!! hint ""
-    ??? "** Hint **"
-        Here is a hint
 
 !!! success ""
-    ??? "** Answer**"
+    ??? "Answer"
         1,000,000. read length=150bp
 
     
@@ -229,16 +226,16 @@ Table 3: Quality Error Probabilities
     Does the quality score values vary throughout the read length? 
         
 !!! hint ""
-    ??? "** Hint **"
+    ??? "Hint"
         look at the ’per base sequence quality plot’
 !!! success ""
-    ???  "** Answer**"
+    ???  "Answer"
         Yes. Quality scores are dropping towards the end of the reads.
 
 !!! note "Question"
     What is the quality score range you see?
 !!! success ""
-    ??? "** Answer**"
+    ??? "Answer"
         2-40
 
 
@@ -247,7 +244,7 @@ Table 3: Quality Error Probabilities
 
      
 !!! success ""
-    ??? "** Answer**"
+    ??? "Answer"
 	Around 30 bp position
 
 
@@ -255,7 +252,7 @@ Table 3: Quality Error Probabilities
     How can we trim the reads to filter out the low quality data?
     
 !!! success ""
-    ??? "** Answer**"
+    ??? "Answer"
         By trimming off the bases after a fixed position of the read or by trimming off bases based on the quality score.
 
 ### Good Quality Data
@@ -364,13 +361,13 @@ Reads <50 bp, following quality trimming, were discarded.
 !!! note "Question"
     Did you observe adapter sequences in the data?
 
-    ??? "** Answer**"
+    ??? "Answer"
         No. (Hint: look at the overrepresented sequences)    
 
 !!! note "Question"
     How can you use -a option with fastqc? (Hint: try fastqc -h).
 
-    ??? "** Answer**"
+    ??? "Answer"
         Adaptors can be supplied in a file for screening.
 
 ### Adapter Clipping
