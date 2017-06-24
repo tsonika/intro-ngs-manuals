@@ -695,12 +695,12 @@ before running `velvetg`:
 
 Compare the results, produced during the last exercises, with each other, 
 
-| Metric                  | SRR022852                   | SRR023408             | SRR023408.trimmed      |
-|:----------------------- |:-------------------------- :|:-------------------- :|: ---------------------:|
-| Overall Quality (1-5)   | 2                           | 5                     | 4                      |
-| bp Coverage             | 136 x (36 bp;11,374,488)    | 95x (37bp; 7761796)   | 82x (32bp; 7761796)    |
-| k-mer Coverage          | 45x                         | 43x (21); 33x (25)    | 30x (21); 20.5x (25)   |
-| N50 (k-mer used)        | 68,843 (25)                 | 2,803 (21)            | 2,914 (21)             |
+| Metric                  | SRR023408             | SRR023408.trimmed      |
+|:----------------------- |---------------------:|
+| Overall Quality (1-5)   |5                     | 4                      |
+| bp Coverage             |95x (37bp; 7761796)   | 82x (32bp; 7761796)    |
+| k-mer Coverage          |43x (21); 33x (25)    | 30x (21); 20.5x (25)   |
+| N50 (k-mer used)        |2,803 (21)            | 2,914 (21)             |
 
 
 !!! note "Question"
@@ -708,7 +708,7 @@ Compare the results, produced during the last exercises, with each other,
 
 !!! success ""
     ??? "Answer"
-        SRR022852
+        SRR023408.trimmed
 
 !!! note "Question"
     If you found a candidate, why do you consider it as “best" assembly?
