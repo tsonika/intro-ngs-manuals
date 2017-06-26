@@ -218,21 +218,21 @@ Based on the above section:
 
 !!! success ""
     ??? "**Answer**"
-    regulation of cell proliferation – regulation of cellular process – regulation of biological process – biological regulation – biological process
+        regulation of cell proliferation – regulation of cellular process – regulation of biological process – biological regulation – biological process
 
 !!! note "Question"
     What are the direct child terms of *regulation of cell proliferation*?. 
 
 !!! success ""
     ??? "**Answer**"
-    regulation of stem cell proliferation, regulation of sooth muscle cell proliferation, positive regulation of cell proliferation, regulation of mesenchymal cell proliferation
+        regulation of stem cell proliferation, regulation of sooth muscle cell proliferation, positive regulation of cell proliferation, regulation of mesenchymal cell proliferation
 
 !!! note "Question"
     What is the enrichment score for *regulation of cell proliferation* ? How is this calculated (Hint: scroll down the page for the heading Enrichment). 
 
 !!! success ""
     ??? "**Answer**"
-    1.58 ((104/870)/(919/12137))
+        1.58 ((104/870)/(919/12137))
 
 
 ### REVIGO to reduce redundancy and visualise
