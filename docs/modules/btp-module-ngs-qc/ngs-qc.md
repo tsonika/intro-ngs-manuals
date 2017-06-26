@@ -245,7 +245,7 @@ Table 3: Quality Error Probabilities
      
 !!! success ""
     ??? "Answer"
-	Around 30 bp position
+       	Around 30 bp position
 
 
 !!! note "Question"
