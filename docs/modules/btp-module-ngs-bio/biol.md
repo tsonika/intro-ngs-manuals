@@ -121,7 +121,7 @@ Based on the above section:
 
 !!! success ""
     ??? "**Answer**"
-       We see terms involving the cell cycle and cell division are enriched in the down-regulated genes and terms involving ER stress and protein folding are enriched in the up-regulated genes. 
+        We see terms involving the cell cycle and cell division are enriched in the down-regulated genes and terms involving ER stress and protein folding are enriched in the up-regulated genes. 
 
 !!! note "Question"
     Looking at the biological process (BP) term “cell division: GO:0051301”, how many down-regulated and up-regulated DEGs are annotated with this term, and what statistical significance is associated with this enrichment?
@@ -129,7 +129,7 @@ Based on the above section:
 
 !!! success ""
     ??? "**Answer**"
-       Look for the row for GO:0051301 in the top 20 BP ontology terms. 
+        Look for the row for GO:0051301 in the top 20 BP ontology terms. 
 
 
 There are a number of tools and packages available with the
@@ -173,7 +173,7 @@ Based on the above section:
 
 !!! success ""
     ??? "**Answer**"
-       Cluster 1 is enriched for cell singling and Cluster 2 is enriched for cell cycle. Note that answers may vary based on the genes entered and the options selected. 
+        Cluster 1 is enriched for cell singling and Cluster 2 is enriched for cell cycle. Note that answers may vary based on the genes entered and the options selected. 
 
 !!! note "Question"
     How many of the DEGs are annotated with the term “intracellular signal transduction” and name five genes?
@@ -181,7 +181,7 @@ Based on the above section:
 
 !!! success ""
     ??? "**Answer**"
-       Looking at the first row of the DAVID results we see that 181 DEGs are annotated with “Intracellular signal transduction”. The first 5 genes listed are DHCR24, HMGCR, ADAP12, ARL5A, ARFGEF3.
+        Looking at the first row of the DAVID results we see that 181 DEGs are annotated with “Intracellular signal transduction”. The first 5 genes listed are DHCR24, HMGCR, ADAP12, ARL5A, ARFGEF3.
 
 !!! note "Question"
     Does this seem to be sensible in an experiment that looks at the response of cancer cells to a stimulant?
