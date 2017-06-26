@@ -54,7 +54,9 @@ Australian Genome Research Facility Ltd, Melbourne
 ## Bioinformatics Training Development  
 
 ![image](images/Revote.jpg) <br>
-**Mr. Jerico Revote** Software Developer Monash eResearch Centre, Monash University, Clayton Melbourne  
+**Mr. Jerico Revote** <br>
+Software Developer <br>
+Monash Bioinformatics Platform Monash University, Clayton Melbourne  
 
 ![image](images/watson-haigh.jpg) <br>
 **Dr. Nathan S. Watson-Haigh** <br>
