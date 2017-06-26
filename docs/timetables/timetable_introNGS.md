@@ -19,7 +19,7 @@
 
 | **Time** | **Topic** | **Links** | **Instructor** |
 | -------- | --------- | --------- | ----------- |
-|09:00|Introductions and course orientation||K|
+|09:00|Introductions and course orientation||KC|
 |09:45|Practical: Introduction to the command line||MF|
 |10:15|**Morning Tea**|
 |10:40|Practical: Introduction to the command line course and R course||MF|
