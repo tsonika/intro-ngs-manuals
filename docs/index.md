@@ -1,5 +1,6 @@
 # Welcome to Introduction to NGS Data Analysis
-### University of Sydney, 27th -29th June 2017
+### University of Sydney
+27th -29th June 2017
 
 The Introduction to NGS Data Analysis is a three-day, hands-on workshop that offers attendees a basic understanding of NGS data analysis workflows. The workshop provides hands-on computational experience in analysis of NGS data using common analytical approaches for ChIP-Seq, RNA-Seq data and de novo genome assembly.
 
