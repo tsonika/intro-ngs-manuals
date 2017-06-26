@@ -67,6 +67,16 @@ http://www.ebi.ac.uk/ena/data/view/ERR022484
 http://www.ebi.ac.uk/ena/data/view/ERR022485  
 http://www.pnas.org/content/suppl/2008/12/16/0807121105.DCSupplemental
 
+## Author Information
+
+*Primary Author(s):*
+    Susan M Corley s.corley@unsw.edu.au
+    Sonika Tyagi sonika.tyagi@agrf.org.au   
+   
+*Contributor(s):*
+    Nathan S. Watson-Haigh nathan.haigh@acpfg.com.au 
+    Myrto Kostadima, EMBL-EBI kostadmi@ebi.ac.uk 
+    Remco Loos, EMBL-EBI remco@ebi.ac.uk
 
 Introduction
 ------------
