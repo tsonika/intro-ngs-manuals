@@ -3,7 +3,7 @@
 
     
     <url>
-     <loc>/</loc>
+     <loc>https://bpa-csiro-workshops.github.io/intro-ngs-manuals/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -11,25 +11,7 @@
 
     
     <url>
-     <loc>/trainers/trainers/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-        
-    <url>
-     <loc>/timetables/timetable_introNGS/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-    <url>
-     <loc>/preamble/</loc>
+     <loc>https://bpa-csiro-workshops.github.io/intro-ngs-manuals/trainers/trainers/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -38,49 +20,67 @@
     
         
     <url>
-     <loc>/modules/btp-module-ngs-cli/commandline/</loc>
+     <loc>https://bpa-csiro-workshops.github.io/intro-ngs-manuals/timetables/timetable_introNGS/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>https://bpa-csiro-workshops.github.io/intro-ngs-manuals/preamble/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>https://bpa-csiro-workshops.github.io/intro-ngs-manuals/modules/btp-module-ngs-cli/commandline/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/modules/btp-module-ngs-qc/ngs-qc/</loc>
+     <loc>https://bpa-csiro-workshops.github.io/intro-ngs-manuals/modules/btp-module-ngs-qc/ngs-qc/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/modules/btp-module-ngs-mapping/alignment/</loc>
+     <loc>https://bpa-csiro-workshops.github.io/intro-ngs-manuals/modules/btp-module-ngs-mapping/alignment/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/modules/btp-module-chip-seq/chip-seq/</loc>
+     <loc>https://bpa-csiro-workshops.github.io/intro-ngs-manuals/modules/btp-module-chip-seq/chip-seq/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/modules/btp-module-rna-seq/rna-seq/</loc>
+     <loc>https://bpa-csiro-workshops.github.io/intro-ngs-manuals/modules/btp-module-rna-seq/rna-seq/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/modules/btp-module-ngs-bio/biol/</loc>
+     <loc>https://bpa-csiro-workshops.github.io/intro-ngs-manuals/modules/btp-module-ngs-bio/biol/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/modules/btp-module-velvet/velvet/</loc>
+     <loc>https://bpa-csiro-workshops.github.io/intro-ngs-manuals/modules/btp-module-velvet/velvet/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/modules/btp-module-denovo-canu/denovo_canu/</loc>
+     <loc>https://bpa-csiro-workshops.github.io/intro-ngs-manuals/modules/btp-module-denovo-canu/denovo_canu/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
