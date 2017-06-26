@@ -31,6 +31,15 @@ http://revigo.irb.hr
 STRING:  
 http://string-db.org
 
+## Author Information
+
+*Primary Author(s):*
+    Susan M Corley s.corley@unsw.edu.au
+  
+*Contributor(s):*
+    Sonika Tyagi sonika.tyagi@agrf.org.au   
+    Nandan Deshpande n.deshpane@unsw.edu.au
+
 Introduction
 ------------
 
