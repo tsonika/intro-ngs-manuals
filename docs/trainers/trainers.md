@@ -1,3 +1,4 @@
+##Workshop Trainers 
 <!--[image](images/generic.jpg) **NAME**, Position, Affiliation-->
 <!--![image](images/Andrews.jpg) **Dr. Dan Andrews** Bioinformatics Fellow, John Curtin School of Medical Research, Australian National University, Canberra   -->
 
