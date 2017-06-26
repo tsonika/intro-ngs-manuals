@@ -37,4 +37,5 @@ This work is licensed under a Creative Commons Attribution 3.0 Unported License 
 *Other Rights* - In no way are any of the following rights affected by the license: • Your fair dealing or fair use rights, or other applicable copyright exceptions and limitations;<br>
 * The author’s moral rights;<br>
 * Rights other persons may have either in the work itself or in how the work is used, such as publicity or privacy rights.<br>
+
 *Notice* - For any reuse or distribution, you must make clear to others the licence terms of this work.<br>
