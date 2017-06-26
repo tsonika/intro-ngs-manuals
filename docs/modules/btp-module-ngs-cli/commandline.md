@@ -24,6 +24,12 @@ After completing this practical the trainee should be able to:
 
 * [Example 1000Genome Project data](http://www.1000genomes.org)
 
+## Author Information
+
+*Primary Author(s):*
+    Matt Field matt.field@anu.edu.au     
+ 
+
 Shell Exercise
 --------------
 
