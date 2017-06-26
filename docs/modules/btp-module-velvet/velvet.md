@@ -696,7 +696,7 @@ before running `velvetg`:
 Compare the results, produced during the last exercises, with each other, 
 
 | Metric                  | SRR023408             | SRR023408.trimmed      |
-|:----------------------- |---------------------:|
+|:----------------------- |---------------------:|---------------------:|
 | Overall Quality (1-5)   |5                     | 4                      |
 | bp Coverage             |95x (37bp; 7761796)   | 82x (32bp; 7761796)    |
 | k-mer Coverage          |43x (21); 33x (25)    | 30x (21); 20.5x (25)   |
