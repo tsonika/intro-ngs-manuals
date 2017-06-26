@@ -44,6 +44,14 @@ https://broadinstitute.github.io/picard/explain-flags.html
 
 http://www.ebi.ac.uk/arrayexpress/experiments/E-GEOD-11431
 
+## Author Information
+
+*Primary Author(s):*
+    Myrto Kostadima kostadim@ebi.ac.uk
+   
+*Contributor(s):*
+    Xi (Sean) Li sean.li@csiro.au
+
 Introduction
 ------------
 
