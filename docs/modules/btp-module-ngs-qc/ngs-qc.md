@@ -319,13 +319,13 @@ Look at the last files generated, are the file names same as the input ?
 
 Run Fastqc on the quality trimmed files:
 
-    fastqc -f fastq qcdemo_R1.fastq-trimmed-pair1.fastq
-    fastqc -f fastq qcdemo_R1.fastq-trimmed-pair2.fastq
+    fastqc -f fastq qcdemo-trimmed-pair1.fastq
+    fastqc -f fastq qcdemo-trimmed-pair2.fastq
 
 Visualise the fastqc results:
 
-    firefox qcdemo_R1.fastq-trimmed-pair1_fastqc.html &
-    firefox qcdemo_R1.fastq-trimmed-pair2_fastqc.html&
+    firefox qcdemo-trimmed-pair1_fastqc.html &
+    firefox qcdemo-trimmed-pair2_fastqc.html &
 
 Let’s look at the quality from the second reads. The output should look
 like:
@@ -333,7 +333,7 @@ like:
 
 |Property  | Value         |
 |----------|:-------------:|
-|Filename | qcdemo_R1.fastq-trimmed-pair2.fastq|
+|Filename | qcdemo-trimmed-pair2.fastq|
 |File type | Conventional base calls|
 |Encoding | Sanger / Illumina 1.9|
 |Total Sequences | 742262|
@@ -341,7 +341,7 @@ like:
 |Sequence length | 50-150 |
 |%GC | 37 |
 
-Table 4:Summary Statistics of bad_example_quality_trimmed
+Table 4:Summary Statistics of QC_demo_R1_trimmed
 
  ![image](images/bad_qcdemo_R2_quality_trimmed.png)
 
