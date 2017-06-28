@@ -713,11 +713,11 @@ memory footprint small. Because of time constraints we will build the
 index only for one chromosome of the mouse genome. For this we need the
 chromosome sequence in FASTA format. This is stored in a file named
 <code class="codehilite">mm10</code>, under the subdirectory <code class="codehilite">bowtie_index</code>.</p>
-<p>The indexed chromosome is generated using the command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>bowtie2-build bowtie_index/mm10.fa bowtie_index/mm10
-</pre></div>
-</td></tr></table>
-
+<div class="admonition failure">
+<p class="admonition-title">STOP</p>
+<p>DO NOT run this command. This has already been run for you.</p>
+<p>** bowtie2-build bowtie_index/mm10.fa bowtie_index/mm10 **</p>
+</div>
 <p>This command will output 6 files that constitute the index. These files
 that have the prefix <code class="codehilite">mm10</code> are stored in the <code class="codehilite">bowtie_index</code>
 subdirectory. To view if they files have been successfully created type:</p>

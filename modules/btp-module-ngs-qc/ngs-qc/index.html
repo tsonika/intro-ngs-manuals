@@ -1061,15 +1061,15 @@ skewer -t 4 -l 50  -q 30 -Q 25 -m pe -o qcdemo qcdemo_R1.fastq.gz qcdemo_R2.fast
 
 <p>Run Fastqc on the quality trimmed files:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>fastqc -f fastq qcdemo_R1.fastq-trimmed-pair1.fastq
-fastqc -f fastq qcdemo_R1.fastq-trimmed-pair2.fastq
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>fastqc -f fastq qcdemo-trimmed-pair1.fastq
+fastqc -f fastq qcdemo-trimmed-pair2.fastq
 </pre></div>
 </td></tr></table>
 
 <p>Visualise the fastqc results:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>firefox qcdemo_R1.fastq-trimmed-pair1_fastqc.html &amp;
-firefox qcdemo_R1.fastq-trimmed-pair2_fastqc.html&amp;
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>firefox qcdemo-trimmed-pair1_fastqc.html &amp;
+firefox qcdemo-trimmed-pair2_fastqc.html &amp;
 </pre></div>
 </td></tr></table>
 
@@ -1085,7 +1085,7 @@ like:</p>
 <tbody>
 <tr>
 <td>Filename</td>
-<td align="center">qcdemo_R1.fastq-trimmed-pair2.fastq</td>
+<td align="center">qcdemo-trimmed-pair2.fastq</td>
 </tr>
 <tr>
 <td>File type</td>
@@ -1113,7 +1113,7 @@ like:</p>
 </tr>
 </tbody>
 </table>
-<p>Table 4:Summary Statistics of bad_example_quality_trimmed</p>
+<p>Table 4:Summary Statistics of QC_demo_R1_trimmed</p>
 <p><img alt="image" src="../images/bad_qcdemo_R2_quality_trimmed.png" /></p>
 <p>Figure 2:bad_example_quality_trimmed_plot</p>
 <p>Did the number of total reads in R1 and R2 change after trimming?</p>
