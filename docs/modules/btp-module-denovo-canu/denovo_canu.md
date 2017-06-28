@@ -34,6 +34,9 @@ Simplified version of workflow:
 
 ## Get data
 
+    cd /home/trainee/long_reads/workshop_files
+    ls -l
+
 The files we need are:
 
 - **pacbio.fastq.gz</fn>** - the PacBio reads
@@ -142,11 +145,12 @@ Move into **<fn>canu_outdir</fn>** and `ls` to see the output files.
 infoseq canu.contigs.fasta
 ```
 
-- This will show the contigs found by Canu. e.g.,
+!!! note "Question"
+    How long is the assembled contig ?
 
-```text
-    - tig00000001	2851805
-```
+!!! success ""
+    ??? "**Answer**"
+        tig00000001       2851805
 
 This looks like a chromosome of approximately 2.8 million bases.
 
@@ -160,8 +164,9 @@ If the assembly is poor with many contigs, re-run Canu with extra sensitivity pa
 canu -p prefix -d outdir corMhapSensitivity=high corMinCoverage=0 genomeSize=2.8m -pacbio-raw pacbio.fastq.gz
 ```
 
-### Questions
 
+!!! warning "Important" Information 
+    
 !!! note "Question"
     How do long- and short-read assembly methods differ?
 
