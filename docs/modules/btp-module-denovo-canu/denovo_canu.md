@@ -32,6 +32,30 @@ Simplified version of workflow:
 
 ![workflow](images/flowchart.png)
 
+!!! warning "Important" 
+    Background Information 
+    
+!!! note "Question"
+        How do long- and short-read assembly methods differ?
+
+!!! success ""
+    ??? "**Answer**"
+        Short reads are usually assembled using De Bruijn graphs. With long reads, there is a move back towards simpler overlap-layout-consensus methods.
+
+!!! note "Question"
+    Where can we find out the what the approximate genome size should be for the species being assembled?
+
+!!! success ""
+    ??? "**Answer**"
+        Go to https://www.ncbi.nlm.nih.gov/genome/ - enter species name - click on Genome Assembly and Annotation report - sort table by clicking on the column header Size (Mb) - look at range of sizes in this column.
+
+!!! note "Question"
+    Where could you view the output **filename.gfa** and what would it show?
+
+!!! success ""
+    ??? "**Answer**"
+        This is the assembly graph. You can view it using the tool "Bandage", https://rrwick.github.io/Bandage/, to see how the contigs are connected (including ambiguities).
+
 ## Get data
 
     cd /home/trainee/long_reads/workshop_files
@@ -129,11 +153,17 @@ canu -p canu -d canu_outdir_NGS genomeSize=2.8m -pacbio-raw pacbio.fastq.gz
 - Canu will correct, trim and assemble the reads.
 - Various output will be displayed on the screen.
 
-_NGS workshop: As we don't have time for Canu to complete, stop the run by typing `Ctrl-C`. We will look at pre-computed data in the folder **canu_outdir**._
+!!! failure "STOP" Warning - STOP and read.
+    _NGS workshop: As we don't have time for Canu to complete, stop the run by typing `Ctrl-C`. We will look at pre-computed data in the folder **canu_outdir**._
 
 ### Canu output
 
 Move into **<fn>canu_outdir</fn>** and `ls` to see the output files.
+
+```text
+cd canu_outdir
+ls -l
+```
 
 - The **<fn>canu.contigs.fasta</fn>** are the assembled sequences.
 - The **<fn>canu.unassembled.fasta</fn>** are the reads that could not be assembled.
@@ -155,38 +185,13 @@ infoseq canu.contigs.fasta
 
 This matches what we would expect for this sample. For other data, Canu may not be able to join all the reads into one contig, so there may be several contigs in the output. Also, the sample may contain some plasmids and these may be found full or partially by Canu as additional contigs.  
 
-### Change Canu parameters if required
+!!! note "Bonus exercise" 
+    **[Try it later] Change Canu parameters if required**
 
-If the assembly is poor with many contigs, re-run Canu with extra sensitivity parameters; e.g.
+    If the assembly is poor with many contigs, re-run Canu with extra sensitivity parameters; e.g.
 
-```text
-canu -p prefix -d outdir corMhapSensitivity=high corMinCoverage=0 genomeSize=2.8m -pacbio-raw pacbio.fastq.gz
-```
+    canu -p prefix -d outdir corMhapSensitivity=high corMinCoverage=0 genomeSize=2.8m -pacbio-raw pacbio.fastq.gz
 
-
-!!! warning "Important" 
-    Information 
-    
-!!! note "Question"
-        How do long- and short-read assembly methods differ?
-
-!!! success ""
-    ??? "**Answer**"
-        Short reads are usually assembled using De Bruijn graphs. With long reads, there is a move back towards simpler overlap-layout-consensus methods.
-
-!!! note "Question"
-    Where can we find out the what the approximate genome size should be for the species being assembled?
-
-!!! success ""
-    ??? "**Answer**"
-        Go to https://www.ncbi.nlm.nih.gov/genome/ - enter species name - click on Genome Assembly and Annotation report - sort table by clicking on the column header Size (Mb) - look at range of sizes in this column.
-
-!!! note "Question"
-    Where could you view the output **filename.gfa** and what would it show?
-
-!!! success ""
-    ??? "**Answer**"
-        This is the assembly graph. You can view it using the tool "Bandage", https://rrwick.github.io/Bandage/, to see how the contigs are connected (including ambiguities).
 
 ## Trim and circularise
 
@@ -202,19 +207,23 @@ Overhangs are shown in blue:
 
 Move back into your main analysis folder.
 
+```text
+cd /home/trainee/long_reads/workshop_files
+```
 Run Circlator:
 
-```text
-circlator all --threads 4 --verbose canu_outdir/canu.contigs.fasta canu_outdir/canu.correctedReads.fasta.gz circlator_outdir_NGS
-```
+!!! failure "STOP" Warning - STOP and read.
+    ```text
+    circlator all --threads 4 --verbose canu_outdir/canu.contigs.fasta canu_outdir/canu.correctedReads.fasta.gz circlator_outdir_NGS
+    ```
 
-- `--threads` is the number of cores <!-- change this to an appropriate number-->
-- `--verbose` prints progress information to the screen
-- `canu_outdir/canu.contigs.fasta` is the file path to the input Canu assembly
-- `canu_outdir/canu.correctedReads.fasta.gz` is the file path to the corrected Pacbio reads - note, fastA not fastQ
-- `circlator_outdir_NGS` is the name of the output directory.
+    - `--threads` is the number of cores <!-- change this to an appropriate number-->
+    - `--verbose` prints progress information to the screen
+    - `canu_outdir/canu.contigs.fasta` is the file path to the input Canu assembly
+    - `canu_outdir/canu.correctedReads.fasta.gz` is the file path to the corrected Pacbio reads - note, fastA not fastQ
+    - `circlator_outdir_NGS` is the name of the output directory.
 
-_NGS workshop: Stop the run by typing `Ctrl-C`. We will look at pre-computed data in the folder **circlator_outdir**._
+    _NGS workshop: Stop the run by typing `Ctrl-C`. We will look at pre-computed data in the folder **circlator_outdir**._
 
 ### Circlator output
 
