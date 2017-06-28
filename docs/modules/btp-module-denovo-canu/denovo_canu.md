@@ -137,24 +137,23 @@ The sample used in this tutorial is a gram-positive bacteria called *Staphylococ
 ## Assemble<a name="assemble"></a>
 
 - We will use the assembly software called Canu, <https://github.com/marbl/canu>.
-- Run Canu with these commands:
+- As we don't have time for Canu to complete, we will look at pre-computed data in the folder **canu_outdir**.
 
-```text
-canu -p canu -d canu_outdir_NGS genomeSize=2.8m -pacbio-raw pacbio.fastq.gz
-```
+!!! failure "Precomputed section" 
+    ```text
+    canu -p canu -d canu_outdir_NGS genomeSize=2.8m -pacbio-raw pacbio.fastq.gz    
+    ```
 
-- the first `canu` tells the program to run
-- `-p canu` names prefix for output files ("canu")
-- `-d canu_outdir_NGS` names output directory
-- `genomeSize` only has to be approximate.
-    - e.g. *Staphylococcus aureus*, 2.8m
-    - e.g. *Streptococcus pyogenes*, 1.8m
+    - the first `canu` tells the program to run    
+    - `-p canu` names prefix for output files ("canu")    
+    - `-d canu_outdir_NGS` names output directory    
+    - `genomeSize` only has to be approximate.    
+        - e.g. *Staphylococcus aureus*, 2.8m    
+        - e.g. *Streptococcus pyogenes*, 1.8m    
 
-- Canu will correct, trim and assemble the reads.
-- Various output will be displayed on the screen.
+    - Canu will correct, trim and assemble the reads.    
+    - Various output will be displayed on the screen.    
 
-!!! failure "STOP" Warning - STOP and read.
-    _NGS workshop: As we don't have time for Canu to complete, stop the run by typing `Ctrl-C`. We will look at pre-computed data in the folder **canu_outdir**._
 
 ### Canu output
 
@@ -185,13 +184,12 @@ infoseq canu.contigs.fasta
 
 This matches what we would expect for this sample. For other data, Canu may not be able to join all the reads into one contig, so there may be several contigs in the output. Also, the sample may contain some plasmids and these may be found full or partially by Canu as additional contigs.  
 
-!!! note "Bonus exercise" 
-    **[Try it later] Change Canu parameters if required**
+!!! hint "Try it later" 
+    Change Canu parameters if required: If the assembly is poor with many contigs, re-run Canu with extra sensitivity parameters; e.g.    
 
-    If the assembly is poor with many contigs, re-run Canu with extra sensitivity parameters; e.g.
-
-    canu -p prefix -d outdir corMhapSensitivity=high corMinCoverage=0 genomeSize=2.8m -pacbio-raw pacbio.fastq.gz
-
+    ```text
+    canu -p prefix -d outdir corMhapSensitivity=high corMinCoverage=0 genomeSize=2.8m -pacbio-raw pacbio.fastq.gz    
+    ```
 
 ## Trim and circularise
 
@@ -205,57 +203,86 @@ Overhangs are shown in blue:
 ![circlator](images/circlator_diagram.png)
 *Adapted from Figure 1. Hunt et al. Genome Biology 2015*
 
-Move back into your main analysis folder.
-
-```text
-cd /home/trainee/long_reads/workshop_files
-```
 Run Circlator:
 
-!!! failure "STOP" Warning - STOP and read.
+We have already run the command below and now we can look at pre-computed data in the folder **circlator_outdir**    
+
+!!! failure "Pre-computed section" 
+    To run the command move back into your main analysis folder.
+
     ```text
-    circlator all --threads 4 --verbose canu_outdir/canu.contigs.fasta canu_outdir/canu.correctedReads.fasta.gz circlator_outdir_NGS
+    cd /home/trainee/long_reads/workshop_files
+    circlator all --threads 4 --verbose canu_outdir/canu.contigs.fasta canu_outdir/canu.correctedReads.fasta.gz circlator_outdir_NGS    
     ```
 
-    - `--threads` is the number of cores <!-- change this to an appropriate number-->
-    - `--verbose` prints progress information to the screen
-    - `canu_outdir/canu.contigs.fasta` is the file path to the input Canu assembly
-    - `canu_outdir/canu.correctedReads.fasta.gz` is the file path to the corrected Pacbio reads - note, fastA not fastQ
-    - `circlator_outdir_NGS` is the name of the output directory.
+    `--threads` is the number of cores <!-- change this to an appropriate number-->    
+    `--verbose` prints progress information to the screen    
+    `canu_outdir/canu.contigs.fasta` is the file path to the input Canu assembly    
+    `canu_outdir/canu.correctedReads.fasta.gz` is the file path to the corrected Pacbio reads - note, fastA not fastQ    
+    `circlator_outdir_NGS` is the name of the output directory.    
 
-    _NGS workshop: Stop the run by typing `Ctrl-C`. We will look at pre-computed data in the folder **circlator_outdir**._
 
 ### Circlator output
 
 Move into the **<fn>circlator_outdir</fn>** directory and `ls` to list files.
 
-*Were the contigs circularised?*
-
 ```text
-less 04.merge.circularise.log
+cd /home/trainee/long_reads/workshop_files/circlator_outdir
+ls -ltr
 ```
 
-- Yes, the contig was circularised (last column).
-- Type "q" to exit.
 
-*Where were the contigs oriented (which gene)?*
+### Questions
 
-```text
-less 06.fixstart.log
-```
+!!! note "Question"
+    Were all the contigs circularised? Why/why not?
 
-- Look in the "gene_name" column.
-- The contig has been oriented at tr|A0A090N2A8|A0A090N2A8_STAAU, which is another name for dnaA. <!-- (search swissprot - uniprot.org) --> This is typically used as the start of bacterial chromosome sequences.
+!!! hint ""
+    ??? "Hint"
+        ```text
+        less 04.merge.circularise.log
+        ```
+        Type "q" to exit.
 
-*What are the trimmed contig sizes?*
+!!! success ""
+    ??? "**Answer**"
+        - Yes, the contig was circularised (last column).
+        In this example, the contig could be circularized because it contained the entire sequence, with overhangs that were trimmed.
 
-```text
-infoseq 06.fixstart.fasta
-```
+!!! note "Question"
+    *Where were the contigs oriented (which gene)?*
 
-- tig00000001 2823331 (28564 bases trimmed)
+!!! hint ""
+    ??? "Hint"
+        ```text
+        less 06.fixstart.log
+        ```
+        Type "q" to exit.
 
-This trimmed part is the overlap.
+!!! success ""
+    ??? "**Answer**"
+        - Look in the "gene_name" column.
+        - The contig has been oriented at tr|A0A090N2A8|A0A090N2A8_STAAU, which is another name for dnaA. <!-- (search swissprot - uniprot.org) --> This is typically used as the start of bacterial chromosome sequences.
+
+!!! note "Question"
+    *What are the trimmed contig sizes?*
+
+!!! hint ""
+    ??? "Hint"
+        ```text
+        infoseq 06.fixstart.fasta
+        ```
+!!! success ""
+    ??? "**Answer**"
+        - tig00000001 2823331 (28564 bases trimmed)
+        -This trimmed part is the overlap.
+
+!!! note "Question"
+    Circlator can set the start of the sequence at a particular gene. Which gene does it use? Is this appropriate for all contigs?
+
+!!! success ""
+    ??? "**Answer**"
+        Circlator uses dnaA for the chromosomal contig. For other contigs, it uses a centrally-located gene. However, ideally, plasmids would be oriented on a gene such as a rep gene. It is possible to provide a file to Circlator to do this.
 
 *Re-name the contigs file*:
 
@@ -270,25 +297,8 @@ Open this file in a text editor (e.g. nano: `nano contig1.fasta`) and change the
 
 Move the file back into the main folder (`mv contig1.fasta ../`).
 
-### Options
-
-If all the contigs have not circularised with Circlator, an option is to change the `--b2r_length_cutoff` setting to approximately 2X the average read depth.
-
-### Questions
-
-!!! note "Question"
-    Were all the contigs circularised? Why/why not?
-
-!!! success ""
-    ??? "**Answer**"
-        In this example, the contig could be circularized because it contained the entire sequence, with overhangs that were trimmed.
-
-!!! note "Question"
-    Circlator can set the start of the sequence at a particular gene. Which gene does it use? Is this appropriate for all contigs?
-
-!!! success ""
-    ??? "**Answer**"
-        Circlator uses dnaA for the chromosomal contig. For other contigs, it uses a centrally-located gene. However, ideally, plasmids would be oriented on a gene such as a rep gene. It is possible to provide a file to Circlator to do this.
+!!! hint "Tips" 
+    If all the contigs have not circularised with Circlator, an option is to change the `--b2r_length_cutoff` setting to approximately 2X the average read depth.
 
 
 ## Find smaller plasmids
@@ -311,19 +321,20 @@ bwa index contig1.fasta
 ```
 
 - Align Illumina reads using using bwa mem:
+  We will use the pre-computed file called **aln.bam**.     
 
-```text
-bwa mem -t 4 contig1.fasta illumina_R1.fastq.gz illumina_R2.fastq.gz | samtools sort > aln_NGS.bam
-```
+!!! failure "Precomputed section" 
+    ```text
+    bwa mem -t 4 contig1.fasta illumina_R1.fastq.gz illumina_R2.fastq.gz | samtools sort > aln_NGS.bam     
+    ```     
 
-- `bwa mem` is the alignment tool
-- `-t 4` is the number of cores <!-- choose an appropriate number -->
-- `contig1.fasta` is the input assembly file
-- `illumina_R1.fastq.gz illumina_R2.fastq.gz` are the Illumina reads
-- ` | samtools sort` pipes the output to samtools to sort
-- `> aln_NGS.bam` sends the alignment to the file **<fn>aln_NGS.bam</fn>**
+    - `bwa mem` is the alignment tool     
+    - `-t 4` is the number of cores <!-- choose an appropriate number -->     
+    - `contig1.fasta` is the input assembly file     
+    - `illumina_R1.fastq.gz illumina_R2.fastq.gz` are the Illumina reads     
+    - ` | samtools sort` pipes the output to samtools to sort     
+    - `> aln_NGS.bam` sends the alignment to the file **<fn>aln_NGS.bam</fn>**     
 
-_NGS workshop: Stop the run by typing `Ctrl-C`. We will use the pre-computed file called **aln.bam**._
 
 ### Extract unmapped Illumina reads
 
@@ -351,19 +362,20 @@ We now have three files of the unampped reads: **<fn> unmapped.R1.fastq</fn>**, 
 ### Assemble the unmapped reads
 
 - Assemble with Spades (<http://cab.spbu.ru/software/spades/>):
+- We will use the pre-computed file in the folder **spades_assembly**.
 
-```text
-spades.py -1 unmapped.R1.fastq -2 unmapped.R2.fastq -s unmapped.RS.fastq --careful --cov-cutoff auto -o spades_assembly_NGS
-```
+!!! failure "Precomputed section" 
+    ```text
+    spades.py -1 unmapped.R1.fastq -2 unmapped.R2.fastq -s unmapped.RS.fastq --careful --cov-cutoff auto -o spades_assembly_NGS
+    ```
 
-- `-1` is input file forward
-- `-2` is input file reverse
-- `-s` is unpaired
-- `--careful` minimizes mismatches and short indels
-- `--cov-cutoff auto` computes the coverage threshold (rather than the default setting, "off")
-- `-o` is the output directory
+    - `-1` is input file forward
+    - `-2` is input file reverse
+    - `-s` is unpaired
+    - `--careful` minimizes mismatches and short indels
+    - `--cov-cutoff auto` computes the coverage threshold (rather than the default setting, "off")
+    - `-o` is the output directory
 
-_NGS workshop: Stop the run by typing `Ctrl-C`. We will use the pre-computed file in the folder **spades_assembly**._
 
 Move into the output directory (**<fn>spades_assembly</fn>**) and look at the contigs:
 
@@ -531,16 +543,18 @@ We will correct the Pacbio assembly with Illumina reads, using the tool Pilon (<
 ### Make an alignment file
 
 - Align the Illumina reads (R1 and R2) to the draft PacBio assembly, e.g. **<fn>genome.fasta</fn>**:
-
-```text
-bwa index genome.fasta
-bwa mem -t 4 genome.fasta illumina_R1.fastq.gz illumina_R2.fastq.gz | samtools sort > aln_illumina_pacbio_NGS.bam
-```
-
-- `-t` is the number of cores <!-- set this to an appropriate number. (To find out how many you have, `grep -c processor /proc/cpuinfo`) -->
+- We will use the pre-computed file called **aln_illumina_pacbio.bam**.
 
 
-_NGS workshop: Stop the run by typing `Ctrl-C`. We will use the pre-computed file called **aln_illumina_pacbio.bam**._
+!!! failure "Precomputed section" 
+    ```text
+    bwa index genome.fasta    
+    bwa mem -t 4 genome.fasta illumina_R1.fastq.gz illumina_R2.fastq.gz | samtools sort > aln_illumina_pacbio_NGS.bam    
+    ```
+
+    - `-t` is the number of cores <!-- set this to an appropriate number. (To find out how many you have, `grep -c processor /proc/cpuinfo`) -->    
+
+
 
 - Index the files:
 
@@ -553,22 +567,22 @@ samtools faidx genome.fasta
 
 ### Run Pilon
 
-- Run:
+- We will use the pre-computed files called with the prefixes **pilon1**._
 
-```text
-pilon --genome genome.fasta --frags aln_illumina_pacbio.bam --output pilon1_NGS --fix all --mindepth 0.5 --changes --verbose --threads 4
-```
+!!! failure "Precomputed section" 
+    ```text
+    pilon --genome genome.fasta --frags aln_illumina_pacbio.bam --output pilon1_NGS --fix all --mindepth 0.5 --changes --verbose --threads 4
+    ```
 
-- `--genome` is the name of the input assembly to be corrected
-- `--frags` is the alignment of the reads against the assembly
-- `--output` is the name of the output prefix
-- `--fix` is an option for types of corrections
-- `--mindepth` gives a minimum read depth to use
-- `--changes` produces an output file of the changes made
-- `--verbose` prints information to the screen during the run
-- `--threads`: the number of cores
+    - `--genome` is the name of the input assembly to be corrected     
+    - `--frags` is the alignment of the reads against the assembly     
+    - `--output` is the name of the output prefix     
+    - `--fix` is an option for types of corrections     
+    - `--mindepth` gives a minimum read depth to use     
+    - `--changes` produces an output file of the changes made     
+    - `--verbose` prints information to the screen during the run     
+    - `--threads`: the number of cores     
 
-_NGS workshop: Stop the run by typing `Ctrl-C`. We will use the pre-computed files called with the prefixes **pilon1**._
 
 
 Look at the changes file:
