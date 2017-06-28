@@ -79,7 +79,7 @@ All these directories will be made as sub-directories of a directory for
 the whole course called NGS. For this you can use the following
 commands:
 
-    mkdir -p NGS/velvet/{part1,part2,part3}
+    mkdir -p NGS/velvet/{part1,part2}
 
 The `-p` tells `mkdir` (make directory) to make any parent directories
 if they don’t already exist. You could have created the above
@@ -594,12 +594,11 @@ writing files can become the bottleneck, also known as I/O bound.
 Therefore, it is often good practice to avoid unnecessary disk
 read/write.
 
-We could do what is called pipelining to send a stream of data from one
-command to another, using the pipe (`|`) character, without the need for
-intermediary files. The following command would achieve this:
+!!! hint "Tips"
+    We could do what is called pipelining to send a stream of data from one command to another, using the pipe (`|`) character, without the need for intermediary files. The following command would achieve this:       
 
-    gunzip --to-stdout < SRR023408_1.fastq.gz | fastx_trimmer -Q 33 -f 4 -l 32 -o SRR023408_trim1.fastq 
-    gunzip --to-stdout < SRR023408_2.fastq.gz | fastx_trimmer -Q 33 -f 3 -l 29 -o SRR023408_trim2.fastq
+    gunzip --to-stdout < SRR023408_1.fastq.gz | fastx_trimmer -Q 33 -f 4 -l 32 -o SRR023408_trim1.fastq     
+    gunzip --to-stdout < SRR023408_2.fastq.gz | fastx_trimmer -Q 33 -f 3 -l 29 -o SRR023408_trim2.fastq    
 
 Now run `velveth` with a k-mer value of 21 for both the untrimmed and
 trimmed read files in `-shortPaired` mode. Separate the output of the
