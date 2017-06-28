@@ -170,9 +170,10 @@ should show the predominant size of the protected region.
 
     binding.characteristics <- get.binding.characteristics(oct4.data,srange=c(50,500),bin=5);
 
-The binding.characteristics provides the estimate of the binding peak
+The 'binding.characteristics' provides the estimate of the binding peak
+
 separation distance, cross-correlation profile itself and tag quality
-bin acceptance information. The srange parameter defines the possible
+bin acceptance information. The 'srange' parameter defines the possible
 range for the size of the protected region. It is supposed to be higher
 than tag length. However, the upper boundary (500) cannot be too high,
 which will increase the running time. The bin parameter tags within the
@@ -181,6 +182,9 @@ bin size will decrease the accuracy of the determined parameters.
 
 Then, print out binding peak separation distance and we can plot
 cross-correlation profile:
+
+!!! failure "STOP"
+    DO NOT run this command, we dont have enough data to generate this plot.
 
     print(paste("binding peak separation distance=",binding.characteristics$peak$x));
     pdf(file="oct4.crosscorrelation.pdf",width=5,height=5);
@@ -198,7 +202,7 @@ alignment quality based on the binding characteristics:
     gfpcontrol.data <- select.informative.tags(gfp.data,binding.characteristics);
 
 The last step below will scan along the chromosomes calculating local
-density of region (can be specified using window.size parameter, default
+density of region (can be specified using 'window.size' parameter, default
 is 200bp), removing or restricting singular positions with extremely
 high tag count relative to the neighborhood:
 
