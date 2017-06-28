@@ -566,6 +566,10 @@ samtools faidx genome.fasta
 - Now we have an alignment file to use in Pilon: **<fn>aln_illumina_pacbio.bam</fn>**
 
 ### Run Pilon
+Pilon is a software tool which can be used to:
+
+- Automatically improve draft assemblies    
+- Find variation among strains, including large event detection    
 
 - We will use the pre-computed files called with the prefixes **pilon1**._
 
