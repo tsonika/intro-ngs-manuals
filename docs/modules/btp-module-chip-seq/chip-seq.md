@@ -99,17 +99,17 @@ Finding enriched areas using SPP
 --------------------------------
 
 Terminology used in the tutorial: 
--   `fragment:` overlapping fragments
-    obtaining in the IP (immuno precipitation) experiments. 
--   `tag:` sequenced part of the fragment which could be from one end (in case of single end
-    sequencing ) or both ends in the paired end data. 
--   `alignment:` a process to determine the position of the tags, which typically should be around
-    the binding site. 
--   `peaks:` spatial distribution of the tags densities
-    around the binding sites on the genome. You would see two separate peaks
-    of tags on the positive and negative strand around the binding site. The
-    distance between the two peaks should reflect the size of the protected
-    region.
+-    `fragment:` overlapping fragments
+     obtaining in the IP (immuno precipitation) experiments. 
+-    `tag:` sequenced part of the fragment which could be from one end (in case of single end
+     sequencing ) or both ends in the paired end data. 
+-    `alignment:` a process to determine the position of the tags, which typically should be around
+     the binding site. 
+-    `peaks:` spatial distribution of the tags densities
+     around the binding sites on the genome. You would see two separate peaks
+     of tags on the positive and negative strand around the binding site. The
+     distance between the two peaks should reflect the size of the protected
+     region.
 
 SPP is a Chip-seq processing pipeline implemented using R.
 
@@ -170,10 +170,10 @@ should show the predominant size of the protected region.
 
     binding.characteristics <- get.binding.characteristics(oct4.data,srange=c(50,500),bin=5);
 
-The 'binding.characteristics' provides the estimate of the binding peak
+The `binding.characteristics` provides the estimate of the binding peak
 
 separation distance, cross-correlation profile itself and tag quality
-bin acceptance information. The 'srange' parameter defines the possible
+bin acceptance information. The `srange` parameter defines the possible
 range for the size of the protected region. It is supposed to be higher
 than tag length. However, the upper boundary (500) cannot be too high,
 which will increase the running time. The bin parameter tags within the
@@ -198,11 +198,11 @@ cross correlation magnitude whereas a randonmly mapped set of tags
 should decrease it. The following calls will select tags with acceptable
 alignment quality based on the binding characteristics:
 
-    chip.data <- select.informative.tags(oct4.data,binding.characteristics);
+    chip.data <- select.informative.tags(oct4.data`binding.characteristics);
     gfpcontrol.data <- select.informative.tags(gfp.data,binding.characteristics);
 
 The last step below will scan along the chromosomes calculating local
-density of region (can be specified using 'window.size' parameter, default
+density of region (can be specified using `window.size` parameter, default
 is 200bp), removing or restricting singular positions with extremely
 high tag count relative to the neighborhood:
 
