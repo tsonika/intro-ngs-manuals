@@ -99,17 +99,18 @@ Finding enriched areas using SPP
 --------------------------------
 
 Terminology used in the tutorial: 
--    `fragment:` overlapping fragments
-     obtaining in the IP (immuno precipitation) experiments. 
--    `tag:` sequenced part of the fragment which could be from one end (in case of single end
-     sequencing ) or both ends in the paired end data. 
--    `alignment:` a process to determine the position of the tags, which typically should be around
-     the binding site. 
--    `peaks:` spatial distribution of the tags densities
-     around the binding sites on the genome. You would see two separate peaks
-     of tags on the positive and negative strand around the binding site. The
-     distance between the two peaks should reflect the size of the protected
-     region.
+
+-   `fragment:` overlapping fragments
+    obtaining in the IP (immuno precipitation) experiments. 
+-   `tag:` sequenced part of the fragment which could be from one end (in case of single end
+    sequencing ) or both ends in the paired end data. 
+-   `alignment:` a process to determine the position of the tags, which typically should be around
+    the binding site. 
+-   `peaks:` spatial distribution of the tags densities
+    around the binding sites on the genome. You would see two separate peaks
+    of tags on the positive and negative strand around the binding site. The
+    distance between the two peaks should reflect the size of the protected
+    region.
 
 SPP is a Chip-seq processing pipeline implemented using R.
 
