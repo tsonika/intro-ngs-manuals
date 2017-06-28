@@ -164,28 +164,29 @@ canu -p prefix -d outdir corMhapSensitivity=high corMinCoverage=0 genomeSize=2.8
 ```
 
 
-!!! warning "Important" Information 
+!!! warning "Important" 
+    Information 
     
-    !!! note "Question"
+!!! note "Question"
         How do long- and short-read assembly methods differ?
 
-    !!! success ""
-        ??? "**Answer**"
-            Short reads are usually assembled using De Bruijn graphs. With long reads, there is a move back towards simpler overlap-layout-consensus methods.
+!!! success ""
+    ??? "**Answer**"
+        Short reads are usually assembled using De Bruijn graphs. With long reads, there is a move back towards simpler overlap-layout-consensus methods.
 
-    !!! note "Question"
-        Where can we find out the what the approximate genome size should be for the species being assembled?
+!!! note "Question"
+    Where can we find out the what the approximate genome size should be for the species being assembled?
 
-    !!! success ""
-        ??? "**Answer**"
-            Go to https://www.ncbi.nlm.nih.gov/genome/ - enter species name - click on Genome Assembly and Annotation report - sort table by clicking on the column header Size (Mb) - look at range of sizes in this column.
+!!! success ""
+    ??? "**Answer**"
+        Go to https://www.ncbi.nlm.nih.gov/genome/ - enter species name - click on Genome Assembly and Annotation report - sort table by clicking on the column header Size (Mb) - look at range of sizes in this column.
 
-    !!! note "Question"
-        Where could you view the output **filename.gfa** and what would it show?
+!!! note "Question"
+    Where could you view the output **filename.gfa** and what would it show?
 
-    !!! success ""
-        ??? "**Answer**"
-            This is the assembly graph. You can view it using the tool "Bandage", https://rrwick.github.io/Bandage/, to see how the contigs are connected (including ambiguities).
+!!! success ""
+    ??? "**Answer**"
+        This is the assembly graph. You can view it using the tool "Bandage", https://rrwick.github.io/Bandage/, to see how the contigs are connected (including ambiguities).
 
 ## Trim and circularise
 
